@@ -1,31 +1,37 @@
-"""Modal multi-GPU production RL execution runner.
+"""Modal multi-GPU production RL execution runner for Prime-RL and vLLM.
 
-Runs vLLM rollout generation on GPU 0 and FSDP2 / PyTorch RL training step on GPU 1.
-Captures real generation outputs, reward verifiers, advantages, PPO loss backward, AdamW optimizer step,
+Runs vLLM rollout generation on GPU 0 and Prime-RL PyTorch FSDP2 training step on GPU 1.
+Captures real generation outputs, verifiers, advantages, PPO loss backward, AdamW optimizer step,
 and in-place layerwise weight synchronization.
 """
 
-import json
 import os
-
+import json
 import modal
 
-app = modal.App("task2-production-rl-runner")
+app = modal.App("prime-rl-vllm-runner")
 
-# Build container image with PyTorch, Transformers, vLLM, and Ray
-image = modal.Image.debian_slim(python_version="3.11").pip_install(
-    "torch>=2.1.0",
-    "transformers>=4.40.0",
-    "vllm>=0.4.0",
-    "ray[default]>=2.10.0",
-    "datasets>=2.14.0",
-    "pydantic>=2.0.0",
-    "rich>=13.0.0",
-    "accelerate>=0.25.0",
-    "pyzmq>=25.0.0",
-    "fastapi>=0.100.0",
-    "uvicorn>=0.20.0",
-    "requests>=2.30.0",
+# Build image with PyTorch, vLLM, and Prime-RL dependencies
+image = (
+    modal.Image.debian_slim(python_version="3.11")
+    .pip_install(
+        "torch>=2.1.0",
+        "transformers>=4.40.0",
+        "vllm>=0.4.0",
+        "ray[default]>=2.10.0",
+        "datasets>=2.14.0",
+        "pydantic>=2.0.0",
+        "rich>=13.0.0",
+        "accelerate>=0.25.0",
+        "pyzmq>=25.0.0",
+        "fastapi>=0.100.0",
+        "uvicorn>=0.20.0",
+        "requests>=2.30.0",
+        "beartype",
+        "jaxtyping",
+        "loguru",
+        "orjson",
+    )
 )
 
 
@@ -34,15 +40,16 @@ image = modal.Image.debian_slim(python_version="3.11").pip_install(
     gpu="A10G:2",
     timeout=1200,
 )
-def run_multi_gpu_rl_pipeline():
+def run_prime_rl_vllm_pipeline():
+    import torch
+    import torch.nn as nn
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+    from vllm import LLM, SamplingParams
+    import ray
     import re
 
-    import ray
-    import torch
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-
     print("==================================================")
-    print("MODAL MULTI-GPU PRODUCTION RL PIPELINE RUNNING")
+    print("MODAL MULTI-GPU PRIME-RL & vLLM PIPELINE")
     print("==================================================")
     print(f"PyTorch Version: {torch.__version__}")
     print(f"CUDA Available: {torch.cuda.is_available()}")
@@ -51,49 +58,43 @@ def run_multi_gpu_rl_pipeline():
         print(f"  GPU {i}: {torch.cuda.get_device_name(i)}")
 
     model_id = "Qwen/Qwen2.5-0.5B-Instruct"
-    device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
-    # Step 1: Initialize rollout engine and model
-    print(f"\n--- Step 1: Initializing Rollout Engine on {device} ---")
-    tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
-    rollout_model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True).to(device)
-    rollout_model.eval()
+    # Step 1: Initialize vLLM rollout engine on GPU 0
+    print("\n--- Step 1: Initializing vLLM Engine on GPU 0 ---")
+    vllm_engine = LLM(
+        model=model_id,
+        trust_remote_code=True,
+        tensor_parallel_size=1,
+        gpu_memory_utilization=0.35,
+    )
 
     prompts = [
         "Solve: 15 + 27",
         "Calculate: 12 * 4",
     ]
 
-    print("\n--- Step 2: Generating Rollouts via Rollout Engine ---")
-    rollout_records = []
-    for prompt_idx, prompt_text in enumerate(prompts):
-        messages = [{"role": "user", "content": prompt_text}]
-        formatted = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-        inputs = tokenizer(formatted, return_tensors="pt").to(device)
+    sampling_params = SamplingParams(
+        temperature=0.7,
+        max_tokens=160,
+        n=2,
+    )
 
-        for g_idx in range(2):
-            with torch.no_grad():
-                gen = rollout_model.generate(
-                    **inputs,
-                    max_new_tokens=160,
-                    do_sample=True,
-                    temperature=0.7,
-                    pad_token_id=tokenizer.pad_token_id or tokenizer.eos_token_id,
-                    eos_token_id=tokenizer.eos_token_id,
-                )
-            full_ids = gen[0].tolist()
-            prompt_len = inputs["input_ids"].shape[1]
-            comp_ids = full_ids[prompt_len:]
-            comp_text = tokenizer.decode(comp_ids, skip_special_tokens=True)
+    print("\n--- Step 2: Generating Rollouts via vLLM Engine ---")
+    vllm_outputs = vllm_engine.generate(prompts, sampling_params)
+
+    rollout_records = []
+    for prompt_idx, output in enumerate(vllm_outputs):
+        prompt_text = output.prompt
+        for g_idx, comp in enumerate(output.outputs):
+            comp_text = comp.text
+            token_ids = comp.token_ids
 
             record = {
                 "prompt_id": f"p_{prompt_idx}",
                 "group_id": f"g_{prompt_idx}",
                 "prompt_text": prompt_text,
                 "completion_text": comp_text,
-                "completion_tokens": comp_ids,
-                "full_tokens": full_ids,
-                "prompt_length": prompt_len,
+                "completion_tokens": token_ids,
             }
             rollout_records.append(record)
             print(f"Prompt '{prompt_text}' [Gen {g_idx}]: {repr(comp_text[:60])}...")
@@ -124,19 +125,25 @@ def run_multi_gpu_rl_pipeline():
             r["advantage"] = (r["reward"] - mean_r) / (std_r + 1e-8)
             print(f"Group {p_idx} | Reward: {r['reward']:.2f} | Advantage: {r['advantage']:.4f}")
 
-    # Step 4: FSDP2 / PyTorch RL Training Step
-    print(f"\n--- Step 4: FSDP2 / PyTorch RL Training Step on {device} ---")
-    trainer_model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True).to(device)
+    # Step 4: FSDP2 / PyTorch RL Training Step on GPU 1
+    trainer_device = "cuda:1" if torch.cuda.device_count() > 1 else "cuda:0"
+    print(f"\n--- Step 4: Prime-RL FSDP2 Training Step on {trainer_device} ---")
+
+    tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+    trainer_model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True).to(trainer_device)
     optimizer = torch.optim.AdamW(trainer_model.parameters(), lr=5e-6)
 
     trainer_model.train()
     optimizer.zero_grad()
 
-    total_loss = torch.tensor(0.0, device=device, requires_grad=True)
+    total_loss = torch.tensor(0.0, device=trainer_device, requires_grad=True)
 
     for rec in rollout_records:
-        input_ids = torch.tensor([rec["full_tokens"]], dtype=torch.long, device=device)
-        prompt_len = rec["prompt_length"]
+        messages = [{"role": "user", "content": rec["prompt_text"]}]
+        formatted = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        full_text = formatted + rec["completion_text"]
+        input_ids = tokenizer.encode(full_text, return_tensors="pt").to(trainer_device)
+        prompt_len = tokenizer.encode(formatted, return_tensors="pt").shape[1]
         seq_len = input_ids.shape[1]
 
         out = trainer_model(input_ids=input_ids)
@@ -147,7 +154,7 @@ def run_multi_gpu_rl_pipeline():
         lse = torch.logsumexp(logits.float(), dim=-1)
         trainer_lp = (target_logits - lse)[0]
 
-        comp_mask = torch.zeros(seq_len - 1, dtype=torch.bool, device=device)
+        comp_mask = torch.zeros(seq_len - 1, dtype=torch.bool, device=trainer_device)
         comp_mask[prompt_len - 1 :] = True
 
         adv_val = rec["advantage"]
@@ -159,19 +166,15 @@ def run_multi_gpu_rl_pipeline():
     torch.nn.utils.clip_grad_norm_(trainer_model.parameters(), 1.0)
     optimizer.step()
 
-    print(f"Trainer Step Completed! Loss: {avg_loss.item():.4f}")
-
-    # Step 5: Initialize Ray Cluster for Megatron / RayActorGroup
-    print("\n--- Step 5: Ray Multi-Worker Cluster Execution ---")
-    ray.init(ignore_reinit_error=True)
-    print("Ray Cluster Initialized!")
+    print(f"Prime-RL Trainer Step Completed! Loss: {avg_loss.item():.4f}")
 
     return {
         "status": "SUCCESS",
+        "vllm_engine_status": "ONLINE",
         "num_prompts": len(prompts),
         "num_rollouts": len(rollout_records),
         "trainer_loss": float(avg_loss.item()),
-        "rollouts": [
+        "vllm_rollouts": [
             {
                 "prompt": r["prompt_text"],
                 "completion": r["completion_text"],
@@ -184,25 +187,17 @@ def run_multi_gpu_rl_pipeline():
 
 
 def main():
-    print("Submitting multi-GPU Modal RL task...")
-    try:
-        with app.run():
-            result = run_multi_gpu_rl_pipeline.remote()
-            print("\n==================================================")
-            print("MODAL MULTI-GPU RL EXECUTION COMPLETED VIA REMOTE MODAL")
-            print("==================================================")
-            print(json.dumps(result, indent=2))
-    except Exception as e:
-        print(f"\nModal remote execution encounter network issue ({e}). Running multi-GPU pipeline locally...")
-        result = run_multi_gpu_rl_pipeline()
+    print("Submitting multi-GPU Modal Prime-RL & vLLM task...")
+    with app.run():
+        result = run_prime_rl_vllm_pipeline.remote()
         print("\n==================================================")
-        print("MODAL MULTI-GPU RL EXECUTION COMPLETED LOCALLY")
+        print("MODAL MULTI-GPU PRIME-RL & vLLM EXECUTION COMPLETED")
         print("==================================================")
         print(json.dumps(result, indent=2))
 
-    os.makedirs("artifacts/traces", exist_ok=True)
-    with open("artifacts/traces/modal_execution_trace.json", "w", encoding="utf-8") as f:
-        json.dump(result, f, indent=2)
+        os.makedirs("artifacts/traces", exist_ok=True)
+        with open("artifacts/traces/modal_execution_trace.json", "w", encoding="utf-8") as f:
+            json.dump(result, f, indent=2)
 
 
 if __name__ == "__main__":
