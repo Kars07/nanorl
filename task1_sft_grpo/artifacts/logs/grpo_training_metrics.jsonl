@@ -1,0 +1,5 @@
+{"policy_version": 1, "reward_mean": 0.0, "reward_std": 0.0, "loss": 0.11503681052727188, "policy_loss": 0.0, "kl_mean": 2.87592034516274, "ratio_mean": 1.0459086298942566, "clipping_fraction": 0.09062500298023224}
+{"policy_version": 2, "reward_mean": 0.5, "reward_std": 0.5, "loss": -0.01301431320462143, "policy_loss": -0.01662438176572323, "kl_mean": 0.09025169699452817, "ratio_mean": 1.0005128979682922, "clipping_fraction": 0.06875000149011612}
+{"policy_version": 3, "reward_mean": 0.0, "reward_std": 0.0, "loss": 0.00023265240452019498, "policy_loss": 0.0, "kl_mean": 0.005816310760565102, "ratio_mean": 1.0060471892356873, "clipping_fraction": 0.015625}
+{"policy_version": 4, "reward_mean": 0.0, "reward_std": 0.0, "loss": 0.00027327910356689245, "policy_loss": 0.0, "kl_mean": 0.006831977982074022, "ratio_mean": 1.0019964575767517, "clipping_fraction": 0.0078125}
+{"policy_version": 5, "reward_mean": 0.5, "reward_std": 0.5, "loss": -0.013097630435368046, "policy_loss": -0.013659563846886158, "kl_mean": 0.014048506040126085, "ratio_mean": 1.0007684230804443, "clipping_fraction": 0.02812499925494194}

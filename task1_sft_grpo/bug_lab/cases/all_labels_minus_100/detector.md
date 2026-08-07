@@ -1,0 +1,3 @@
+# Detector: all_labels_minus_100
+
+Automated assertion check in `tests/test_bug_injections.py` flags this anomaly.

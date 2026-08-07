@@ -1,0 +1,2 @@
+{"id": "valid_1", "messages": [{"role": "user", "content": "What is 2 + 2?"}, {"role": "assistant", "content": "2 + 2 = 4."}], "source": "math_basic", "category": "arithmetic"}
+{"id": "valid_2", "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "Name three colors."}, {"role": "assistant", "content": "Red, green, and blue."}], "source": "general_qa", "category": "listing"}

@@ -1,0 +1,20 @@
+# Model checkpoints and weights
+*.pt
+*.pth
+*.safetensors
+*.bin
+artifacts/checkpoints/
+
+# Environments and caches
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Logs and scratch
+.system_generated/

@@ -1,0 +1,3 @@
+# Detector: duplicated_incorrect_eos
+
+Automated assertion check in `tests/test_bug_injections.py` flags this anomaly.
