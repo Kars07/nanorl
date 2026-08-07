@@ -1,0 +1,14 @@
+C:\Users\eniai\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Skipping import of cpp extensions due to incompatible torch version 2.7.0+cu128 for torchao version 0.16.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0807 16:07:36.578000 28952 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Initializing Prime-RL Inference Engine `Qwen/Qwen2.5-0.5B-Instruct` on cuda...
+INFO:     Started server process [28952]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:56478 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56490 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56492 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56496 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56498 - "POST /generate HTTP/1.1" 200 OK

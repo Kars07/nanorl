@@ -4,7 +4,10 @@
 *.safetensors
 *.bin
 artifacts/checkpoints/
-artifacts/
+
+# Track key execution traces
+!artifacts/traces/modal_execution_trace.json
+!artifacts/traces/ray_pipeline_trace.json
 
 # Environments and caches
 .venv/
@@ -17,5 +20,5 @@ __pycache__/
 *.pyo
 .DS_Store
 
-# Logs and scratch
+# Logs
 .system_generated/

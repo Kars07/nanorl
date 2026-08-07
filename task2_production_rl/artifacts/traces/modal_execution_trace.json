@@ -1,0 +1,32 @@
+{
+  "status": "SUCCESS",
+  "num_prompts": 2,
+  "num_rollouts": 4,
+  "trainer_loss": -0.007300235331058502,
+  "rollouts": [
+    {
+      "prompt": "Solve: 15 + 27",
+      "completion": "The problem is straightforward:\n\n\\[ 15 + 27 \\]\n\nTo solve this addition problem, simply add the two numbers together:\n\n\\[ 15 + 27 = 42 \\]\n\nSo the solution to the problem \\( 15 + 27 \\) is 42.",
+      "reward": 1.0,
+      "advantage": 0.9999999800000003
+    },
+    {
+      "prompt": "Solve: 15 + 27",
+      "completion": "The solution to the equation \\(15 + 27\\) is:\n\n\\[32\\]\n\nThis can be calculated directly as follows:\n\\[15 + 27 = (10 + 5) + (10 + 7) = 10 \\times 2 + 5 \\times 2 + 10 \\times 2 + 7 = 20 + 10 + 7 = 32.\\]",
+      "reward": 0.0,
+      "advantage": -0.9999999800000003
+    },
+    {
+      "prompt": "Calculate: 12 * 4",
+      "completion": "To calculate \\( 12 \\times 4 \\), you simply multiply the two numbers together:\n\n\\[ 12 \\times 4 = 48 \\]\n\nSo, the result is 48.",
+      "reward": 1.0,
+      "advantage": 0.0
+    },
+    {
+      "prompt": "Calculate: 12 * 4",
+      "completion": "Sure! Let's calculate the expression \\( 12 \\times 4 \\).\n\nFirst, we can break it down into simpler steps:\n\n1. Multiply the first number (12) by the second number (4).\n   \\[\n   12 \\times 4 = 48\n   \\]\n\nSo, the result of \\( 12 \\times 4 \\) is **48**.",
+      "reward": 1.0,
+      "advantage": 0.0
+    }
+  ]
+}

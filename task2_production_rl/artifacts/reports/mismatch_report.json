@@ -1,0 +1,83 @@
+{
+  "probe_results": {
+    "prompt_text": "Solve: 15 + 27",
+    "completion_text": " 15 + 27 = 42. #### 42",
+    "prompt_length": 39,
+    "completion_length": 16,
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0,
+    "worst_disagreement_index": 0,
+    "worst_disagreement_token": " ",
+    "logprobs_a": [
+      -11.854806900024414,
+      -0.22125244140625,
+      -0.0003204345703125,
+      -0.00322723388671875,
+      -7.62939453125e-06,
+      -3.814697265625e-06,
+      -9.5367431640625e-06,
+      -0.37429237365722656,
+      -0.000244140625,
+      -3.814697265625e-06,
+      0.0,
+      -1.9440231323242188,
+      -15.916189193725586,
+      -2.478635787963867,
+      -0.3498344421386719,
+      -0.0003204345703125
+    ],
+    "logprobs_b": [
+      -11.854806900024414,
+      -0.22125244140625,
+      -0.0003204345703125,
+      -0.00322723388671875,
+      -7.62939453125e-06,
+      -3.814697265625e-06,
+      -9.5367431640625e-06,
+      -0.37429237365722656,
+      -0.000244140625,
+      -3.814697265625e-06,
+      0.0,
+      -1.9440231323242188,
+      -15.916189193725586,
+      -2.478635787963867,
+      -0.3498344421386719,
+      -0.0003204345703125
+    ],
+    "abs_diffs": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "weight_fingerprint": {
+    "global_l2": 479.53091956740866,
+    "total_params": 146687104,
+    "digest": "a5c722e562b5",
+    "sample_tensor_hashes": [
+      "model.embed_tokens.weight:1b620ed5",
+      "model.layers.0.self_attn.q_proj.weight:168f8e4e",
+      "model.layers.0.self_attn.q_proj.bias:bfc5dc0d",
+      "model.layers.0.self_attn.k_proj.weight:30e7249c",
+      "model.layers.0.self_attn.k_proj.bias:45cea82d",
+      "model.layers.0.self_attn.v_proj.weight:8057a1ec",
+      "model.layers.0.self_attn.v_proj.bias:0a5f3061",
+      "model.layers.0.self_attn.o_proj.weight:cc20c0f6",
+      "model.layers.0.mlp.gate_proj.weight:3b119c61",
+      "model.layers.0.mlp.up_proj.weight:8240e2a2"
+    ]
+  }
+}
