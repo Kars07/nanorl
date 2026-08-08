@@ -1,3 +1,0 @@
-Starting Prime-RL Orchestrator Process...
-Orchestrated prompt 'Solve: 15 + 27': rewards=[0.5, 0.5], packed_len=217
-Orchestrated prompt 'Calculate: 12 * 4': rewards=[0.5, 0.5], packed_len=174

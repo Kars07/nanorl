@@ -1,4 +1,4 @@
-# Ignore everything except task1_sft_grpo and task2_production_rl
+# Ignore everything except task1_sft_grpo
 dataset_dataloaders/
 distributed_training/
 mixed_precision_amp/
