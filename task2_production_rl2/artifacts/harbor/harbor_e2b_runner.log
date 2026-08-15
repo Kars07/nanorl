@@ -1,0 +1,274 @@
+{
+  "command": "uv run --frozen python scripts/run_harbor_e2b.py",
+  "dataset": "harbor/hello-world",
+  "taskset_class": "HarborTaskset",
+  "task_class": "HarborTask",
+  "model": "Qwen/Qwen3-1.7B",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "strict_loader_error": "ValueError: hello-world: environment is a Dockerfile, not a pullable [environment].docker_image \u2014 building Dockerfiles isn't supported, so this task can't run (it would otherwise score against the wrong default image). Pass --env.taskset.ignore-dockerfile to run it on the harness runtime's image instead.",
+  "dockerfile_adapter": {
+    "path": "/root/.cache/harbor/harbor_hello-world/hello-world/hello-world/environment/Dockerfile",
+    "instructions": [
+      "FROM ubuntu:24.04",
+      "WORKDIR /app"
+    ],
+    "emulated_workdir": "/app"
+  },
+  "trace": {
+    "version": 1,
+    "id": "843c921fb2604df7bcfa4ea69ce6a282",
+    "verifiers": {
+      "version": "0.3.1.dev20",
+      "commit": "7251c60934d2c42af85d42a1da3da62269b7957e"
+    },
+    "run": {
+      "type": "eval",
+      "id": "harbor-e2b-modal",
+      "step": null
+    },
+    "task": {
+      "type": "HarborTask",
+      "data": {
+        "idx": 0,
+        "name": "hello-world/hello-world",
+        "description": "A simple task useful for testing and debugging.",
+        "prompt": "Create a file called hello.txt with \"Hello, world!\" as the content.",
+        "system_prompt": null,
+        "image": null,
+        "workdir": null,
+        "network_allow": [
+          "*"
+        ],
+        "network_block": [],
+        "artifacts": [],
+        "timeout": {
+          "setup": null,
+          "agent": null,
+          "finalize": null,
+          "scoring": null
+        },
+        "resources": {
+          "cpu": 1.0,
+          "memory": 2.0,
+          "gpu": null,
+          "disk": 10.0
+        },
+        "keywords": [
+          "trivial",
+          "programming",
+          "hello-world"
+        ],
+        "authors": [
+          {
+            "name": "Alex Shaw",
+            "email": "alexgshaw64@gmail.com"
+          }
+        ],
+        "difficulty": "easy",
+        "category": "programming",
+        "tags": [
+          "trivial"
+        ],
+        "task_dir": "/root/.cache/harbor/harbor_hello-world/hello-world/hello-world",
+        "upload_environment": false,
+        "verifier_env": {},
+        "collect": [],
+        "verifier": null
+      },
+      "hash": null
+    },
+    "agent": {
+      "config": {
+        "harness": null,
+        "runtime": {
+          "type": "subprocess"
+        },
+        "model": "Qwen/Qwen3-1.7B",
+        "client": null,
+        "sampling": null,
+        "max_turns": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "max_total_tokens": null,
+        "timeout": {
+          "setup": null,
+          "rollout": null,
+          "finalize": null,
+          "scoring": null
+        },
+        "retries": {
+          "max_retries": 0,
+          "include": [],
+          "exclude": []
+        }
+      },
+      "runtime": null,
+      "name": "agent",
+      "trainable": true
+    },
+    "tools": [
+      {
+        "name": "execute",
+        "description": "Execute one shell command in /app.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "command": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "command"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      }
+    ],
+    "nodes": [
+      {
+        "parent": null,
+        "message": {
+          "role": "user",
+          "content": "Create a file called hello.txt with \"Hello, world!\" as the content."
+        },
+        "sampled": false,
+        "timestamp": 1786632048.2764711,
+        "token_ids": [],
+        "mask": [],
+        "is_content": [],
+        "logprobs": [],
+        "advantages": null,
+        "multi_modal_data": null,
+        "routed_experts": null,
+        "kept_tokens": null
+      },
+      {
+        "parent": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"arguments\": {\"command\": \"echo 'Hello, world!' > /app/hello.txt\"}, \"mode\": \"tool_call\", \"tool_call_id\": \"chatcmpl-tool-a3ac3eb2a0173221\", \"tool_name\": \"execute\"}",
+          "reasoning_content": null,
+          "tool_calls": null,
+          "provider_state": null
+        },
+        "sampled": true,
+        "timestamp": 1786632048.27665,
+        "token_ids": [],
+        "mask": [],
+        "is_content": [],
+        "logprobs": [],
+        "advantages": null,
+        "multi_modal_data": null,
+        "routed_experts": null,
+        "kept_tokens": null
+      }
+    ],
+    "calls": [
+      {
+        "node": 1,
+        "model": "Qwen/Qwen3-1.7B",
+        "sampling": {
+          "temperature": 0.0,
+          "top_p": null,
+          "reasoning_effort": null,
+          "max_tokens": 256
+        },
+        "endpoint": "/v1/chat/completions",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 200,
+          "completion_tokens": 18,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null
+        },
+        "time": {
+          "start": 1786632046.3480725,
+          "end": 1786632048.2756772
+        },
+        "error": null
+      }
+    ],
+    "rewards": {
+      "solved": {
+        "score": 1.0,
+        "weight": 1.0
+      }
+    },
+    "metrics": {},
+    "info": {
+      "runtime": "e2b",
+      "sandbox_id": "iipyivny8x5ds3s712nzo",
+      "modal_hosted_driver": true,
+      "dockerfile_adapter": {
+        "path": "/root/.cache/harbor/harbor_hello-world/hello-world/hello-world/environment/Dockerfile",
+        "instructions": [
+          "FROM ubuntu:24.04",
+          "WORKDIR /app"
+        ],
+        "emulated_workdir": "/app"
+      },
+      "agent_command": "echo 'Hello, world!' > /app/hello.txt",
+      "model_action_request": {
+        "mode": "tool_call",
+        "tool_call_id": "chatcmpl-tool-a3ac3eb2a0173221",
+        "tool_name": "execute",
+        "arguments": {
+          "command": "echo 'Hello, world!' > /app/hello.txt"
+        }
+      },
+      "agent_exit_code": 0,
+      "agent_stdout": "",
+      "agent_stderr": "",
+      "tests_staged_after_agent": true,
+      "verifier_seconds": 4.289342880249023
+    },
+    "extra_usage": [],
+    "is_completed": true,
+    "ok": true,
+    "stop_condition": "agent_completed",
+    "errors": [],
+    "timing": {
+      "start": 1786632048.2868714,
+      "boot": {
+        "start": 0.0,
+        "end": 0.0
+      },
+      "setup": {
+        "start": 0.0,
+        "end": 0.0
+      },
+      "agent": {
+        "start": 0.0,
+        "end": 0.0,
+        "model": {
+          "duration": 0.0
+        },
+        "harness": {
+          "duration": 0.0
+        }
+      },
+      "finalize": {
+        "start": 0.0,
+        "end": 0.0
+      },
+      "scoring": {
+        "start": 0.0,
+        "end": 0.0
+      }
+    }
+  },
+  "reward": 1.0,
+  "passed": true
+}
+
+[stderr]
+   Building prime-rl @ file:///opt/prime-rl
+   Building prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config
+   Building prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs
+      Built prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs
+      Built prime-rl @ file:///opt/prime-rl
+      Built prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config
+Uninstalled 3 packages in 1ms
+Installed 3 packages in 3ms

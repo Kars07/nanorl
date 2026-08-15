@@ -1,0 +1,69 @@
+[2m14:46:50[0m [1m   INFO[0m [1m[22mEnvServerPool up: address=tcp://127.0.0.1:5000 workers=1/inf multiplex=128 elastic=True[0m[0m
+[2m14:46:59[0m [1m   INFO[0m [1m[22mEnvServer up: taskset=tiny-repo-repair-v1 address=ipc:///tmp/vf-pool-t1ppjzzf/0[0m[0m
+[2m14:46:59[0m [1m   INFO[0m [1m[22minterception up: url=http://127.0.0.1:40829[0m[0m
+[2m14:46:59[0m [1m   INFO[0m [1m[22minterception pool: 1 server(s), multiplex=32[0m[0m
+[2m14:48:12[0m [1m   INFO[0m [1m[22mrollout start: id=c8f6d6adf27344c981d4ff80d00d3ca9 task=2 harness=null runtime=subprocess[0m[0m
+[2m14:48:12[0m [1m   INFO[0m [1m[22mrollout start: id=1585f601a8f540ddae09ad0262b16445 task=2 harness=null runtime=subprocess[0m[0m
+[2m14:48:12[0m [1m   INFO[0m [1m[22mrollout start: id=594777f5528c460eabf7a84e382ad537 task=2 harness=null runtime=subprocess[0m[0m
+[2m14:48:12[0m [1m   INFO[0m [1m[22mrollout start: id=bc04c2ddce5049ec8f1aedef685db4fb task=2 harness=null runtime=subprocess[0m[0m
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2m14:48:23[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:61834/mcp[0m[0m
+[2m14:48:23[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:47714/mcp[0m[0m
+[2m14:48:23[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:30824/mcp[0m[0m
+[2m14:48:23[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:26867/mcp[0m[0m
+[2m14:48:24[0m [1m   INFO[0m [1m[22mrenderer pool: 1 renderer(s), multiplex=256[0m[0m
+[2m14:48:37[0m [1m   INFO[0m [1m[22mrollout done: id=1585f601a8f540ddae09ad0262b16445 task=2 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:48:37[0m [1m   INFO[0m [1m[22mrollout start: id=5d8cdb700b864388bbd8d7dd9ff9da8e task=10 harness=null runtime=subprocess[0m[0m
+[2m14:48:37[0m [1m   INFO[0m [1m[22mrollout done: id=594777f5528c460eabf7a84e382ad537 task=2 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:48:37[0m [1m   INFO[0m [1m[22mrollout start: id=db06df32673d40279ed064881586cdd4 task=10 harness=null runtime=subprocess[0m[0m
+[2m14:48:37[0m [1m   INFO[0m [1m[22mrollout done: id=bc04c2ddce5049ec8f1aedef685db4fb task=2 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:48:37[0m [1m   INFO[0m [1m[22mrollout start: id=24c0e554cb334fbcae3f1aa938b6578c task=10 harness=null runtime=subprocess[0m[0m
+[2m14:48:37[0m [1m   INFO[0m [1m[22mrollout done: id=c8f6d6adf27344c981d4ff80d00d3ca9 task=2 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:48:37[0m [1m   INFO[0m [1m[22mrollout start: id=5025edf9aaa34489b52682d853b43fa1 task=10 harness=null runtime=subprocess[0m[0m
+[2m14:48:44[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:23554/mcp[0m[0m
+[2m14:48:44[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:52168/mcp[0m[0m
+[2m14:48:44[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:42932/mcp[0m[0m
+[2m14:48:45[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:46489/mcp[0m[0m
+[2m14:48:50[0m [1m   INFO[0m [1m[22mrollout done: id=24c0e554cb334fbcae3f1aa938b6578c task=10 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:48:50[0m [1m   INFO[0m [1m[22mrollout start: id=19a0639c1b764d35a94f006788ecca96 task=0 harness=null runtime=subprocess[0m[0m
+[2m14:48:50[0m [1m   INFO[0m [1m[22mrollout done: id=5025edf9aaa34489b52682d853b43fa1 task=10 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:48:50[0m [1m   INFO[0m [1m[22mrollout start: id=42882ea7ac644d1ab8ea08e986be2b78 task=0 harness=null runtime=subprocess[0m[0m
+[2m14:48:50[0m [1m   INFO[0m [1m[22mrollout done: id=db06df32673d40279ed064881586cdd4 task=10 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:48:50[0m [1m   INFO[0m [1m[22mrollout start: id=2df1bac5cb3640b49f16fa9b109454e2 task=0 harness=null runtime=subprocess[0m[0m
+[2m14:48:51[0m [1m   INFO[0m [1m[22mrollout done: id=5d8cdb700b864388bbd8d7dd9ff9da8e task=10 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:48:51[0m [1m   INFO[0m [1m[22mrollout start: id=ed48865849f647bcb9f529ed5b9755f6 task=0 harness=null runtime=subprocess[0m[0m
+[2m14:48:57[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:35500/mcp[0m[0m
+[2m14:48:57[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:59970/mcp[0m[0m
+[2m14:48:57[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:28953/mcp[0m[0m
+[2m14:48:58[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:59092/mcp[0m[0m
+[2m14:49:02[0m [1m   INFO[0m [1m[22mrollout done: id=19a0639c1b764d35a94f006788ecca96 task=0 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:49:02[0m [1m   INFO[0m [1m[22mrollout start: id=c4117f77c43c44688537a80f7e0eeb8d task=14 harness=null runtime=subprocess[0m[0m
+[2m14:49:03[0m [1m   INFO[0m [1m[22mrollout done: id=42882ea7ac644d1ab8ea08e986be2b78 task=0 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:49:03[0m [1m   INFO[0m [1m[22mrollout start: id=9541d8ea158c446b88e63e8f66e51cf4 task=14 harness=null runtime=subprocess[0m[0m
+[2m14:49:03[0m [1m   INFO[0m [1m[22mrollout done: id=2df1bac5cb3640b49f16fa9b109454e2 task=0 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:49:03[0m [1m   INFO[0m [1m[22mrollout start: id=863ff5690d0f4431bfb4d4ea5fb2c52b task=14 harness=null runtime=subprocess[0m[0m
+[2m14:49:05[0m [1m   INFO[0m [1m[22mrollout done: id=ed48865849f647bcb9f529ed5b9755f6 task=0 reward=1.000 turns=2 stop=agent_completed[0m[0m
+[2m14:49:05[0m [1m   INFO[0m [1m[22mrollout start: id=d4cdbea66ecc490291653c86206536d3 task=14 harness=null runtime=subprocess[0m[0m
+[2m14:49:10[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:19357/mcp[0m[0m
+[2m14:49:11[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:33667/mcp[0m[0m
+[2m14:49:11[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:19703/mcp[0m[0m
+[2m14:49:13[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:53388/mcp[0m[0m
+[2m14:49:17[0m [1m   INFO[0m [1m[22mrollout done: id=c4117f77c43c44688537a80f7e0eeb8d task=14 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:49:17[0m [1m   INFO[0m [1m[22mrollout start: id=4008d8c5902a45ae8cee8ff4cac7e991 task=6 harness=null runtime=subprocess[0m[0m
+[2m14:49:18[0m [1m   INFO[0m [1m[22mrollout done: id=863ff5690d0f4431bfb4d4ea5fb2c52b task=14 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:49:18[0m [1m   INFO[0m [1m[22mrollout start: id=640a541d52e04a8a87540187f9681e7b task=6 harness=null runtime=subprocess[0m[0m
+[2m14:49:18[0m [1m   INFO[0m [1m[22mrollout done: id=9541d8ea158c446b88e63e8f66e51cf4 task=14 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m14:49:18[0m [1m   INFO[0m [1m[22mrollout start: id=4b36f19f22a54711abd0f6868be3e596 task=6 harness=null runtime=subprocess[0m[0m
+[2m14:49:19[0m [1m   INFO[0m [1m[22mrollout done: id=d4cdbea66ecc490291653c86206536d3 task=14 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:49:19[0m [1m   INFO[0m [1m[22mrollout start: id=b91246eef80843a1852011db99b2d9bc task=6 harness=null runtime=subprocess[0m[0m
+[2m14:49:25[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:25716/mcp[0m[0m
+[2m14:49:26[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:65002/mcp[0m[0m
+[2m14:49:26[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:32331/mcp[0m[0m
+[2m14:49:27[0m [1m   INFO[0m [1m[22mtool server 'e2b': http://127.0.0.1:51326/mcp[0m[0m
+[2m14:49:31[0m [1m   INFO[0m [1m[22mrollout done: id=4008d8c5902a45ae8cee8ff4cac7e991 task=6 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:49:32[0m [1m   INFO[0m [1m[22mrollout done: id=640a541d52e04a8a87540187f9681e7b task=6 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:49:33[0m [1m   INFO[0m [1m[22mrollout done: id=4b36f19f22a54711abd0f6868be3e596 task=6 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:49:34[0m [1m   INFO[0m [1m[22mrollout done: id=b91246eef80843a1852011db99b2d9bc task=6 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m14:49:56[0m [1m   INFO[0m [1m[22mEnvServer down: taskset=tiny-repo-repair-v1[0m[0m
+[2m14:49:56[0m [1m   INFO[0m [1m[22minterception down: url=http://127.0.0.1:40829[0m[0m
+[2m14:49:57[0m [1m   INFO[0m [1m[22mEnvServerPool down[0m[0m

@@ -1,0 +1,41 @@
+{
+  "inference_command": "uv run --frozen inference --vllm.model Qwen/Qwen3-1.7B --vllm.max-model-len 4096 --vllm.gpu-memory-utilization 0.85",
+  "results": {
+    "tiny-browser-v1": {
+      "command": "uv run --frozen eval tiny-browser-v1 -m Qwen/Qwen3-1.7B -n 1 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.agent.max-turns 8 --env.agent.harness.id null --env.agent.runtime.type subprocess --sampling.max-tokens 1536 --output-dir /outputs/environment-rerun/tiny-browser-v1 --no-push",
+      "exit_code": 0,
+      "stdout": "env       tiny-browser-v1  \u00b7  null harness  \u00b7  subprocess runtime               \nmodel     Qwen/Qwen3-1.7B  (max_tokens=1536)  via http://127.0.0.1:8000/v1      \nlimits    \u2264128 episodes     \u00b7  8 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/environment-rerun/tiny-browser-v1                            \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1/1 \u00b7 15s \u00b7 reward 1.00 \u00b7 err 0.00\nrewards   correct_answer 1.00                                                   \nmetrics   pages_visited 1.00                                                    \nusage     455/638 tokens                                                        \ntime      boot 0.0s  \u00b7  setup 6s  \u00b7  agent 9s (model 6s + harness 3s)  \u00b7        \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  [success ] task idx=0 agent=agent \u00b7 c9bb9047 \u00b7 subprocess(/\u2026 reward=1.00 \u00b7 15s",
+      "stderr": "   Building prime-rl @ file:///opt/prime-rl\n   Building prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config\n   Building prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs\n      Built prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs\n      Built prime-rl @ file:///opt/prime-rl\n      Built prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config\nUninstalled 3 packages in 1ms\nInstalled 3 packages in 2ms\n",
+      "trace_count": 1,
+      "ok": true,
+      "reward": [
+        {
+          "correct_answer": {
+            "score": 1.0,
+            "weight": 1.0
+          }
+        }
+      ],
+      "calls": [
+        5
+      ],
+      "tools": [
+        [
+          "browser_open_page",
+          "browser_search",
+          "browser_submit"
+        ]
+      ],
+      "called_tools": [
+        [
+          "browser_search",
+          "browser_submit",
+          "browser_open_page",
+          "browser_submit"
+        ]
+      ]
+    }
+  },
+  "all_commands_succeeded": true,
+  "all_traces_ok": true
+}

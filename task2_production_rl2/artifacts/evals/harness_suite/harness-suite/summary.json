@@ -1,0 +1,83 @@
+{
+  "inference_command": "uv run --frozen inference --vllm.model Qwen/Qwen3-0.6B --vllm.max-model-len 2048 --vllm.gpu-memory-utilization 0.85",
+  "results": {
+    "null": {
+      "command": "uv run --frozen eval learning-harness -m Qwen/Qwen3-0.6B -n 1 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.agent.max-turns 2 --env.agent.harness.id null --env.agent.runtime.type subprocess --sampling.max-tokens 64 --output-dir /outputs/harness-suite/null --no-push",
+      "exit_code": 0,
+      "stdout": "env       learning-harness  \u00b7  null harness  \u00b7  subprocess runtime              \nmodel     Qwen/Qwen3-0.6B  (max_tokens=64)  via http://127.0.0.1:8000/v1        \nlimits    \u2264128 episodes     \u00b7  2 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/harness-suite/null                                           \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1/1 \u00b7 6s \u00b7 reward 0.00 \u00b7 err 0.00\nrewards   exact_answer 0.00                                                     \nusage     27/64 tokens                                                          \ntime      boot 0.0s  \u00b7  setup 3s  \u00b7  agent 3s (model 0.5s + harness 3s)  \u00b7      \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  [success ] task idx=0 agent=agent \u00b7 d32bba7f \u00b7 subprocess(/r\u2026 reward=0.00 \u00b7 6s",
+      "stderr": "   Building prime-rl @ file:///opt/prime-rl\n   Building prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config\n   Building prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs\n      Built prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs\n      Built prime-rl @ file:///opt/prime-rl\n      Built prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config\nUninstalled 3 packages in 1ms\nInstalled 3 packages in 2ms\n",
+      "trace_count": 1,
+      "ok": true,
+      "calls": [
+        1
+      ],
+      "runtime": [
+        {
+          "id": "/root/.cache/verifiers/runtimes/subprocess/d32bba7fc94a457b9612d32971061659",
+          "borrowed": false,
+          "type": "subprocess"
+        }
+      ],
+      "rewards": [
+        {
+          "exact_answer": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        }
+      ]
+    },
+    "bash": {
+      "command": "uv run --frozen eval learning-harness -m Qwen/Qwen3-0.6B -n 1 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.agent.max-turns 2 --env.agent.harness.id bash --env.agent.runtime.type subprocess --sampling.max-tokens 64 --output-dir /outputs/harness-suite/bash --no-push",
+      "exit_code": 0,
+      "stdout": "warning  Runs on the local system; local files and settings may affect this \nevaluation. Use subprocess only for debugging, or use docker or prime for an \nisolated run.\n\nenv       learning-harness  \u00b7  bash harness  \u00b7  subprocess runtime              \nmodel     Qwen/Qwen3-0.6B  (max_tokens=64)  via http://127.0.0.1:8000/v1        \nlimits    \u2264128 episodes     \u00b7  2 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/harness-suite/bash                                           \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1/1 \u00b7 4s \u00b7 reward 0.00 \u00b7 err 0.00\nrewards   exact_answer 0.00                                                     \nusage     339/64 tokens                                                         \ntime      boot 0.0s  \u00b7  setup 1s  \u00b7  agent 3s (model 0.3s + harness 3s)  \u00b7      \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  [success ] task idx=0 agent=agent \u00b7 b3ee3f5e \u00b7 subprocess(/r\u2026 reward=0.00 \u00b7 4s",
+      "stderr": "",
+      "trace_count": 1,
+      "ok": true,
+      "calls": [
+        1
+      ],
+      "runtime": [
+        {
+          "id": "/root/.cache/verifiers/runtimes/subprocess/b3ee3f5e9e8b4730a967922235b476ac",
+          "borrowed": false,
+          "type": "subprocess"
+        }
+      ],
+      "rewards": [
+        {
+          "exact_answer": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        }
+      ]
+    },
+    "learning-harness": {
+      "command": "uv run --frozen eval learning-harness -m Qwen/Qwen3-0.6B -n 1 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.agent.max-turns 2 --env.agent.harness.id learning-harness --env.agent.runtime.type subprocess --sampling.max-tokens 64 --output-dir /outputs/harness-suite/learning-harness --no-push",
+      "exit_code": 0,
+      "stdout": "env       learning-harness  \u00b7  learning-harness harness  \u00b7  subprocess runtime  \nmodel     Qwen/Qwen3-0.6B  (max_tokens=64)  via http://127.0.0.1:8000/v1        \nlimits    \u2264128 episodes     \u00b7  2 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/harness-suite/learning-harness                               \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1/1 \u00b7 4s \u00b7 reward 0.00 \u00b7 err 0.00\nrewards   exact_answer 0.00                                                     \nusage     27/64 tokens                                                          \ntime      boot 0.0s  \u00b7  setup 1s  \u00b7  agent 3s (model 0.3s + harness 2s)  \u00b7      \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  [success ] task idx=0 agent=agent \u00b7 85af2cf8 \u00b7 subprocess(/r\u2026 reward=0.00 \u00b7 4s",
+      "stderr": "",
+      "trace_count": 1,
+      "ok": true,
+      "calls": [
+        1
+      ],
+      "runtime": [
+        {
+          "id": "/root/.cache/verifiers/runtimes/subprocess/85af2cf8f8174acd8c78bd7b8184edad",
+          "borrowed": false,
+          "type": "subprocess"
+        }
+      ],
+      "rewards": [
+        {
+          "exact_answer": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        }
+      ]
+    }
+  }
+}

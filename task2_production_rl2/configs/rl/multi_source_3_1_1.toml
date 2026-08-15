@@ -1,0 +1,65 @@
+max_steps = 2
+seq_len = 4096
+
+[model]
+name = "Qwen/Qwen3-0.6B"
+
+[env_vars]
+E2B_KEY_FILE = "/tmp/task2-e2b-key"
+
+[orchestrator]
+batch_size = 4
+group_size = 4
+max_inflight_episodes = 4
+
+[orchestrator.train.sampling]
+max_completion_tokens = 512
+
+[[orchestrator.train.source]]
+name = "repo-repair"
+ratio = 3
+[orchestrator.train.source.env.taskset]
+id = "tiny-repo-repair-v1"
+num_tasks = 16
+start = 0
+[orchestrator.train.source.env.taskset.task.e2b]
+allow_internet_access = false
+timeout_seconds = 240
+[orchestrator.train.source.env.agent]
+max_turns = 4
+[orchestrator.train.source.env.agent.harness]
+id = "null"
+[orchestrator.train.source.env.agent.runtime]
+type = "subprocess"
+
+[[orchestrator.train.source]]
+name = "terminal"
+ratio = 1
+[orchestrator.train.source.env.taskset]
+id = "tiny-terminal-v1"
+[orchestrator.train.source.env.agent]
+max_turns = 8
+[orchestrator.train.source.env.agent.harness]
+id = "null"
+[orchestrator.train.source.env.agent.runtime]
+type = "subprocess"
+
+[[orchestrator.train.source]]
+name = "browser"
+ratio = 1
+[orchestrator.train.source.env.taskset]
+id = "tiny-browser-v1"
+[orchestrator.train.source.env.agent]
+max_turns = 8
+[orchestrator.train.source.env.agent.harness]
+id = "null"
+[orchestrator.train.source.env.agent.runtime]
+type = "subprocess"
+
+[trainer.optim]
+lr = 1e-6
+
+[inference]
+
+[orchestrator.renderer]
+name = "qwen3"

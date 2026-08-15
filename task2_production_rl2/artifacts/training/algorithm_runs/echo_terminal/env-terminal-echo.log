@@ -1,0 +1,45 @@
+[2m15:26:44[0m [1m   INFO[0m [1m[22mEnvServerPool up: address=tcp://127.0.0.1:5000 workers=1/inf multiplex=128 elastic=True[0m[0m
+[2m15:26:57[0m [1m   INFO[0m [1m[22mEnvServer up: taskset=tiny-terminal-v1 address=ipc:///tmp/vf-pool-cdewbapy/0[0m[0m
+[2m15:26:57[0m [1m   INFO[0m [1m[22minterception up: url=http://127.0.0.1:61201[0m[0m
+[2m15:26:57[0m [1m   INFO[0m [1m[22minterception pool: 1 server(s), multiplex=32[0m[0m
+[2m15:28:34[0m [1m   INFO[0m [1m[22mrollout start: id=20fa9ad8fcb64f258d2fa0ad6d31e015 task=2 harness=null runtime=subprocess[0m[0m
+[2m15:28:34[0m [1m   INFO[0m [1m[22mrollout start: id=fa48a3fd521140088ee64e669610b17c task=2 harness=null runtime=subprocess[0m[0m
+[2m15:28:34[0m [1m   INFO[0m [1m[22mrollout start: id=f4c7c40e4ce74c5a8f19b0f18704deba task=2 harness=null runtime=subprocess[0m[0m
+[2m15:28:34[0m [1m   INFO[0m [1m[22mrollout start: id=a5972decdb5d448ebd60d3a29e18e2ef task=2 harness=null runtime=subprocess[0m[0m
+[2m15:28:45[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:32287/mcp[0m[0m
+[2m15:28:45[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:16282/mcp[0m[0m
+[2m15:28:45[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:55354/mcp[0m[0m
+[2m15:28:45[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:58331/mcp[0m[0m
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2m15:28:49[0m [1m   INFO[0m [1m[22mrenderer pool: 1 renderer(s), multiplex=256[0m[0m
+[2m15:28:53[0m [1m   INFO[0m [1m[22mrollout done: id=20fa9ad8fcb64f258d2fa0ad6d31e015 task=2 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:28:53[0m [1m   INFO[0m [1m[22mrollout start: id=780076d63d974c79b2f6abd0d2f29dcf task=3 harness=null runtime=subprocess[0m[0m
+[2m15:28:53[0m [1m   INFO[0m [1m[22mrollout done: id=fa48a3fd521140088ee64e669610b17c task=2 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:28:53[0m [1m   INFO[0m [1m[22mrollout start: id=506cab1c5713408192d38558d17839c2 task=3 harness=null runtime=subprocess[0m[0m
+[2m15:28:53[0m [1m   INFO[0m [1m[22mrollout done: id=f4c7c40e4ce74c5a8f19b0f18704deba task=2 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:28:53[0m [1m   INFO[0m [1m[22mrollout start: id=8021028a8ab24725918164c5221fcf19 task=3 harness=null runtime=subprocess[0m[0m
+[2m15:28:53[0m [1m   INFO[0m [1m[22mrollout done: id=a5972decdb5d448ebd60d3a29e18e2ef task=2 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m15:28:53[0m [1m   INFO[0m [1m[22mrollout start: id=d865b30961de47cb9ca096d10d65ffe1 task=3 harness=null runtime=subprocess[0m[0m
+[2m15:29:01[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:25133/mcp[0m[0m
+[2m15:29:01[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:22092/mcp[0m[0m
+[2m15:29:01[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:24822/mcp[0m[0m
+[2m15:29:02[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:35820/mcp[0m[0m
+[2m15:29:06[0m [1m   INFO[0m [1m[22mrollout done: id=780076d63d974c79b2f6abd0d2f29dcf task=3 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:29:06[0m [1m   INFO[0m [1m[22mrollout start: id=92d6f51adfaa4011a9b23641508f36d9 task=4 harness=null runtime=subprocess[0m[0m
+[2m15:29:06[0m [1m   INFO[0m [1m[22mrollout done: id=8021028a8ab24725918164c5221fcf19 task=3 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m15:29:06[0m [1m   INFO[0m [1m[22mrollout start: id=11bf76b5eee34e30898f2b0bbdeaf23c task=4 harness=null runtime=subprocess[0m[0m
+[2m15:29:07[0m [1m   INFO[0m [1m[22mrollout done: id=506cab1c5713408192d38558d17839c2 task=3 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:29:07[0m [1m   INFO[0m [1m[22mrollout start: id=4ffd681b468f4db6ab152a0f8d6db416 task=4 harness=null runtime=subprocess[0m[0m
+[2m15:29:07[0m [1m   INFO[0m [1m[22mrollout done: id=d865b30961de47cb9ca096d10d65ffe1 task=3 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:29:07[0m [1m   INFO[0m [1m[22mrollout start: id=2a15cf3105c2458f8a5c59954c89eb5e task=4 harness=null runtime=subprocess[0m[0m
+[2m15:29:13[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:36362/mcp[0m[0m
+[2m15:29:14[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:42534/mcp[0m[0m
+[2m15:29:15[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:31527/mcp[0m[0m
+[2m15:29:16[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:54242/mcp[0m[0m
+[2m15:29:18[0m [1m   INFO[0m [1m[22mrollout done: id=92d6f51adfaa4011a9b23641508f36d9 task=4 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m15:29:19[0m [1m   INFO[0m [1m[22mrollout done: id=11bf76b5eee34e30898f2b0bbdeaf23c task=4 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:29:20[0m [1m   INFO[0m [1m[22mrollout done: id=4ffd681b468f4db6ab152a0f8d6db416 task=4 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m15:29:21[0m [1m   INFO[0m [1m[22mrollout done: id=2a15cf3105c2458f8a5c59954c89eb5e task=4 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m15:29:33[0m [1m   INFO[0m [1m[22mEnvServer down: taskset=tiny-terminal-v1[0m[0m
+[2m15:29:33[0m [1m   INFO[0m [1m[22minterception down: url=http://127.0.0.1:61201[0m[0m
+[2m15:29:34[0m [1m   INFO[0m [1m[22mEnvServerPool down[0m[0m

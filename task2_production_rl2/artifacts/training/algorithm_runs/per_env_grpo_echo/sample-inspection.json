@@ -1,0 +1,39 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "environment": "terminal-echo",
+      "algorithm": "echo",
+      "rollouts": 4,
+      "rewards": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rl_trainable_tokens": 1292,
+      "rl_nonzero_advantage_tokens": 0,
+      "ce_trainable_tokens": 4,
+      "ce_weight_values": [
+        0.0,
+        0.1
+      ]
+    },
+    {
+      "step": 2,
+      "environment": "browser-grpo",
+      "algorithm": "grpo",
+      "rollouts": 4,
+      "rewards": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rl_trainable_tokens": 1522,
+      "rl_nonzero_advantage_tokens": 0,
+      "ce_trainable_tokens": 0,
+      "ce_weight_values": []
+    }
+  ]
+}

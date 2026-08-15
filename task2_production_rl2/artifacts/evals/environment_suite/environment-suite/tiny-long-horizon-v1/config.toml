@@ -1,0 +1,73 @@
+model = "Qwen/Qwen3-1.7B"
+num_tasks = 1
+num_rollouts = 1
+shuffle = false
+max_concurrent = 128
+verbose = false
+rich = true
+server = false
+push = false
+output_dir = "/outputs/environment-suite/tiny-long-horizon-v1"
+
+[env]
+id = ""
+max_concurrent_agents = 1
+
+[env.taskset]
+id = "tiny-long-horizon-v1"
+num_tasks = 2
+
+[env.taskset.task]
+judges = []
+
+[env.taskset.task.stops]
+
+[env.taskset.task.metrics]
+
+[env.taskset.task.rewards]
+
+[env.timeout]
+
+[env.retries]
+max_retries = 0
+include = []
+exclude = []
+
+[env.interception]
+type = "elastic"
+multiplex = 32
+
+[env.agent]
+max_turns = 8
+
+[env.agent.harness]
+id = "null"
+forward_env = []
+tool_timeout = 600.0
+skills = []
+
+[env.agent.harness.env]
+
+[env.agent.runtime]
+type = "subprocess"
+
+[env.agent.timeout]
+
+[env.agent.retries]
+max_retries = 0
+include = []
+exclude = []
+
+[serve.pool]
+type = "elastic"
+multiplex = 128
+
+[client]
+base_url = "http://127.0.0.1:8000/v1"
+api_key_var = "TASK2_LOCAL_INFERENCE_KEY"
+type = "eval"
+
+[client.headers]
+
+[sampling]
+max_tokens = 1536

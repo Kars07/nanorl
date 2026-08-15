@@ -1,0 +1,45 @@
+[2m15:40:50[0m [1m   INFO[0m [1m[22mEnvServerPool up: address=tcp://127.0.0.1:5000 workers=1/inf multiplex=128 elastic=True[0m[0m
+[2m15:40:59[0m [1m   INFO[0m [1m[22mEnvServer up: taskset=tiny-browser-v1 address=ipc:///tmp/vf-pool-qaizu0uh/0[0m[0m
+[2m15:40:59[0m [1m   INFO[0m [1m[22minterception up: url=http://127.0.0.1:43349[0m[0m
+[2m15:40:59[0m [1m   INFO[0m [1m[22minterception pool: 1 server(s), multiplex=32[0m[0m
+[2m15:42:27[0m [1m   INFO[0m [1m[22mrollout start: id=93d30188833b42bd87b678a196c8f8bf task=1 harness=null runtime=subprocess[0m[0m
+[2m15:42:27[0m [1m   INFO[0m [1m[22mrollout start: id=c5c86c5c4514418696e4b406b76a4ffe task=1 harness=null runtime=subprocess[0m[0m
+[2m15:42:27[0m [1m   INFO[0m [1m[22mrollout start: id=d4d45f16c8c94c36a7710dab3bb83192 task=1 harness=null runtime=subprocess[0m[0m
+[2m15:42:27[0m [1m   INFO[0m [1m[22mrollout start: id=118e1f46b9b14051bcb71693d2e7de30 task=1 harness=null runtime=subprocess[0m[0m
+[2m15:42:35[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:23797/mcp[0m[0m
+[2m15:42:35[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:22219/mcp[0m[0m
+[2m15:42:35[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:28689/mcp[0m[0m
+[2m15:42:35[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:56732/mcp[0m[0m
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2m15:42:37[0m [1m   INFO[0m [1m[22mrenderer pool: 1 renderer(s), multiplex=256[0m[0m
+[2m15:42:39[0m [1m   INFO[0m [1m[22mrollout done: id=93d30188833b42bd87b678a196c8f8bf task=1 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:42:39[0m [1m   INFO[0m [1m[22mrollout start: id=5ec49cac120e421db428bc1ab9866594 task=2 harness=null runtime=subprocess[0m[0m
+[2m15:42:39[0m [1m   INFO[0m [1m[22mrollout done: id=d4d45f16c8c94c36a7710dab3bb83192 task=1 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:42:39[0m [1m   INFO[0m [1m[22mrollout start: id=1535e9dc391a46f0982e6799ee173820 task=2 harness=null runtime=subprocess[0m[0m
+[2m15:42:39[0m [1m   INFO[0m [1m[22mrollout done: id=c5c86c5c4514418696e4b406b76a4ffe task=1 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:42:39[0m [1m   INFO[0m [1m[22mrollout start: id=81135bfe646440d1a1623fb73f348a20 task=2 harness=null runtime=subprocess[0m[0m
+[2m15:42:40[0m [1m   INFO[0m [1m[22mrollout done: id=118e1f46b9b14051bcb71693d2e7de30 task=1 reward=0.000 turns=3 stop=agent_completed[0m[0m
+[2m15:42:40[0m [1m   INFO[0m [1m[22mrollout start: id=c5b7df0804734dc5a31570dc0a55d07d task=2 harness=null runtime=subprocess[0m[0m
+[2m15:42:44[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:42598/mcp[0m[0m
+[2m15:42:44[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:46465/mcp[0m[0m
+[2m15:42:44[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:41722/mcp[0m[0m
+[2m15:42:45[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:62027/mcp[0m[0m
+[2m15:42:48[0m [1m   INFO[0m [1m[22mrollout done: id=5ec49cac120e421db428bc1ab9866594 task=2 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:42:48[0m [1m   INFO[0m [1m[22mrollout start: id=9ee094e9c08b423db621ca9ffea45002 task=0 harness=null runtime=subprocess[0m[0m
+[2m15:42:48[0m [1m   INFO[0m [1m[22mrollout done: id=81135bfe646440d1a1623fb73f348a20 task=2 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m15:42:48[0m [1m   INFO[0m [1m[22mrollout start: id=87b57fd2110645dd8daf245aeef54bb9 task=0 harness=null runtime=subprocess[0m[0m
+[2m15:42:49[0m [1m   INFO[0m [1m[22mrollout done: id=c5b7df0804734dc5a31570dc0a55d07d task=2 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:42:49[0m [1m   INFO[0m [1m[22mrollout start: id=84a6efe5cd0e4d1baafcae9a4935f702 task=0 harness=null runtime=subprocess[0m[0m
+[2m15:42:49[0m [1m   INFO[0m [1m[22mrollout done: id=1535e9dc391a46f0982e6799ee173820 task=2 reward=0.000 turns=3 stop=agent_completed[0m[0m
+[2m15:42:49[0m [1m   INFO[0m [1m[22mrollout start: id=26078bc31d5243c88927ff909bf37cbc task=0 harness=null runtime=subprocess[0m[0m
+[2m15:42:53[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:31764/mcp[0m[0m
+[2m15:42:53[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:41935/mcp[0m[0m
+[2m15:42:54[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:30665/mcp[0m[0m
+[2m15:42:54[0m [1m   INFO[0m [1m[22mtool server 'browser': http://127.0.0.1:17021/mcp[0m[0m
+[2m15:42:55[0m [1m   INFO[0m [1m[22mrollout done: id=87b57fd2110645dd8daf245aeef54bb9 task=0 reward=0.000 turns=1 stop=agent_completed[0m[0m
+[2m15:42:56[0m [1m   INFO[0m [1m[22mrollout done: id=9ee094e9c08b423db621ca9ffea45002 task=0 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:42:57[0m [1m   INFO[0m [1m[22mrollout done: id=84a6efe5cd0e4d1baafcae9a4935f702 task=0 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:42:58[0m [1m   INFO[0m [1m[22mrollout done: id=26078bc31d5243c88927ff909bf37cbc task=0 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:43:18[0m [1m   INFO[0m [1m[22mEnvServer down: taskset=tiny-browser-v1[0m[0m
+[2m15:43:18[0m [1m   INFO[0m [1m[22minterception down: url=http://127.0.0.1:43349[0m[0m
+[2m15:43:19[0m [1m   INFO[0m [1m[22mEnvServerPool down[0m[0m

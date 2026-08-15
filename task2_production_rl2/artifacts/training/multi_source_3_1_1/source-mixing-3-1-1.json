@@ -1,0 +1,21 @@
+{
+  "class": "prime_rl.orchestrator.train_source.TrainSource",
+  "draws": 10000,
+  "counts": {
+    "terminal": 2074,
+    "repo-repair": 5957,
+    "browser": 1969
+  },
+  "observed": {
+    "repo-repair": 0.5957,
+    "terminal": 0.2074,
+    "browser": 0.1969
+  },
+  "expected": {
+    "repo-repair": 0.6,
+    "terminal": 0.2,
+    "browser": 0.2
+  },
+  "within_two_percent": true,
+  "checkpoint_rng_reproducible": true
+}

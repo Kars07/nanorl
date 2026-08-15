@@ -1,0 +1,410 @@
+[2m15:26:32[0m [1m   INFO[0m [1m[22mStarting router on http://0.0.0.0:8000/v1 (engine on port 8100)
+[0m[0m
+DEBUG: Server startup function called
+DEBUG: Initializing logging
+DEBUG: Logging initialized
+DEBUG: Initializing Prometheus metrics
+DEBUG: Prometheus metrics initialized
+[2m2026-08-13 15:26:33[0m [32m INFO[0m [2mvllm_router_rs::server[0m[2m:[0m [2msrc/server.rs[0m[2m:[0m[2m1345:[0m Starting router on 0.0.0.0:8000 | mode: Regular { worker_urls: ["http://localhost:8100"] } | policy: ConsistentHash { virtual_nodes: 160 } | max_payload: 512MB
+DEBUG: Creating HTTP client
+DEBUG: HTTP client created
+DEBUG: Creating AppContext
+DEBUG: AppContext created
+[2m2026-08-13 15:26:33[0m [32m INFO[0m [2mvllm_router_rs::server[0m[2m:[0m [2msrc/server.rs[0m[2m:[0m[2m1443:[0m Single router mode (enable_igw=false)
+[2m2026-08-13 15:26:33[0m [32m INFO[0m [2mvllm_router_rs::routers::http::router[0m[2m:[0m [2msrc/routers/http/router.rs[0m[2m:[0m[2m287:[0m Waiting for 1 unique hosts (representing 1 workers) to become healthy (timeout: 4200s)
+WARNING 08-13 15:26:59 [patches.py:104] Patched Scheduler._update_from_kv_xfer_finished to tolerate freed (aborted) KV-transfer reqs.
+INFO 08-13 15:26:59 [__init__.py:112] Registered model loader `<class 'modelexpress.vllm_loader.MxModelLoader'>` with load format `mx`
+(APIServer pid=118) INFO 08-13 15:26:59 [api_utils.py:345] 
+(APIServer pid=118) INFO 08-13 15:26:59 [api_utils.py:345]        █     █     █▄   ▄█
+(APIServer pid=118) INFO 08-13 15:26:59 [api_utils.py:345]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.26.0
+(APIServer pid=118) INFO 08-13 15:26:59 [api_utils.py:345]   █▄█▀ █     █     █     █  model   Qwen/Qwen3-0.6B
+(APIServer pid=118) INFO 08-13 15:26:59 [api_utils.py:345]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(APIServer pid=118) INFO 08-13 15:26:59 [api_utils.py:345] 
+(APIServer pid=118) INFO 08-13 15:26:59 [api_utils.py:273] non-default args: {'api_server_count': 1, 'enable_auto_tool_choice': True, 'tool_call_parser': 'hermes', 'port': 8100, 'logprobs_mode': 'processed_logprobs', 'data_parallel_rpc_port': 13345, 'worker_extension_cls': 'prime_rl.inference.vllm.worker.nccl.NCCLWeightUpdateWorker', 'gpu_memory_utilization': 0.9, 'enable_lora': False, 'max_loras': 8, 'max_lora_rank': None, 'max_cpu_loras': 100, 'additional_config': {'fp32_lm_head': True, 'fp32_router_logits': True}}
+(APIServer pid=118) Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(APIServer pid=118) INFO 08-13 15:26:59 [model.py:623] Resolved architecture: Qwen3ForCausalLM
+(APIServer pid=118) INFO 08-13 15:26:59 [model.py:1788] Using max model len 40960
+(APIServer pid=118) INFO 08-13 15:26:59 [vllm.py:1109] Asynchronous scheduling is enabled.
+(APIServer pid=118) INFO 08-13 15:26:59 [kernel.py:295] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+(EngineCore pid=356) Enabled vLLM routed-experts capture with NIXL connector patch.
+(EngineCore pid=356) WARNING 08-13 15:27:26 [patches.py:104] Patched Scheduler._update_from_kv_xfer_finished to tolerate freed (aborted) KV-transfer reqs.
+(EngineCore pid=356) INFO 08-13 15:27:26 [__init__.py:112] Registered model loader `<class 'modelexpress.vllm_loader.MxModelLoader'>` with load format `mx`
+(EngineCore pid=356) INFO 08-13 15:27:26 [core.py:116] Initializing a V1 LLM engine (v0.26.0) with config: model='Qwen/Qwen3-0.6B', speculative_config=None, tokenizer='Qwen/Qwen3-0.6B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=40960, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=Qwen/Qwen3-0.6B, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'ir_enable_torch_wrap': True, 'splitting_ops': ['vllm::unified_attention_with_output', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::qwen_gdn_attention_core', 'vllm::gdn_attention_core_xpu', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::deepseek_v4_attention', 'vllm::hpc_rope_norm_forward', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
+(EngineCore pid=356) INFO 08-13 15:27:26 [worker_base.py:282] Injected <class 'prime_rl.inference.vllm.worker.nccl.NCCLWeightUpdateWorker'> into <class 'vllm.v1.worker.gpu_worker.Worker'> for extended collective_rpc calls ['init_broadcaster', 'liveness_probe', 'update_weights_from_path']
+(EngineCore pid=356) INFO 08-13 15:27:26 [parallel_state.py:1615] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.20.0.14:64680 backend=nccl
+(EngineCore pid=356) INFO 08-13 15:27:26 [parallel_state.py:1946] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=356) INFO 08-13 15:27:27 [gpu_model_runner.py:5250] Starting to load model Qwen/Qwen3-0.6B...
+(EngineCore pid=356) INFO 08-13 15:27:29 [cuda.py:482] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=356) INFO 08-13 15:27:29 [flash_attn.py:776] Using FlashAttention version 2
+(EngineCore pid=356) <frozen importlib._bootstrap_external>:1296: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(EngineCore pid=356) <frozen importlib._bootstrap_external>:1296: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(EngineCore pid=356) fp32 lm_head ENABLED for this LogitsProcessor instance.
+(EngineCore pid=356) Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(EngineCore pid=356) INFO 08-13 15:27:29 [weight_utils.py:574] No model.safetensors.index.json found in remote.
+(EngineCore pid=356) INFO 08-13 15:27:29 [weight_utils.py:869] Filesystem type for checkpoints: 9P. Checkpoint size: 1.40 GiB. Available RAM: 359.40 GiB.
+(EngineCore pid=356) INFO 08-13 15:27:29 [weight_utils.py:892] Auto-prefetch is disabled because the filesystem (9P) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+(EngineCore pid=356) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+(EngineCore pid=356) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  4.27it/s]
+(EngineCore pid=356) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  4.26it/s]
+(EngineCore pid=356) 
+(EngineCore pid=356) INFO 08-13 15:27:30 [default_loader.py:430] Loading weights took 0.34 seconds
+(EngineCore pid=356) INFO 08-13 15:27:30 [gpu_model_runner.py:5347] Model loading took 1.12 GiB memory and 2.801756 seconds
+(EngineCore pid=356) INFO 08-13 15:27:38 [backends.py:1094] Using cache directory: /cache/vllm/torch_compile_cache/4493a2659c/rank_0_0/backbone for vLLM's torch.compile
+(EngineCore pid=356) INFO 08-13 15:27:38 [backends.py:1155] Dynamo bytecode transform time: 7.80 s
+(EngineCore pid=356) INFO 08-13 15:27:42 [backends.py:292] Directly load the compiled graph(s) for compile range (1, 2048) from the cache, took 3.151 s
+(EngineCore pid=356) INFO 08-13 15:27:42 [decorators.py:311] Directly load AOT compilation from path /cache/vllm/torch_compile_cache/torch_aot_compile/b2efd9a5f2776bbe2e9e80268597fc076ba2f0a8cab1303d9da04827b8fb6b54/rank_0_0/model
+(EngineCore pid=356) INFO 08-13 15:27:42 [monitor.py:53] torch.compile took 11.24 s in total
+(EngineCore pid=356) INFO 08-13 15:27:42 [monitor.py:81] Initial profiling/warmup run took 0.24 s
+(EngineCore pid=356) INFO 08-13 15:27:53 [gpu_model_runner.py:6612] Profiling CUDA graph memory: PIECEWISE=51 (largest=512), FULL=35 (largest=256)
+(EngineCore pid=356) INFO 08-13 15:27:55 [gpu_model_runner.py:6737] Estimated CUDA graph memory: 0.47 GiB total
+(EngineCore pid=356) INFO 08-13 15:27:56 [gpu_worker.py:560] Available KV cache memory: 17.53 GiB
+(EngineCore pid=356) INFO 08-13 15:27:56 [gpu_worker.py:575] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9000 is equivalent to --gpu-memory-utilization=0.8785 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9215. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(EngineCore pid=356) INFO 08-13 15:27:56 [kv_cache_utils.py:2177] GPU KV cache size: 164,080 tokens
+(EngineCore pid=356) INFO 08-13 15:27:56 [kv_cache_utils.py:2178] Maximum concurrency for 40,960 tokens per request: 4.01x
+(EngineCore pid=356) INFO 08-13 15:27:56 [cutedsl_warmup.py:101] Skipping CuTeDSL warmup because no compile units were requested.
+(EngineCore pid=356) INFO 08-13 15:27:56 [gpu_model_runner.py:6798] Rank 0: Torch profiler disabled for CUDA graph capture
+(EngineCore pid=356) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   2%|▏         | 1/51 [00:00<00:07,  6.53it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   4%|▍         | 2/51 [00:00<00:07,  6.83it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:06,  6.86it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   8%|▊         | 4/51 [00:00<00:06,  6.88it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  10%|▉         | 5/51 [00:00<00:06,  6.88it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:06,  6.51it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  14%|█▎        | 7/51 [00:01<00:06,  6.59it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▌        | 8/51 [00:01<00:06,  6.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:01<00:06,  6.73it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  20%|█▉        | 10/51 [00:01<00:06,  6.81it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  22%|██▏       | 11/51 [00:01<00:05,  6.76it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:01<00:05,  6.86it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  25%|██▌       | 13/51 [00:01<00:05,  6.87it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 14/51 [00:02<00:05,  6.98it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:02<00:05,  7.13it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  31%|███▏      | 16/51 [00:02<00:04,  7.19it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 17/51 [00:02<00:04,  7.13it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:02<00:04,  7.12it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  37%|███▋      | 19/51 [00:02<00:04,  6.93it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 20/51 [00:02<00:04,  6.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:03<00:04,  6.36it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  43%|████▎     | 22/51 [00:03<00:04,  6.50it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  45%|████▌     | 23/51 [00:03<00:04,  6.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:03<00:04,  6.73it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  49%|████▉     | 25/51 [00:03<00:03,  6.86it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  51%|█████     | 26/51 [00:03<00:03,  6.96it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:03<00:03,  7.01it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  55%|█████▍    | 28/51 [00:04<00:03,  6.67it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  57%|█████▋    | 29/51 [00:04<00:03,  6.60it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:04<00:03,  6.70it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  61%|██████    | 31/51 [00:04<00:02,  6.68it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 32/51 [00:04<00:02,  6.76it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:04<00:02,  6.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  67%|██████▋   | 34/51 [00:05<00:02,  6.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  69%|██████▊   | 35/51 [00:05<00:02,  6.72it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:05<00:02,  6.71it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  73%|███████▎  | 37/51 [00:05<00:02,  6.74it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  75%|███████▍  | 38/51 [00:05<00:01,  6.79it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:05<00:01,  6.77it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  78%|███████▊  | 40/51 [00:05<00:01,  6.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  80%|████████  | 41/51 [00:06<00:01,  6.90it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:06<00:01,  6.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  84%|████████▍ | 43/51 [00:06<00:01,  6.80it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  86%|████████▋ | 44/51 [00:06<00:01,  6.71it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:06<00:00,  6.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  90%|█████████ | 46/51 [00:06<00:00,  6.59it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  92%|█████████▏| 47/51 [00:06<00:00,  6.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:07<00:00,  6.78it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  96%|█████████▌| 49/51 [00:07<00:00,  6.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  98%|█████████▊| 50/51 [00:07<00:00,  6.83it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:07<00:00,  6.04it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:07<00:00,  6.72it/s]
+(EngineCore pid=356) Capturing CUDA graphs (decode, FULL):   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   3%|▎         | 1/35 [00:00<00:05,  6.78it/s]Capturing CUDA graphs (decode, FULL):   6%|▌         | 2/35 [00:00<00:04,  6.91it/s]Capturing CUDA graphs (decode, FULL):   9%|▊         | 3/35 [00:00<00:04,  6.93it/s]Capturing CUDA graphs (decode, FULL):  11%|█▏        | 4/35 [00:00<00:04,  7.03it/s]Capturing CUDA graphs (decode, FULL):  14%|█▍        | 5/35 [00:00<00:04,  6.96it/s]Capturing CUDA graphs (decode, FULL):  17%|█▋        | 6/35 [00:00<00:04,  6.96it/s]Capturing CUDA graphs (decode, FULL):  20%|██        | 7/35 [00:01<00:03,  7.02it/s]Capturing CUDA graphs (decode, FULL):  23%|██▎       | 8/35 [00:01<00:03,  7.05it/s]Capturing CUDA graphs (decode, FULL):  26%|██▌       | 9/35 [00:01<00:03,  6.77it/s]Capturing CUDA graphs (decode, FULL):  29%|██▊       | 10/35 [00:01<00:03,  6.88it/s]Capturing CUDA graphs (decode, FULL):  31%|███▏      | 11/35 [00:01<00:03,  7.05it/s]Capturing CUDA graphs (decode, FULL):  34%|███▍      | 12/35 [00:01<00:03,  7.13it/s]Capturing CUDA graphs (decode, FULL):  37%|███▋      | 13/35 [00:01<00:03,  7.23it/s]Capturing CUDA graphs (decode, FULL):  40%|████      | 14/35 [00:01<00:02,  7.25it/s]Capturing CUDA graphs (decode, FULL):  43%|████▎     | 15/35 [00:02<00:02,  7.32it/s]Capturing CUDA graphs (decode, FULL):  46%|████▌     | 16/35 [00:02<00:02,  7.38it/s]Capturing CUDA graphs (decode, FULL):  49%|████▊     | 17/35 [00:02<00:02,  7.37it/s]Capturing CUDA graphs (decode, FULL):  51%|█████▏    | 18/35 [00:02<00:02,  7.34it/s]Capturing CUDA graphs (decode, FULL):  54%|█████▍    | 19/35 [00:02<00:02,  7.29it/s]Capturing CUDA graphs (decode, FULL):  57%|█████▋    | 20/35 [00:02<00:02,  7.24it/s]Capturing CUDA graphs (decode, FULL):  60%|██████    | 21/35 [00:02<00:01,  7.22it/s]Capturing CUDA graphs (decode, FULL):  63%|██████▎   | 22/35 [00:03<00:01,  7.20it/s]Capturing CUDA graphs (decode, FULL):  66%|██████▌   | 23/35 [00:03<00:01,  6.81it/s]Capturing CUDA graphs (decode, FULL):  69%|██████▊   | 24/35 [00:03<00:01,  6.93it/s]Capturing CUDA graphs (decode, FULL):  71%|███████▏  | 25/35 [00:03<00:01,  7.02it/s]Capturing CUDA graphs (decode, FULL):  74%|███████▍  | 26/35 [00:03<00:01,  7.12it/s]Capturing CUDA graphs (decode, FULL):  77%|███████▋  | 27/35 [00:03<00:01,  7.18it/s]Capturing CUDA graphs (decode, FULL):  80%|████████  | 28/35 [00:03<00:00,  7.26it/s]Capturing CUDA graphs (decode, FULL):  83%|████████▎ | 29/35 [00:04<00:00,  7.24it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▌ | 30/35 [00:04<00:00,  7.23it/s]Capturing CUDA graphs (decode, FULL):  89%|████████▊ | 31/35 [00:04<00:00,  7.25it/s]Capturing CUDA graphs (decode, FULL):  91%|█████████▏| 32/35 [00:04<00:00,  6.67it/s]Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 33/35 [00:04<00:00,  6.78it/s]Capturing CUDA graphs (decode, FULL):  97%|█████████▋| 34/35 [00:04<00:00,  6.85it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:04<00:00,  6.98it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:04<00:00,  7.07it/s]
+(EngineCore pid=356) INFO 08-13 15:28:10 [gpu_model_runner.py:6844] Graph capturing finished in 13 secs, took 0.41 GiB
+(EngineCore pid=356) INFO 08-13 15:28:10 [gpu_worker.py:793] CUDA graph pool memory: 0.41 GiB (actual), 0.47 GiB (estimated), difference: 0.07 GiB (16.8%).
+(EngineCore pid=356) INFO 08-13 15:28:10 [gpu_worker.py:857] Free memory on device (21.81/22.06 GiB) on startup. Desired GPU memory utilization is (0.9, 19.85 GiB). Actual usage is 1.12 GiB for weight, 0.64 GiB for peak activation, 0.09 GiB for non-torch memory, and 0.41 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=18735603405` (17.45 GiB) to fit into requested memory, or `--kv-cache-memory=20833292800` (19.4 GiB) to fully utilize gpu memory. Current kv cache memory in use is 17.53 GiB.
+(EngineCore pid=356) INFO 08-13 15:28:11 [jit_monitor.py:79] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+(EngineCore pid=356) INFO 08-13 15:28:11 [core.py:340] init engine (profile, create kv cache, warmup model) took 40.73 s (compilation: 11.24 s)
+(EngineCore pid=356) INFO 08-13 15:28:12 [vllm.py:1109] Asynchronous scheduling is enabled.
+(EngineCore pid=356) INFO 08-13 15:28:12 [kernel.py:295] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+(APIServer pid=118) INFO 08-13 15:28:12 [api_server.py:673] Supported tasks: ['generate']
+(APIServer pid=118) INFO 08-13 15:28:13 [parser_manager.py:37] "auto" tool choice has been enabled.
+(APIServer pid=118) WARNING 08-13 15:28:13 [model.py:1546] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+(APIServer pid=118) INFO 08-13 15:28:14 [hf.py:540] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+(APIServer pid=118) INFO 08-13 15:28:14 [api_server.py:677] Starting vLLM server on http://0.0.0.0:8100
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:37] Available routes are:
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /load, Methods: GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /version, Methods: GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /health, Methods: GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /metrics, Methods: GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /tokenize, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /detokenize, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/models, Methods: GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /ping, Methods: GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /ping, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /invocations, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/chat/completions/batch, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/responses, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/completions, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/messages, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/messages/count_tokens, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /generative_scoring, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/chat/completions/derender, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /v1/completions/derender, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /pause, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /resume, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /update_weights, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /load_lora_adapter, Methods: POST
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /liveness, Methods: GET
+(APIServer pid=118) INFO 08-13 15:28:14 [launcher.py:46] Route: /init_broadcaster, Methods: POST
+(APIServer pid=118) INFO:     Started server process [118]
+(APIServer pid=118) INFO:     Waiting for application startup.
+(APIServer pid=118) INFO:     Application startup complete.
+(APIServer pid=118) INFO:     127.0.0.1:57868 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:34757 - "GET /health HTTP/1.1" 200 OK
+[2m2026-08-13 15:28:33[0m [32m INFO[0m [2mvllm_router_rs::routers::http::router[0m[2m:[0m [2msrc/routers/http/router.rs[0m[2m:[0m[2m357:[0m 1 out of 1 unique hosts are healthy (representing 1 workers)
+(APIServer pid=118) INFO:     127.0.0.1:16501 - "GET /v1/models HTTP/1.1" 200 OK
+[2m2026-08-13 15:28:33[0m [32m INFO[0m [2mvllm_router_rs::routers::http::router[0m[2m:[0m [2msrc/routers/http/router.rs[0m[2m:[0m[2m130:[0m Discovered model 'Qwen/Qwen3-0.6B' on worker http://localhost:8100
+[2m2026-08-13 15:28:33[0m [32m INFO[0m [2mvllm_router_rs::policies::registry[0m[2m:[0m [2msrc/policies/registry.rs[0m[2m:[0m[2m83:[0m Assigning policy consistent_hash to new model Qwen/Qwen3-0.6B
+[2m2026-08-13 15:28:33[0m [32m INFO[0m [2mvllm_router_rs::server[0m[2m:[0m [2msrc/server.rs[0m[2m:[0m[2m1455:[0m Started health checker for workers with 60s interval
+[2m2026-08-13 15:28:33[0m [32m INFO[0m [2mvllm_router_rs::server[0m[2m:[0m [2msrc/server.rs[0m[2m:[0m[2m1470:[0m Started request queue with size: 100, timeout: 60s
+[2m2026-08-13 15:28:33[0m [32m INFO[0m [2mvllm_router_rs::middleware[0m[2m:[0m [2msrc/middleware.rs[0m[2m:[0m[2m421:[0m Starting concurrency queue processor
+[2m2026-08-13 15:28:33[0m [32m INFO[0m [2mvllm_router_rs::server[0m[2m:[0m [2msrc/server.rs[0m[2m:[0m[2m1506:[0m Router ready | workers: ["http://localhost:8100"]
+[2m2026-08-13 15:28:33[0m [32m INFO[0m [2mvllm_router_rs::server[0m[2m:[0m [2msrc/server.rs[0m[2m:[0m[2m1535:[0m Starting server on 0.0.0.0:8000
+(APIServer pid=118) INFO:     127.0.0.1:16501 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:47167 - "GET /v1/models HTTP/1.1" 200 OK
+(EngineCore pid=356) INFO 08-13 15:28:33 [nccl.py:120] Worker [local_rank=0 rank_offset=0] -> [global_rank=0 inference_world_size=1]
+(EngineCore pid=356) INFO 08-13 15:28:33 [nccl.py:74] Initializing NCCL broadcast receiver (localhost:29501, rank=1, world_size=2)
+(EngineCore pid=356) [2m15:28:33[0m [33m[1mWARNING[0m [33m[1m[22mNo NVLink detected, disabling NCCL P2P and SHM transports. Override by setting NCCL_P2P_DISABLE=0 and NCCL_SHM_DISABLE=0 explicitly.[0m[0m
+(APIServer pid=118) INFO:     127.0.0.1:47167 - "POST /init_broadcaster HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:47167 - "POST /pause?mode=keep&clear_cache=false HTTP/1.1" 200 OK
+(EngineCore pid=356) INFO 08-13 15:28:34 [weight_transfer.py:19] Reloading checkpoint-format weights with vLLM layerwise processing
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:83] Receiving weights from trainer
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:85] Receiving 29 layer state dicts
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 1/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 2/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 3/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 4/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 5/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 6/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 7/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 8/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 9/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 10/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 11/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 12/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 13/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 14/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 15/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 16/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 17/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 18/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 19/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 20/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 21/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 22/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 23/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 24/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 25/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 26/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 27/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 28/29
+(EngineCore pid=356) INFO 08-13 15:28:34 [nccl.py:87] Receiving state dict 29/29
+(EngineCore pid=356) WARNING 08-13 15:28:34 [layerwise.py:268] RotaryEmbedding: Failed to load weights
+(APIServer pid=118) INFO:     127.0.0.1:47167 - "POST /update_weights HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:47167 - "POST /resume HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:61205 - "GET /v1/models HTTP/1.1" 200 OK
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m281:[0m Updated consistent hash ring with 1 workers and 160 virtual nodes
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': f4c7c40e4ce74c5a8f19b0f18704deba
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:f4c7c40e4ce74c5a8f19b0f18704deba
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:f4c7c40e4ce74c5a8f19b0f18704deba' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:f4c7c40e4ce74c5a8f19b0f18704deba' -> worker='http://localhost:8100' (index=0)
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': a5972decdb5d448ebd60d3a29e18e2ef
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:a5972decdb5d448ebd60d3a29e18e2ef
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:a5972decdb5d448ebd60d3a29e18e2ef' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:a5972decdb5d448ebd60d3a29e18e2ef' -> worker='http://localhost:8100' (index=0)
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 20fa9ad8fcb64f258d2fa0ad6d31e015
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:20fa9ad8fcb64f258d2fa0ad6d31e015
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:20fa9ad8fcb64f258d2fa0ad6d31e015' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:20fa9ad8fcb64f258d2fa0ad6d31e015' -> worker='http://localhost:8100' (index=0)
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': fa48a3fd521140088ee64e669610b17c
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:fa48a3fd521140088ee64e669610b17c
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:fa48a3fd521140088ee64e669610b17c' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:28:49[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:fa48a3fd521140088ee64e669610b17c' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO:     127.0.0.1:43095 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+[2m2026-08-13 15:28:51[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 20fa9ad8fcb64f258d2fa0ad6d31e015
+[2m2026-08-13 15:28:51[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:20fa9ad8fcb64f258d2fa0ad6d31e015
+[2m2026-08-13 15:28:51[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:20fa9ad8fcb64f258d2fa0ad6d31e015' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:28:51[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:20fa9ad8fcb64f258d2fa0ad6d31e015' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO:     127.0.0.1:57151 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+[2m2026-08-13 15:28:51[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': fa48a3fd521140088ee64e669610b17c
+[2m2026-08-13 15:28:51[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:fa48a3fd521140088ee64e669610b17c
+[2m2026-08-13 15:28:51[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:fa48a3fd521140088ee64e669610b17c' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:28:51[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:fa48a3fd521140088ee64e669610b17c' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO:     127.0.0.1:61205 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+[2m2026-08-13 15:28:52[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': f4c7c40e4ce74c5a8f19b0f18704deba
+[2m2026-08-13 15:28:52[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:f4c7c40e4ce74c5a8f19b0f18704deba
+[2m2026-08-13 15:28:52[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:f4c7c40e4ce74c5a8f19b0f18704deba' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:28:52[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:f4c7c40e4ce74c5a8f19b0f18704deba' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO:     127.0.0.1:43095 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:57151 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:61205 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:54377 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO 08-13 15:28:54 [loggers.py:310] Engine 000: Avg prompt throughput: 53.5 tokens/s, Avg generation throughput: 155.0 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 86.1%
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 506cab1c5713408192d38558d17839c2
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:506cab1c5713408192d38558d17839c2
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:506cab1c5713408192d38558d17839c2' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:506cab1c5713408192d38558d17839c2' -> worker='http://localhost:8100' (index=0)
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 8021028a8ab24725918164c5221fcf19
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:8021028a8ab24725918164c5221fcf19
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:8021028a8ab24725918164c5221fcf19' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:8021028a8ab24725918164c5221fcf19' -> worker='http://localhost:8100' (index=0)
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 780076d63d974c79b2f6abd0d2f29dcf
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:780076d63d974c79b2f6abd0d2f29dcf
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:780076d63d974c79b2f6abd0d2f29dcf' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:03[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:780076d63d974c79b2f6abd0d2f29dcf' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO:     127.0.0.1:42221 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+[2m2026-08-13 15:29:04[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 780076d63d974c79b2f6abd0d2f29dcf
+[2m2026-08-13 15:29:04[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:780076d63d974c79b2f6abd0d2f29dcf
+[2m2026-08-13 15:29:04[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:780076d63d974c79b2f6abd0d2f29dcf' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:04[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:780076d63d974c79b2f6abd0d2f29dcf' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO 08-13 15:29:04 [loggers.py:310] Engine 000: Avg prompt throughput: 7.6 tokens/s, Avg generation throughput: 68.4 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.7%, Prefix cache hit rate: 89.6%
+[2m2026-08-13 15:29:05[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': d865b30961de47cb9ca096d10d65ffe1
+[2m2026-08-13 15:29:05[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:d865b30961de47cb9ca096d10d65ffe1
+[2m2026-08-13 15:29:05[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:d865b30961de47cb9ca096d10d65ffe1' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:05[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:d865b30961de47cb9ca096d10d65ffe1' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO:     127.0.0.1:17207 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+[2m2026-08-13 15:29:05[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 506cab1c5713408192d38558d17839c2
+[2m2026-08-13 15:29:05[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:506cab1c5713408192d38558d17839c2
+[2m2026-08-13 15:29:05[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:506cab1c5713408192d38558d17839c2' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:05[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:506cab1c5713408192d38558d17839c2' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO:     127.0.0.1:42221 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:18409 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:24074 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+[2m2026-08-13 15:29:06[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': d865b30961de47cb9ca096d10d65ffe1
+[2m2026-08-13 15:29:06[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:d865b30961de47cb9ca096d10d65ffe1
+[2m2026-08-13 15:29:06[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:d865b30961de47cb9ca096d10d65ffe1' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:06[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:d865b30961de47cb9ca096d10d65ffe1' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO:     127.0.0.1:17207 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:24074 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO 08-13 15:29:14 [loggers.py:310] Engine 000: Avg prompt throughput: 6.0 tokens/s, Avg generation throughput: 135.0 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 91.5%
+[2m2026-08-13 15:29:16[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 11bf76b5eee34e30898f2b0bbdeaf23c
+[2m2026-08-13 15:29:16[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:11bf76b5eee34e30898f2b0bbdeaf23c
+[2m2026-08-13 15:29:16[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:11bf76b5eee34e30898f2b0bbdeaf23c' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:16[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:11bf76b5eee34e30898f2b0bbdeaf23c' -> worker='http://localhost:8100' (index=0)
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 92d6f51adfaa4011a9b23641508f36d9
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:92d6f51adfaa4011a9b23641508f36d9
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:92d6f51adfaa4011a9b23641508f36d9' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:92d6f51adfaa4011a9b23641508f36d9' -> worker='http://localhost:8100' (index=0)
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 4ffd681b468f4db6ab152a0f8d6db416
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:4ffd681b468f4db6ab152a0f8d6db416
+(APIServer pid=118) [2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:4ffd681b468f4db6ab152a0f8d6db416' mapped to worker: http://localhost:8100
+INFO:     127.0.0.1:40497 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:4ffd681b468f4db6ab152a0f8d6db416' -> worker='http://localhost:8100' (index=0)
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 11bf76b5eee34e30898f2b0bbdeaf23c
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:11bf76b5eee34e30898f2b0bbdeaf23c
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:11bf76b5eee34e30898f2b0bbdeaf23c' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:17[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:11bf76b5eee34e30898f2b0bbdeaf23c' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO:     127.0.0.1:42260 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:40497 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+[2m2026-08-13 15:29:19[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m331:[0m CONSISTENT_HASH_DEBUG: Found session key in header 'x-session-id': 2a15cf3105c2458f8a5c59954c89eb5e
+[2m2026-08-13 15:29:19[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m593:[0m CONSISTENT_HASH_DEBUG: Extracted hash key: header:x-session-id:2a15cf3105c2458f8a5c59954c89eb5e
+[2m2026-08-13 15:29:19[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m598:[0m CONSISTENT_HASH_DEBUG: Hash key 'header:x-session-id:2a15cf3105c2458f8a5c59954c89eb5e' mapped to worker: http://localhost:8100
+[2m2026-08-13 15:29:19[0m [32m INFO[0m [2mvllm_router_rs::policies::consistent_hash[0m[2m:[0m [2msrc/policies/consistent_hash.rs[0m[2m:[0m[2m647:[0m Consistent hash routing: key='header:x-session-id:2a15cf3105c2458f8a5c59954c89eb5e' -> worker='http://localhost:8100' (index=0)
+(APIServer pid=118) INFO:     127.0.0.1:57999 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO:     127.0.0.1:40497 - "POST /inference/v1/generate HTTP/1.1" 200 OK
+(APIServer pid=118) INFO 08-13 15:29:24 [loggers.py:310] Engine 000: Avg prompt throughput: 8.0 tokens/s, Avg generation throughput: 183.5 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 92.9%
+[2m2026-08-13 15:29:33[0m [32m INFO[0m [2mvllm_router_rs::server[0m[2m:[0m [2msrc/server.rs[0m[2m:[0m[2m1568:[0m Received terminate signal, starting graceful shutdown
+(APIServer pid=118) (EngineCore pid=356) INFO:     Shutting down
+INFO 08-13 15:29:33 [core.py:1313] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore pid=356) (APIServer pid=118) INFO 08-13 15:29:33 [core.py:1432] [shutdown] EngineCore: start mode=abort timeout=0s
+INFO 08-13 15:29:33 [launcher.py:100] [shutdown] API server: shutdown triggered
+(EngineCore pid=356) INFO 08-13 15:29:33 [core.py:1463] [shutdown] EngineCore: request processing complete; starting resource teardown
+(APIServer pid=118) (EngineCore pid=356) INFO 08-13 15:29:33 [launcher.py:116] [shutdown] API server: stopping engine client mode=abort timeout=0s
+INFO 08-13 15:29:33 [core.py:1326] [shutdown] EngineCore: exiting busy loop
+(APIServer pid=118) INFO 08-13 15:29:33 [core_client.py:655] [shutdown] MPClient: start timeout=0s
+(APIServer pid=118) INFO 08-13 15:29:33 [core_client.py:657] [shutdown] MPClient: stopping engine manager
+(APIServer pid=118) WARNING 08-13 15:29:33 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1
+(APIServer pid=118) INFO 08-13 15:29:33 [core_client.py:659] [shutdown] MPClient: engine manager stopped
+(APIServer pid=118) INFO 08-13 15:29:33 [core_client.py:660] [shutdown] MPClient: cleaning up background resources
+(APIServer pid=118) INFO 08-13 15:29:33 [core_client.py:662] [shutdown] MPClient: complete
+(APIServer pid=118) ERROR 08-13 15:29:33 [async_llm.py:704] AsyncLLM output_handler failed.
+(APIServer pid=118) ERROR 08-13 15:29:33 [async_llm.py:704] Traceback (most recent call last):
+(APIServer pid=118) ERROR 08-13 15:29:33 [async_llm.py:704]   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/v1/engine/async_llm.py", line 660, in output_handler
+(APIServer pid=118) ERROR 08-13 15:29:33 [async_llm.py:704]     outputs = await engine_core.get_output_async()
+(APIServer pid=118) ERROR 08-13 15:29:33 [async_llm.py:704]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=118) ERROR 08-13 15:29:33 [async_llm.py:704]   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/v1/engine/core_client.py", line 1061, in get_output_async
+(APIServer pid=118) ERROR 08-13 15:29:33 [async_llm.py:704]     raise self._format_exception(outputs) from None
+(APIServer pid=118) ERROR 08-13 15:29:33 [async_llm.py:704] vllm.v1.engine.exceptions.EngineDeadError: EngineCore encountered an issue. See stack trace (above) for the root cause.
+(APIServer pid=118) INFO 08-13 15:29:33 [launcher.py:125] [shutdown] API server: engine client stopped
+(APIServer pid=118) INFO 08-13 15:29:33 [launcher.py:128] [shutdown] API server: signalling HTTP server shutdown
+(APIServer pid=118) ERROR:    Traceback (most recent call last):
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/entrypoints/launcher.py", line 137, in serve_http
+(APIServer pid=118)     await server_task
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 79, in serve
+(APIServer pid=118)     await self._serve(sockets)
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 98, in _serve
+(APIServer pid=118)     await self.shutdown(sockets=sockets)
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 283, in shutdown
+(APIServer pid=118)     await asyncio.sleep(0.1)
+(APIServer pid=118)   File "/usr/local/lib/python3.12/asyncio/tasks.py", line 665, in sleep
+(APIServer pid=118)     return await future
+(APIServer pid=118)            ^^^^^^^^^^^^
+(APIServer pid=118) asyncio.exceptions.CancelledError
+(APIServer pid=118) 
+(APIServer pid=118) During handling of the above exception, another exception occurred:
+(APIServer pid=118) 
+(APIServer pid=118) Traceback (most recent call last):
+(APIServer pid=118)   File "/usr/local/lib/python3.12/asyncio/runners.py", line 194, in run
+(APIServer pid=118)     return runner.run(main)
+(APIServer pid=118)            ^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+(APIServer pid=118)     return self._loop.run_until_complete(task)
+(APIServer pid=118)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/uvloop/__init__.py", line 48, in wrapper
+(APIServer pid=118)     return await main
+(APIServer pid=118)            ^^^^^^^^^^
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 759, in run_server
+(APIServer pid=118)     await run_server_worker(listen_address, sock, args, **uvicorn_kwargs)
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 777, in run_server_worker
+(APIServer pid=118)     shutdown_task = await build_and_serve(
+(APIServer pid=118)                     ^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 679, in build_and_serve
+(APIServer pid=118)     return await serve_http(
+(APIServer pid=118)            ^^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/entrypoints/launcher.py", line 141, in serve_http
+(APIServer pid=118)     process = find_process_using_port(port)
+(APIServer pid=118)               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/utils/network_utils.py", line 234, in find_process_using_port
+(APIServer pid=118)     if conn.laddr.port == port and (conn.pid is not None and conn.pid != our_pid):
+(APIServer pid=118)        ^^^^^^^^^^^^^^^
+(APIServer pid=118) AttributeError: 'tuple' object has no attribute 'port'
+(APIServer pid=118) 
+(APIServer pid=118) During handling of the above exception, another exception occurred:
+(APIServer pid=118) 
+(APIServer pid=118) Traceback (most recent call last):
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/starlette/routing.py", line 645, in lifespan
+(APIServer pid=118)     await receive()
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/uvicorn/lifespan/on.py", line 137, in receive
+(APIServer pid=118)     return await self.receive_queue.get()
+(APIServer pid=118)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "/usr/local/lib/python3.12/asyncio/queues.py", line 158, in get
+(APIServer pid=118)     await getter
+(APIServer pid=118) asyncio.exceptions.CancelledError
+(APIServer pid=118) 
+(APIServer pid=118) Traceback (most recent call last):
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/entrypoints/launcher.py", line 137, in serve_http
+(APIServer pid=118)     await server_task
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 79, in serve
+(APIServer pid=118)     await self._serve(sockets)
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 98, in _serve
+(APIServer pid=118)     await self.shutdown(sockets=sockets)
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 283, in shutdown
+(APIServer pid=118)     await asyncio.sleep(0.1)
+(APIServer pid=118)   File "/usr/local/lib/python3.12/asyncio/tasks.py", line 665, in sleep
+(APIServer pid=118)     return await future
+(APIServer pid=118)            ^^^^^^^^^^^^
+(APIServer pid=118) asyncio.exceptions.CancelledError
+(APIServer pid=118) 
+(APIServer pid=118) During handling of the above exception, another exception occurred:
+(APIServer pid=118) 
+(APIServer pid=118) Traceback (most recent call last):
+(APIServer pid=118)   File "/opt/prime-rl/.venv/bin/inference", line 10, in <module>
+(APIServer pid=118)     sys.exit(main())
+(APIServer pid=118)              ^^^^^^
+(APIServer pid=118)   File "/opt/prime-rl/src/prime_rl/entrypoints/inference.py", line 241, in main
+(APIServer pid=118)     inference(cli(InferenceConfig))
+(APIServer pid=118)   File "/opt/prime-rl/src/prime_rl/entrypoints/inference.py", line 236, in inference
+(APIServer pid=118)     inference_local(config)
+(APIServer pid=118)   File "/opt/prime-rl/src/prime_rl/entrypoints/inference.py", line 225, in inference_local
+(APIServer pid=118)     server(config)
+(APIServer pid=118)   File "/opt/prime-rl/src/prime_rl/inference/vllm/server.py", line 242, in server
+(APIServer pid=118)     uvloop.run(run_server(args))
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/uvloop/__init__.py", line 96, in run
+(APIServer pid=118)     return __asyncio.run(
+(APIServer pid=118)            ^^^^^^^^^^^^^^
+(APIServer pid=118)   File "/usr/local/lib/python3.12/asyncio/runners.py", line 194, in run
+(APIServer pid=118)     return runner.run(main)
+(APIServer pid=118)            ^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+(APIServer pid=118)     return self._loop.run_until_complete(task)
+(APIServer pid=118)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/uvloop/__init__.py", line 48, in wrapper
+(APIServer pid=118)     return await main
+(APIServer pid=118)            ^^^^^^^^^^
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 759, in run_server
+(APIServer pid=118)     await run_server_worker(listen_address, sock, args, **uvicorn_kwargs)
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 777, in run_server_worker
+(APIServer pid=118)     shutdown_task = await build_and_serve(
+(APIServer pid=118)                     ^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 679, in build_and_serve
+(APIServer pid=118)     return await serve_http(
+(APIServer pid=118)            ^^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/entrypoints/launcher.py", line 141, in serve_http
+(APIServer pid=118)     process = find_process_using_port(port)
+(APIServer pid=118)               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=118)   File "/opt/prime-rl/.venv/lib/python3.12/site-packages/vllm/utils/network_utils.py", line 234, in find_process_using_port
+(APIServer pid=118)     if conn.laddr.port == port and (conn.pid is not None and conn.pid != our_pid):
+(APIServer pid=118)        ^^^^^^^^^^^^^^^
+(APIServer pid=118) AttributeError: 'tuple' object has no attribute 'port'
+/usr/local/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

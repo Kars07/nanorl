@@ -1,0 +1,46 @@
+[trainer0]:[2m15:27:14[0m [1m   INFO[0m [1m[22mStarting RL trainer in World(world_size=1, rank=0, local_rank=0, local_world_size=1, num_nodes=1) in /outputs/algorithm-training/echo-terminal[0m[0m
+[trainer0]:[2m15:27:14[0m [1m   INFO[0m [1m[22mInitializing monitor (None)[0m[0m
+[trainer0]:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[trainer0]:[2m15:27:15[0m [1m   INFO[0m [1m[22mEP auto: model is not MoE, resolving ep=1[0m[0m
+[trainer0]:[2m15:27:15[0m [1m   INFO[0m [1m[22mInitializing checkpoint managers (None)[0m[0m
+[trainer0]:[2m15:27:15[0m [1m   INFO[0m [1m[22mInitializing model (name='Qwen/Qwen3-0.6B' trust_remote_code=False vlm=None conversion_dir=None seq_len=4096 attn='auto' compile=CompileConfig(fullgraph=False) ac=ActivationCheckpointConfig(mode='full', freq=1, targets=['norm']) ac_offloading=ActivationOffloadingConfig(pin_memory=True, max_inflight_activations=5) fsdp_cpu_offload=False optim_cpu_offload=True reshard_after_forward=True dp_replicate=1 ep=1 ep_comm_backend='torch' deepep_num_sms=20 deepep_token_chunk_size=None cp=1 cp_style='ring' impl='auto' optimization_dtype='float32' reduce_dtype='float32' moe_router_dtype='float32' moe_use_grouped_mm=True quantization=None index_cache=None freeze_moe_router=False lora=None debug=DebugModelConfig(num_layers=None, random_init=False, force_balanced_routing=False) fused_lm_head_token_chunk_size=1024)[0m[0m
+[trainer0]:[2m15:27:15[0m [1m   INFO[0m [1m[22mAuto-resolved attn='auto' to 'flash_attention_2' (SM86)[0m[0m
+[trainer0]:[2m15:27:15[0m [1m   INFO[0m [1m[22mLoading model config (name=Qwen/Qwen3-0.6B, attn=flash_attention_2, trust_remote_code=False)[0m[0m
+[trainer0]:[2m15:27:15[0m [1m   INFO[0m [1m[22mAuto-selected implementation: custom[0m[0m
+[trainer0]:[2m15:27:15[0m [1m   INFO[0m [1m[22mLoading model Qwen/Qwen3-0.6B using AutoModelForCausalLMPrimeRL to meta device[0m[0m
+[trainer0]:[2m15:27:15[0m [1m   INFO[0m [1m[22mInjecting chunked LM head with chunk size 1024[0m[0m
+[trainer0]:[2m15:27:16[0m [1m   INFO[0m [1m[22mApplied activation checkpointing (freq=1)[0m[0m
+[trainer0]:[2m15:27:16[0m [1m   INFO[0m [1m[22mCompiled 28 layers (fullgraph=False)[0m[0m
+[trainer0]:[2m15:27:16[0m [1m   INFO[0m [1m[22mBuilding 1-D device mesh with ['dp_shard'], [1][0m[0m
+[trainer0]:[2m15:27:16[0m [33m[1mWARNING[0m [33m[1m[22mModel uses tied word embeddings, so skipping the last-layer no-reshard optimization.[0m[0m
+[trainer0]:
+[trainer0]:Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+[trainer0]:Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 71943.46it/s]
+[trainer0]:[2m15:27:16[0m [1m   INFO[0m [1m[22mLoading weights using HF DCP from /cache/huggingface/hub/models--Qwen--Qwen3-0.6B/snapshots/c1899de289a04d12100db370d81485cdf75e47ca[0m[0m
+[trainer0]:[2m15:27:18[0m [1m   INFO[0m [1m[22mInitializing tokenizer (name='Qwen/Qwen3-0.6B' trust_remote_code=False chat_template=None)[0m[0m
+[trainer0]:[2m15:27:19[0m [1m   INFO[0m [1m[22mSetting up loss function (type='default' dppo_mask_low=0.2 dppo_mask_high=0.2 adv_tau=1.0 kl_tau=0.001)[0m[0m
+[trainer0]:[2m15:27:19[0m [1m   INFO[0m [1m[22mInitializing optimizer (lr=1e-06 weight_decay=0.01 max_norm=1.0 type='adamw' betas1=0.9 betas2=0.999)[0m[0m
+[trainer0]:[2m15:27:19[0m [1m   INFO[0m [1m[22mWrapping optimizer with CPUOffloadOptimizer for optimizer state CPU offloading[0m[0m
+[trainer0]:[2m15:27:19[0m [1m   INFO[0m [1m[22mUsing `constant` scheduler (type='constant')[0m[0m
+[trainer0]:[2m15:27:19[0m [1m   INFO[0m [1m[22mInitializing weight broadcast (host='localhost' port=29501 timeout=1200 inference_world_size=1 type='nccl' quantize_in_weight_transfer=False)[0m[0m
+[trainer0]:[2m15:27:19[0m [33m[1mWARNING[0m [33m[1m[22mNo NVLink detected, disabling NCCL P2P and SHM transports. Override by setting NCCL_P2P_DISABLE=0 and NCCL_SHM_DISABLE=0 explicitly.[0m[0m
+[trainer0]:INFO 08-13 15:28:33 [pynccl.py:113] vLLM is using nccl==2.28.9
+[trainer0]:[2m15:28:34[0m [1m   INFO[0m [1m[22mStarting from step 1 (total_tokens=0, total_samples=0)[0m[0m
+[trainer0]:[2m15:28:34[0m [1m   INFO[0m [1m[22mInitializing data loader (fake=None)[0m[0m
+[trainer0]:[2m15:28:34[0m [1m   INFO[0m [1m[22mZMQ micro batch receiver initialized: endpoint=tcp://localhost:5555 ready_endpoint=tcp://localhost:5556 hwm=10[0m[0m
+[trainer0]:[2m15:28:34[0m [1m   INFO[0m [1m[22m[GC] collection took 0.00s[0m[0m
+[trainer0]:[2m15:28:34[0m [1m   INFO[0m [1m[22mStarting training loop (max_steps=1)[0m[0m
+[trainer0]:[2m15:28:34[0m [1m   INFO[0m [1m[22mBroadcasting startup policy weights (v0) to inference engines[0m[0m
+[trainer0]:/opt/prime-rl/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2202: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'norms.py:37'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+[trainer0]:
+[trainer0]:This call originates from:
+[trainer0]:  File "/opt/prime-rl/src/prime_rl/trainer/models/layers/norms.py", line 37, in forward
+[trainer0]:    quack_fn = _get_quack_rmsnorm() if hidden_states.is_cuda else None
+[trainer0]:
+[trainer0]:  torch._dynamo.utils.warn_once(msg)
+[trainer0]:/opt/prime-rl/src/prime_rl/trainer/utils.py:345: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at /pytorch/aten/src/ATen/native/ReduceOps.cpp:1858.)
+[trainer0]:  metrics[f"{key}/std"] = tensors.std().item()
+[trainer0]:[2m15:29:19[0m [33m[1mWARNING[0m [33m[1m[22mPeak FLOPS undefined for `NVIDIA A10G`. Falling back to A100 (312 TFLOPS)[0m[0m
+[trainer0]:[2m15:29:19[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 1 |   45.3s | Loss 1.2717 | Entropy 0.5033 | Mismatch KL 0.0006 | Grad. Norm 189.3151 | LR 1.00e-06 | Throughput 134 tokens/s | MFU 0.2% | Peak Mem. 11.7 GiB[0m[0m
+[trainer0]:[2m15:29:19[0m [1m   INFO[0m [1m[22mPeak memory: 11.7 GiB[0m[0m
+[trainer0]:[2m15:29:19[0m [32m[1mSUCCESS[0m [32m[1m[22mRL trainer finished![0m[0m

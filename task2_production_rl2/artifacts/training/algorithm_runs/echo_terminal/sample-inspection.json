@@ -1,0 +1,86 @@
+{
+  "algorithm": "echo",
+  "group_size": 4,
+  "rollouts": [
+    {
+      "trace_id": "20fa9ad8fcb64f258d2fa0ad6d31e015",
+      "reward": 0.0,
+      "turns": 2,
+      "samples": [
+        {
+          "token_count": 786,
+          "rl_trainable_tokens": 317,
+          "ce_trainable_tokens": 1,
+          "ce_weight_values": [
+            0.0,
+            0.1
+          ],
+          "advantage_values": [
+            0.0
+          ],
+          "rl_weight_values": null
+        }
+      ]
+    },
+    {
+      "trace_id": "fa48a3fd521140088ee64e669610b17c",
+      "reward": 0.0,
+      "turns": 2,
+      "samples": [
+        {
+          "token_count": 818,
+          "rl_trainable_tokens": 349,
+          "ce_trainable_tokens": 1,
+          "ce_weight_values": [
+            0.0,
+            0.1
+          ],
+          "advantage_values": [
+            0.0
+          ],
+          "rl_weight_values": null
+        }
+      ]
+    },
+    {
+      "trace_id": "f4c7c40e4ce74c5a8f19b0f18704deba",
+      "reward": 0.0,
+      "turns": 2,
+      "samples": [
+        {
+          "token_count": 841,
+          "rl_trainable_tokens": 372,
+          "ce_trainable_tokens": 1,
+          "ce_weight_values": [
+            0.0,
+            0.1
+          ],
+          "advantage_values": [
+            0.0
+          ],
+          "rl_weight_values": null
+        }
+      ]
+    },
+    {
+      "trace_id": "a5972decdb5d448ebd60d3a29e18e2ef",
+      "reward": 0.0,
+      "turns": 1,
+      "samples": [
+        {
+          "token_count": 967,
+          "rl_trainable_tokens": 512,
+          "ce_trainable_tokens": 0,
+          "ce_weight_values": [
+            0.0
+          ],
+          "advantage_values": [
+            0.0
+          ],
+          "rl_weight_values": null
+        }
+      ]
+    }
+  ],
+  "ce_trainable_tokens": 3
+}

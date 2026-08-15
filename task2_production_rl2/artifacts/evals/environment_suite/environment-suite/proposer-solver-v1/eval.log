@@ -1,0 +1,580 @@
+13:07:28    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "proposer-solver-v1",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {}
+      },
+      "system_prompt": null,
+      "num_tasks": 2
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 1,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "agent": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 8,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-0.6B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 256
+  },
+  "num_tasks": 1,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/environment-suite/proposer-solver-v1"
+}
+13:07:28    INFO running 1x1 rollouts on Qwen/Qwen3-0.6B
+13:07:28    INFO results: /outputs/environment-suite/proposer-solver-v1
+13:07:28    INFO rollout start: id=cde8692d58ab430c840b377f9144c076 task=0 harness=null runtime=subprocess
+13:07:28    INFO interception up: url=http://127.0.0.1:59791
+13:07:28    INFO interception pool: 1 server(s), multiplex=32
+13:07:37    INFO tool server 'pair': http://127.0.0.1:51038/mcp
+13:07:41    INFO rollout done: id=cde8692d58ab430c840b377f9144c076 task=0 reward=0.000 turns=1 stop=agent_completed
+13:07:41    INFO interception down: url=http://127.0.0.1:59791
+13:17:35    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "proposer-solver-v1",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {}
+      },
+      "system_prompt": null,
+      "num_tasks": 2
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 2,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "proposer": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 4,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    },
+    "solver_a": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 4,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    },
+    "solver_b": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 4,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-0.6B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 512
+  },
+  "num_tasks": 1,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/environment-suite/proposer-solver-v1"
+}
+13:17:35    INFO running 1x1 rollouts on Qwen/Qwen3-0.6B
+13:17:35    INFO results: /outputs/environment-suite/proposer-solver-v1
+13:17:35    INFO rollout start: id=075bbc79d51646048d9fddce6ed1af32 task=0 harness=null runtime=subprocess
+13:17:35    INFO interception up: url=http://127.0.0.1:64334
+13:17:35    INFO interception pool: 1 server(s), multiplex=32
+13:17:40    INFO tool server 'pair': http://127.0.0.1:28182/mcp
+13:17:45    INFO rollout done: id=075bbc79d51646048d9fddce6ed1af32 task=0 reward=0.000 turns=3 stop=agent_completed
+13:17:45    INFO rollout start: id=f3cf1c6be4d244deb90f19ddcdbf4fdd task=0 harness=null runtime=subprocess
+13:17:45    INFO rollout start: id=86411149c0cd4ef394d355cd392dc6fa task=0 harness=null runtime=subprocess
+13:17:49    INFO tool server 'pair': http://127.0.0.1:60250/mcp
+13:17:49    INFO tool server 'pair': http://127.0.0.1:18437/mcp
+13:17:55    INFO rollout done: id=f3cf1c6be4d244deb90f19ddcdbf4fdd task=0 reward=0.000 turns=3 stop=agent_completed
+13:17:55    INFO rollout done: id=86411149c0cd4ef394d355cd392dc6fa task=0 reward=0.000 turns=3 stop=agent_completed
+13:17:55    INFO interception down: url=http://127.0.0.1:64334
+13:29:06    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "proposer-solver-v1",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {}
+      },
+      "system_prompt": null,
+      "num_tasks": 2
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 2,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "proposer": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 4,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    },
+    "solver_a": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 4,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    },
+    "solver_b": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 4,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-1.7B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 512
+  },
+  "num_tasks": 1,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/environment-suite/proposer-solver-v1"
+}
+13:29:06    INFO running 1x1 rollouts on Qwen/Qwen3-1.7B
+13:29:06    INFO results: /outputs/environment-suite/proposer-solver-v1
+13:29:06    INFO rollout start: id=b8d8e2848aba4b94ae9ba8749a6f74ca task=0 harness=null runtime=subprocess
+13:29:06    INFO interception up: url=http://127.0.0.1:20163
+13:29:06    INFO interception pool: 1 server(s), multiplex=32
+13:29:10    INFO tool server 'pair': http://127.0.0.1:34182/mcp
+13:29:17    INFO rollout done: id=b8d8e2848aba4b94ae9ba8749a6f74ca task=0 reward=0.000 turns=1 stop=agent_completed
+13:29:17    INFO rollout start: id=77dc16ba05f34943ad9c2ccf28c8103b task=0 harness=null runtime=subprocess
+13:29:17    INFO rollout start: id=24cc251ce8b84d93b5b8ed9ca2558193 task=0 harness=null runtime=subprocess
+13:29:21    INFO tool server 'pair': http://127.0.0.1:30178/mcp
+13:29:21    INFO tool server 'pair': http://127.0.0.1:18416/mcp
+13:29:28    INFO rollout done: id=77dc16ba05f34943ad9c2ccf28c8103b task=0 reward=0.000 turns=2 stop=agent_completed
+13:29:31    INFO rollout done: id=24cc251ce8b84d93b5b8ed9ca2558193 task=0 reward=0.000 turns=4 stop=max_turns
+13:29:31    INFO interception down: url=http://127.0.0.1:20163
+13:39:58    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "proposer-solver-v1",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {}
+      },
+      "system_prompt": null,
+      "num_tasks": 2
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 2,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "proposer": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 4,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    },
+    "solver": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 4,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    },
+    "n": 2,
+    "train_proposer": true,
+    "train_solver": true
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-1.7B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 1536
+  },
+  "num_tasks": 1,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/environment-suite/proposer-solver-v1"
+}
+13:39:58    INFO running 1x1 rollouts on Qwen/Qwen3-1.7B
+13:39:58    INFO results: /outputs/environment-suite/proposer-solver-v1
+13:39:58    INFO rollout start: id=2fd710721144413896ec8cedd9e7dffb task=0 harness=null runtime=subprocess
+13:39:58    INFO interception up: url=http://127.0.0.1:22560
+13:39:58    INFO interception pool: 1 server(s), multiplex=32
+13:40:04    INFO tool server 'pair': http://127.0.0.1:37519/mcp
+13:40:11    INFO rollout done: id=2fd710721144413896ec8cedd9e7dffb task=0 reward=1.000 turns=2 stop=agent_completed
+13:40:11    INFO rollout start: id=ad374155ed8049f89e819df7e4ccbe57 task=0 harness=null runtime=subprocess
+13:40:11    INFO rollout start: id=330bad3fbdfc4b6d81615e4de96c1c16 task=0 harness=null runtime=subprocess
+13:40:15    INFO tool server 'pair': http://127.0.0.1:62123/mcp
+13:40:15    INFO tool server 'pair': http://127.0.0.1:48494/mcp
+13:40:19    INFO rollout done: id=ad374155ed8049f89e819df7e4ccbe57 task=0 reward=1.000 turns=2 stop=agent_completed
+13:40:19    INFO rollout done: id=330bad3fbdfc4b6d81615e4de96c1c16 task=0 reward=1.000 turns=2 stop=agent_completed
+13:40:19    INFO interception down: url=http://127.0.0.1:22560

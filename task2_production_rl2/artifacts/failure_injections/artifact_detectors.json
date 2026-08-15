@@ -1,0 +1,101 @@
+{
+  "checks": {
+    "identical_group_rewards": true,
+    "group_size_one": true,
+    "zero_advantage_batch": true,
+    "missing_harness_tool": true,
+    "repeated_gibberish_rollout": true,
+    "extension_success_control": true,
+    "extension_property_break": true,
+    "context_compaction_discontinuity": true,
+    "subagent_handoff_discontinuity": true,
+    "wrong_renderer_template": true,
+    "stale_inference_policy": true,
+    "omitted_weight_update": true,
+    "trainer_inference_logprob_mismatch": true,
+    "actual_train_eval_split_control": true,
+    "train_eval_contamination": true,
+    "one_environment_dominating": true,
+    "wrong_checkpoint_resume": true
+  },
+  "all_passed": true,
+  "evidence": {
+    "real_sample_trace": "07ce2c5365bd4927bb5f7e756b41ded8",
+    "real_sample_spans": [
+      [
+        519,
+        1031
+      ],
+      [
+        1056,
+        1254
+      ],
+      [
+        1295,
+        1807
+      ],
+      [
+        1845,
+        2178
+      ]
+    ],
+    "equal_advantages": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "singleton_advantages": [
+      0.0
+    ],
+    "actual_policy_versions_step1": [
+      0
+    ],
+    "actual_weight_updates": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "actual_mismatch_kl": [
+      0.0006,
+      0.0007
+    ],
+    "train_ids": [
+      0,
+      15
+    ],
+    "eval_ids": [
+      16,
+      19
+    ],
+    "injected_contaminated_eval_ids": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "injected_requested_resume_step": 19,
+    "actual_resume_step": 20,
+    "injected_environment_counts": {
+      "repo": 19,
+      "browser": 1
+    }
+  }
+}

@@ -1,0 +1,21 @@
+[2m15:40:50[0m [1m   INFO[0m [1m[22mEnvServerPool up: address=tcp://127.0.0.1:5001 workers=1/inf multiplex=128 elastic=True[0m[0m
+[2m15:40:59[0m [1m   INFO[0m [1m[22mEnvServer up: taskset=tiny-terminal-v1 address=ipc:///tmp/vf-pool-h6n9kr9m/0[0m[0m
+[2m15:40:59[0m [1m   INFO[0m [1m[22minterception up: url=http://127.0.0.1:44404[0m[0m
+[2m15:40:59[0m [1m   INFO[0m [1m[22minterception pool: 1 server(s), multiplex=32[0m[0m
+[2m15:42:13[0m [1m   INFO[0m [1m[22mrollout start: id=eb77ffafb3e54039aef9d733b7a0c930 task=2 harness=null runtime=subprocess[0m[0m
+[2m15:42:13[0m [1m   INFO[0m [1m[22mrollout start: id=1cf18de6f2ff4ee7974f6a5a963c1c2c task=2 harness=null runtime=subprocess[0m[0m
+[2m15:42:13[0m [1m   INFO[0m [1m[22mrollout start: id=982113d72d1148858ab2214a1dd485eb task=2 harness=null runtime=subprocess[0m[0m
+[2m15:42:13[0m [1m   INFO[0m [1m[22mrollout start: id=bc37e2ca110c4d23926c503ec0ad174e task=2 harness=null runtime=subprocess[0m[0m
+[2m15:42:21[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:63381/mcp[0m[0m
+[2m15:42:21[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:19348/mcp[0m[0m
+[2m15:42:21[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:41882/mcp[0m[0m
+[2m15:42:21[0m [1m   INFO[0m [1m[22mtool server 'terminal': http://127.0.0.1:36124/mcp[0m[0m
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2m15:42:23[0m [1m   INFO[0m [1m[22mrenderer pool: 1 renderer(s), multiplex=256[0m[0m
+[2m15:42:27[0m [1m   INFO[0m [1m[22mrollout done: id=eb77ffafb3e54039aef9d733b7a0c930 task=2 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:42:27[0m [1m   INFO[0m [1m[22mrollout done: id=1cf18de6f2ff4ee7974f6a5a963c1c2c task=2 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:42:27[0m [1m   INFO[0m [1m[22mrollout done: id=bc37e2ca110c4d23926c503ec0ad174e task=2 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:42:27[0m [1m   INFO[0m [1m[22mrollout done: id=982113d72d1148858ab2214a1dd485eb task=2 reward=0.000 turns=2 stop=agent_completed[0m[0m
+[2m15:43:20[0m [1m   INFO[0m [1m[22mEnvServer down: taskset=tiny-terminal-v1[0m[0m
+[2m15:43:20[0m [1m   INFO[0m [1m[22minterception down: url=http://127.0.0.1:44404[0m[0m
+[2m15:43:21[0m [1m   INFO[0m [1m[22mEnvServerPool down[0m[0m

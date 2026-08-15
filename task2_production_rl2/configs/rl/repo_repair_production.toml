@@ -1,0 +1,63 @@
+max_steps = 20
+seq_len = 4096
+
+[model]
+name = "Qwen/Qwen3-0.6B"
+
+[env_vars]
+E2B_KEY_FILE = "/tmp/task2-e2b-key"
+
+[orchestrator]
+batch_size = 4
+group_size = 4
+max_inflight_episodes = 4
+
+[orchestrator.train.sampling]
+max_completion_tokens = 512
+
+[[orchestrator.train.source]]
+name = "repo-repair-train-100"
+[orchestrator.train.source.env.taskset]
+id = "tiny-repo-repair-v1"
+num_tasks = 100
+start = 0
+[orchestrator.train.source.env.taskset.task.e2b]
+allow_internet_access = false
+timeout_seconds = 240
+command_timeout_seconds = 120
+max_output_chars = 20000
+[orchestrator.train.source.env.agent]
+max_turns = 4
+[orchestrator.train.source.env.agent.harness]
+id = "null"
+[orchestrator.train.source.env.agent.runtime]
+type = "subprocess"
+
+[[orchestrator.eval.source]]
+name = "repo-repair-validation-25"
+num_examples = 25
+[orchestrator.eval.source.env.taskset]
+id = "tiny-repo-repair-v1"
+num_tasks = 25
+start = 100
+[orchestrator.eval.source.env.taskset.task.e2b]
+allow_internet_access = false
+timeout_seconds = 240
+command_timeout_seconds = 120
+max_output_chars = 20000
+[orchestrator.eval.source.env.agent]
+max_turns = 4
+[orchestrator.eval.source.env.agent.harness]
+id = "null"
+[orchestrator.eval.source.env.agent.runtime]
+type = "subprocess"
+
+[trainer.optim]
+lr = 1e-6
+
+[ckpt]
+
+[inference]
+
+[orchestrator.renderer]
+name = "qwen3"

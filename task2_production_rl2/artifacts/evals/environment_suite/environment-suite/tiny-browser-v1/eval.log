@@ -1,0 +1,404 @@
+13:06:32    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "tiny-browser-v1",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {}
+      },
+      "system_prompt": null,
+      "num_tasks": 3
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 1,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "agent": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 8,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-0.6B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 256
+  },
+  "num_tasks": 1,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/environment-suite/tiny-browser-v1"
+}
+13:06:32    INFO running 1x1 rollouts on Qwen/Qwen3-0.6B
+13:06:32    INFO results: /outputs/environment-suite/tiny-browser-v1
+13:06:32    INFO rollout start: id=10766936ed52410da671027352a6ce91 task=0 harness=null runtime=subprocess
+13:06:32    INFO interception up: url=http://127.0.0.1:19900
+13:06:32    INFO interception pool: 1 server(s), multiplex=32
+13:06:40    INFO tool server 'browser': http://127.0.0.1:36627/mcp
+13:06:43    INFO rollout done: id=10766936ed52410da671027352a6ce91 task=0 reward=0.000 turns=1 stop=agent_completed
+13:06:43    INFO interception down: url=http://127.0.0.1:19900
+13:17:00    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "tiny-browser-v1",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {}
+      },
+      "system_prompt": null,
+      "num_tasks": 3
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 1,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "agent": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 8,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-0.6B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 512
+  },
+  "num_tasks": 1,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/environment-suite/tiny-browser-v1"
+}
+13:17:00    INFO running 1x1 rollouts on Qwen/Qwen3-0.6B
+13:17:00    INFO results: /outputs/environment-suite/tiny-browser-v1
+13:17:00    INFO rollout start: id=23cfa4fe1374497e8fcbf08c0ebff85a task=0 harness=null runtime=subprocess
+13:17:00    INFO interception up: url=http://127.0.0.1:44424
+13:17:00    INFO interception pool: 1 server(s), multiplex=32
+13:17:05    INFO tool server 'browser': http://127.0.0.1:19285/mcp
+13:17:08    INFO rollout done: id=23cfa4fe1374497e8fcbf08c0ebff85a task=0 reward=0.000 turns=2 stop=agent_completed
+13:17:08    INFO interception down: url=http://127.0.0.1:44424
+13:28:20    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "tiny-browser-v1",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {}
+      },
+      "system_prompt": null,
+      "num_tasks": 3
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 1,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "agent": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 8,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-1.7B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 512
+  },
+  "num_tasks": 1,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/environment-suite/tiny-browser-v1"
+}
+13:28:21    INFO running 1x1 rollouts on Qwen/Qwen3-1.7B
+13:28:21    INFO results: /outputs/environment-suite/tiny-browser-v1
+13:28:21    INFO rollout start: id=b9583c4c172747d48519191c8f3fa2f4 task=0 harness=null runtime=subprocess
+13:28:21    INFO interception up: url=http://127.0.0.1:17670
+13:28:21    INFO interception pool: 1 server(s), multiplex=32
+13:28:25    INFO tool server 'browser': http://127.0.0.1:45474/mcp
+13:28:35    INFO rollout done: id=b9583c4c172747d48519191c8f3fa2f4 task=0 reward=0.000 turns=7 stop=agent_completed
+13:28:35    INFO interception down: url=http://127.0.0.1:17670
+13:38:35    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "tiny-browser-v1",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {}
+      },
+      "system_prompt": null,
+      "num_tasks": 3
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 1,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "agent": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 8,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-1.7B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 1536
+  },
+  "num_tasks": 1,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/environment-suite/tiny-browser-v1"
+}
+13:38:35    INFO running 1x1 rollouts on Qwen/Qwen3-1.7B
+13:38:35    INFO results: /outputs/environment-suite/tiny-browser-v1
+13:38:35    INFO rollout start: id=9a9cfca1f3054b2f9e80e8e55137eae4 task=0 harness=null runtime=subprocess
+13:38:35    INFO interception up: url=http://127.0.0.1:28859
+13:38:35    INFO interception pool: 1 server(s), multiplex=32
+13:38:40    INFO tool server 'browser': http://127.0.0.1:45676/mcp
+13:38:51    INFO rollout done: id=9a9cfca1f3054b2f9e80e8e55137eae4 task=0 reward=0.000 turns=7 stop=agent_completed
+13:38:51    INFO interception down: url=http://127.0.0.1:28859

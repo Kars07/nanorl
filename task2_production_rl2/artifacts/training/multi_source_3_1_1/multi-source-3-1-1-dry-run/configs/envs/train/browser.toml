@@ -1,0 +1,59 @@
+[env]
+id = ""
+max_concurrent_agents = 1
+
+[env.taskset]
+id = "tiny-browser-v1"
+num_tasks = 3
+
+[env.taskset.task]
+judges = []
+
+[env.taskset.task.stops]
+
+[env.taskset.task.metrics]
+
+[env.taskset.task.rewards]
+
+[env.timeout]
+
+[env.retries]
+max_retries = 0
+include = []
+exclude = []
+
+[env.interception]
+type = "elastic"
+multiplex = 32
+
+[env.agent]
+max_turns = 8
+
+[env.agent.harness]
+id = "null"
+forward_env = []
+tool_timeout = 600.0
+skills = []
+
+[env.agent.harness.env]
+
+[env.agent.runtime]
+type = "subprocess"
+
+[env.agent.timeout]
+
+[env.agent.retries]
+max_retries = 0
+include = []
+exclude = []
+
+[serve]
+address = "tcp://127.0.0.1:5002"
+
+[serve.pool]
+type = "elastic"
+multiplex = 128
+
+[log]
+level = "info"
+json_logging = false

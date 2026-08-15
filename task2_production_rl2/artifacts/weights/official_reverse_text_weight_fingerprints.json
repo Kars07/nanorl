@@ -1,0 +1,67 @@
+{
+  "transport": "Prime in-node NCCL broadcast",
+  "steps": {
+    "20": {
+      "model.embed_tokens.weight": {
+        "shape": [
+          151936,
+          1024
+        ],
+        "mean": -0.00020844221580773592,
+        "std": 0.02919546328485012,
+        "sha256": "87ac04d569af2ef784f7a68f368bb2ed8be306e3735de181be7d29646e225457"
+      },
+      "model.layers.0.self_attn.q_proj.weight": {
+        "shape": [
+          2048,
+          1024
+        ],
+        "mean": -2.7668735128827393e-05,
+        "std": 0.03134075924754143,
+        "sha256": "d79de426c76e9af15ae1437804286d66739e6c520d96f7b4c11482114e17b20a"
+      },
+      "model.norm.weight": {
+        "shape": [
+          1024
+        ],
+        "mean": 3.840456485748291,
+        "std": 0.7548460960388184,
+        "sha256": "0fa78ae0d05f557db62bf1a43deb3be4416a3c871c5ebb3b4f432a51210799b3"
+      }
+    },
+    "21": {
+      "model.embed_tokens.weight": {
+        "shape": [
+          151936,
+          1024
+        ],
+        "mean": -0.0002084414882119745,
+        "std": 0.02919546328485012,
+        "sha256": "537ad0a9eefc83d4cb9667768c3a6eaf168c895a2cfa564d10f6d1d197774576"
+      },
+      "model.layers.0.self_attn.q_proj.weight": {
+        "shape": [
+          2048,
+          1024
+        ],
+        "mean": -2.7667536414810456e-05,
+        "std": 0.03134075924754143,
+        "sha256": "f1f7d8461fc049a982d40a2bec3e6576904ee9bd3b03c2c677c30bd487a09f8b"
+      },
+      "model.norm.weight": {
+        "shape": [
+          1024
+        ],
+        "mean": 3.840456485748291,
+        "std": 0.7548460960388184,
+        "sha256": "0fa78ae0d05f557db62bf1a43deb3be4416a3c871c5ebb3b4f432a51210799b3"
+      }
+    }
+  },
+  "changed": {
+    "model.layers.0.self_attn.q_proj.weight": true,
+    "model.norm.weight": false,
+    "model.embed_tokens.weight": true
+  },
+  "all_selected_changed": false
+}

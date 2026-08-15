@@ -1,0 +1,185 @@
+   Building prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config
+   Building prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs
+   Building prime-rl @ file:///opt/prime-rl
+Downloading widgetsnbextension (2.1MiB)
+Downloading virtualenv (7.2MiB)
+Downloading ruff (10.9MiB)
+Downloading jedi (4.7MiB)
+Downloading debugpy (4.1MiB)
+Downloading pyqwest (5.2MiB)
+ Downloaded widgetsnbextension
+ Downloaded pyqwest
+ Downloaded ruff
+ Downloaded virtualenv
+ Downloaded debugpy
+      Built prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs
+      Built prime-rl @ file:///opt/prime-rl
+      Built prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config
+ Downloaded jedi
+Uninstalled 4 packages in 13ms
+Installed 41 packages in 280ms
+[2m15:06:30[0m [1m   INFO[0m [1m[22mTraining from scratch, cleaning any stale rollouts and broadcasts[0m[0m
+[2m15:06:53[0m [1m   INFO[0m [1m[22mPre-downloading model Qwen/Qwen3-0.6B[0m[0m
+
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 25811.10it/s]
+[2m15:06:53[0m [1m   INFO[0m [1m[22mWrote subconfigs to /outputs/algorithm-training/per-env-grpo-echo/configs[0m[0m
+[2m15:06:53[0m [1m   INFO[0m [1m[22mUsing local->physical GPU mapping: {0: 0, 1: 1}[0m[0m
+[2m15:06:53[0m [1m   INFO[0m [1m[22mStarting RL run[0m[0m
+[2m15:06:53[0m [1m   INFO[0m [1m[22mStarting inference on GPU(s) 0[0m[0m
+[2m15:06:53[0m [1m   INFO[0m [1m[22mStarting train env server browser-grpo at tcp://127.0.0.1:5000[0m[0m
+[2m15:06:54[0m [1m   INFO[0m [1m[22mStarting train env server terminal-echo at tcp://127.0.0.1:5001[0m[0m
+[2m15:06:54[0m [1m   INFO[0m [1m[22mStarting orchestrator process[0m[0m
+[2m15:06:54[0m [1m   INFO[0m [1m[22mStarting trainer on GPU(s) 1[0m[0m
+[2m15:06:54[0m [32m[1mSUCCESS[0m [32m[1m[22mStartup complete. Showing orchestrator logs...[0m[0m
+[2m15:07:35[0m [1m   INFO[0m [1m[22mStarting orchestrator (algorithm: echo, grpo)[0m[0m
+[2m15:07:35[0m [1m   INFO[0m [1m[22mSetting default executor to ThreadPoolExecutor(max_workers=64)[0m[0m
+[2m15:07:35[0m [1m   INFO[0m [1m[22mInitializing tokenizer (name='Qwen/Qwen3-0.6B' trust_remote_code=False chat_template=None)[0m[0m
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2m15:07:36[0m [1m   INFO[0m [1m[22mInitializing policy inference pool (base_url=http://localhost:8000/v1, model=Qwen/Qwen3-0.6B)[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22mInitialized Qwen3Renderer for Qwen/Qwen3-0.6B[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22mUsing direct renderer rollout client[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22mInitializing monitor (wandb=None, prime_monitor=None)[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22mConfigured 3 pre-batch rollout filter(s):[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22m  Monitoring gibberish filter (type=gibberish, enforce=False, token_id_threshold=100000, logprob_offset=2.0)[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22m  Monitoring repetition filter (type=repetition, enforce=False, window=3000, prob_threshold=0.99)[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22m  Monitoring zero_advantage filter (type=zero_advantage, enforce=False)[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22mConfigured 3 post-batch rollout filter(s):[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22m  Monitoring gibberish filter (type=gibberish, enforce=False, token_id_threshold=100000, logprob_offset=2.0)[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22m  Monitoring repetition filter (type=repetition, enforce=False, window=3000, prob_threshold=0.99)[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22m  Enforcing zero_advantage filter (type=zero_advantage, enforce=True)[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22mLoading training environments[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22mEnv browser-grpo ready: num_tasks=3[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22mEnv terminal-echo ready: num_tasks=5[0m[0m
+[2m15:07:36[0m [32m[1mSUCCESS[0m [32m[1m[22mTrain environment(s) ready[0m[0m
+[2m15:07:36[0m [1m   INFO[0m [1m[22mWaiting for policy inference pool to be ready[0m[0m
+[2m15:07:46[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 10 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m15:07:46[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 10 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m15:07:56[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 20 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m15:07:56[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 20 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m15:08:06[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 30 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m15:08:06[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 30 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m15:08:16[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 40 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m15:08:16[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 40 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m15:08:26[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 50 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m15:08:26[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 50 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m15:08:36[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 60 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m15:08:36[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 60 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m15:08:46[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 70 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m15:08:46[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 70 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m15:08:56[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 80 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m15:08:56[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 80 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m15:09:06[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 90 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m15:09:06[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 90 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m15:09:16[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 100 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m15:09:16[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 100 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m15:09:25[0m [32m[1mSUCCESS[0m [32m[1m[22mPolicy inference pool ready[0m[0m
+[2m15:09:25[0m [1m   INFO[0m [1m[22mInitializing weight broadcast (host='localhost' port=29501 timeout=1200 inference_world_size=1 type='nccl' quantize_in_weight_transfer=False)[0m[0m
+[2m15:09:25[0m [1m   INFO[0m [1m[22mInitializing NCCL broadcast: 1 servers, inference_world_size=1, gpus_per_server=1[0m[0m
+[2m15:09:26[0m [1m   INFO[0m [1m[22mTraining from scratch[0m[0m
+[2m15:09:26[0m [1m   INFO[0m [1m[22mInitializing micro batch sender (type='zmq' host='localhost' port=5555 hwm=10)[0m[0m
+[2m15:09:26[0m [1m   INFO[0m [1m[22mZMQ micro batch sender initialized: endpoint=tcp://localhost:5555 ready_endpoint=tcp://localhost:5556 hwm=10[0m[0m
+[2m15:09:26[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v0[0m[0m
+[2m15:09:26[0m [1m   INFO[0m [1m[22mStarting orchestrator loop (max_steps=1)[0m[0m
+[2m15:09:36[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0); 4 inflight rollouts (train=4, eval=0 | browser-grpo=0, terminal-echo=4)[0m[0m
+[2m15:09:46[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0); 4 inflight rollouts (train=4, eval=0 | browser-grpo=0, terminal-echo=4)[0m[0m
+[2m15:09:47[0m [33m[1mWARNING[0m [33m[1m[22mStep 1: empty train batch (0 of 4 generated rollouts shipped — all errored or filtered out) (consecutive empty batches: 1/10)[0m[0m
+[2m15:09:56[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0); 4 inflight rollouts (train=4, eval=0 | browser-grpo=4, terminal-echo=0)[0m[0m
+[2m15:10:03[0m [33m[1mWARNING[0m [33m[1m[22mStep 1: empty train batch (0 of 8 generated rollouts shipped — all errored or filtered out) (consecutive empty batches: 2/10)[0m[0m
+[2m15:10:06[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0); 4 inflight rollouts (train=4, eval=0 | browser-grpo=4, terminal-echo=0)[0m[0m
+[2m15:10:14[0m [33m[1mWARNING[0m [33m[1m[22mStep 1: empty train batch (0 of 12 generated rollouts shipped — all errored or filtered out) (consecutive empty batches: 3/10)[0m[0m
+[2m15:10:16[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0); 4 inflight rollouts (train=4, eval=0 | browser-grpo=4, terminal-echo=0)[0m[0m
+[2m15:10:26[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0) (+3 buffered); 4 inflight rollouts (train=4, eval=0 | browser-grpo=1, terminal-echo=3)[0m[0m
+[2m15:10:28[0m [33m[1mWARNING[0m [33m[1m[22mStep 1: empty train batch (0 of 16 generated rollouts shipped — all errored or filtered out) (consecutive empty batches: 4/10)[0m[0m
+[2m15:10:36[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0); 4 inflight rollouts (train=4, eval=0 | browser-grpo=0, terminal-echo=4)[0m[0m
+[2m15:10:39[0m [33m[1mWARNING[0m [33m[1m[22mStep 1: empty train batch (0 of 20 generated rollouts shipped — all errored or filtered out) (consecutive empty batches: 5/10)[0m[0m
+[2m15:10:46[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0); 4 inflight rollouts (train=4, eval=0 | browser-grpo=0, terminal-echo=4)[0m[0m
+[2m15:10:50[0m [33m[1mWARNING[0m [33m[1m[22mStep 1: empty train batch (0 of 24 generated rollouts shipped — all errored or filtered out) (consecutive empty batches: 6/10)[0m[0m
+[2m15:10:56[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0); 4 inflight rollouts (train=4, eval=0 | browser-grpo=0, terminal-echo=4)[0m[0m
+[2m15:11:02[0m [33m[1mWARNING[0m [33m[1m[22mStep 1: empty train batch (0 of 28 generated rollouts shipped — all errored or filtered out) (consecutive empty batches: 7/10)[0m[0m
+[2m15:11:06[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0); 4 inflight rollouts (train=4, eval=0 | browser-grpo=4, terminal-echo=0)[0m[0m
+[2m15:11:15[0m [33m[1mWARNING[0m [33m[1m[22mStep 1: empty train batch (0 of 32 generated rollouts shipped — all errored or filtered out) (consecutive empty batches: 8/10)[0m[0m
+[2m15:11:16[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0); 4 inflight rollouts (train=4, eval=0 | browser-grpo=4, terminal-echo=0)[0m[0m
+[2m15:11:26[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0) (+3 buffered); 4 inflight rollouts (train=4, eval=0 | browser-grpo=4, terminal-echo=0)[0m[0m
+[2m15:11:27[0m [33m[1mWARNING[0m [33m[1m[22mStep 1: empty train batch (0 of 36 generated rollouts shipped — all errored or filtered out) (consecutive empty batches: 9/10)[0m[0m
+[2m15:11:36[0m [1m   INFO[0m [1m[22mTrain batch 0/4 (0.0%) (browser-grpo=0, terminal-echo=0) (+3 buffered); 4 inflight rollouts (train=4, eval=0 | browser-grpo=4, terminal-echo=0)[0m[0m
+[2m15:11:37[0m [33m[1mWARNING[0m [33m[1m[22mStep 1: empty train batch (0 of 40 generated rollouts shipped — all errored or filtered out) (consecutive empty batches: 10/10)[0m[0m
+[2m15:11:37[0m [33m[1mWARNING[0m [33m[1m[22mOrchestrator interrupted after 2m 10s — forcing cleanup (not a clean exit)[0m[0m
+[2m15:11:37[0m [1m   INFO[0m [1m[22mZMQ micro batch sender closed[0m[0m
+[2m15:11:37[0m [33m[1mWARNING[0m [33m[1m[22mOrchestrator cleanup complete (forced).[0m[0m
+[2m15:11:37[0m [31m[1m  ERROR[0m [31m[1m[22mFatal error in run_orchestrator[0m[0m
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/opt/prime-rl/.venv/bin/orchestrator", line 10, in <module>
+    sys.exit(main())
+    │   │    └ <function main at 0x2b2dd6eb40e0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "[32m/opt/prime-rl/src/prime_rl/entrypoints/[0m[32m[1morchestrator.py[0m", line [33m24[0m, in [35mmain[0m
+    [1masyncio[0m[35m[1m.[0m[1mrun[0m[1m([0m[1mrun_orchestrator[0m[1m([0m[1mconfig[0m[1m)[0m[1m)[0m
+    [36m│       │   │                └ [0m[36m[1mOrchestratorConfig(algo=GRPOAlgoConfig(sampling=SamplingConfig(source='policy'), type='grpo', length_penalty=None), model=Mod...[0m
+    [36m│       │   └ [0m[36m[1m<function run_orchestrator at 0x2b2ff52aa340>[0m
+    [36m│       └ [0m[36m[1m<function run at 0x2b2dd719ade0>[0m
+    [36m└ [0m[36m[1m<module 'asyncio' from '/usr/local/lib/python3.12/asyncio/__init__.py'>[0m
+
+  File "/usr/local/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_orchestrator at 0x2b2ff4f52a70>
+           │      └ <function Runner.run at 0x2b2dd72402c0>
+           └ <asyncio.runners.Runner object at 0x2b2dd6e6b9e0>
+  File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_orchestrator() running at /opt/prime-rl/src/prime_rl/utils/utils.py:55> cb=[_run_until_...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x2b2dd7239ee0>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x2b2dd6e6b9e0>
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 671, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x2b2dd7239e40>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 638, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x2b2dd723bc40>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 1971, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x2b2dd717e2a0>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+> File "[32m/opt/prime-rl/src/prime_rl/utils/[0m[32m[1mutils.py[0m", line [33m51[0m, in [35masync_wrapper[0m
+    [1mret[0m [35m[1m=[0m [35m[1mawait[0m [1mfunc[0m[1m([0m[35m[1m*[0m[1margs[0m[1m,[0m [35m[1m**[0m[1mkwargs[0m[1m)[0m
+    [36m            │     │       └ [0m[36m[1m{}[0m
+    [36m            │     └ [0m[36m[1m(OrchestratorConfig(algo=GRPOAlgoConfig(sampling=SamplingConfig(source='policy'), type='grpo', length_penalty=None), model=Mo...[0m
+    [36m            └ [0m[36m[1m<function run_orchestrator at 0x2b2ead49dbc0>[0m
+
+  File "[32m/opt/prime-rl/src/prime_rl/orchestrator/[0m[32m[1morchestrator.py[0m", line [33m1015[0m, in [35mrun_orchestrator[0m
+    [35m[1mawait[0m [1mOrchestrator[0m[1m([0m[1mconfig[0m[1m)[0m[35m[1m.[0m[1mstart[0m[1m([0m[1m)[0m
+    [36m      │            └ [0m[36m[1mOrchestratorConfig(algo=GRPOAlgoConfig(sampling=SamplingConfig(source='policy'), type='grpo', length_penalty=None), model=Mod...[0m
+    [36m      └ [0m[36m[1m<class 'prime_rl.orchestrator.orchestrator.Orchestrator'>[0m
+
+  File "[32m/opt/prime-rl/src/prime_rl/orchestrator/[0m[32m[1morchestrator.py[0m", line [33m493[0m, in [35mstart[0m
+    [35m[1mawait[0m [1mself[0m[35m[1m.[0m[1mmain_loop[0m[1m([0m[1m)[0m
+    [36m      │    └ [0m[36m[1m<function Orchestrator.main_loop at 0x2b2ff52a9c60>[0m
+    [36m      └ [0m[36m[1m<prime_rl.orchestrator.orchestrator.Orchestrator object at 0x2b2ff52a0c80>[0m
+
+  File "[32m/opt/prime-rl/src/prime_rl/orchestrator/[0m[32m[1morchestrator.py[0m", line [33m568[0m, in [35mmain_loop[0m
+    [35m[1mawait[0m [1mself[0m[35m[1m.[0m[1mfinalize_train_batch[0m[1m([0m[1mtrain_batch[0m[1m)[0m
+    [36m      │    │                    └ [0m[36m[1mTrainBatch(rollouts=<prime_rl.orchestrator.metrics.TrainRollouts object at 0x2b2ff891ab40>, samples=[])[0m
+    [36m      │    └ [0m[36m[1m<function Orchestrator.finalize_train_batch at 0x2b2ff52a9d00>[0m
+    [36m      └ [0m[36m[1m<prime_rl.orchestrator.orchestrator.Orchestrator object at 0x2b2ff52a0c80>[0m
+
+  File "[32m/opt/prime-rl/src/prime_rl/orchestrator/[0m[32m[1morchestrator.py[0m", line [33m603[0m, in [35mfinalize_train_batch[0m
+    [35m[1mraise[0m [1mRuntimeError[0m[1m([0m
+
+[31m[1mRuntimeError[0m:[1m 10 consecutive empty train batches — check filter config (pre_batch_filters / post_batch_filters) or task difficulty.[0m
+[2m15:11:40[0m [31m[1m  ERROR[0m [31m[1m[22mError: Orchestrator failed with exit code 1[0m[0m
+[2m15:11:40[0m [31m[1m  ERROR[0m [31m[1m[22mTerminating all processes...[0m[0m

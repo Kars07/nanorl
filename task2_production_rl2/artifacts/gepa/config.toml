@@ -1,0 +1,80 @@
+model = "Qwen/Qwen3-0.6B"
+reflection_model = "Qwen/Qwen3-0.6B"
+num_train = 2
+num_val = 1
+shuffle = false
+seed = 0
+max_total_rollouts = 6
+reflection_minibatch_size = 1
+reflection_columns = []
+max_concurrent = 1
+output_dir = "/outputs/gepa-learning-harness"
+save_results = true
+verbose = false
+
+[env]
+id = ""
+max_concurrent_agents = 1
+
+[env.taskset]
+id = "learning-harness"
+num_tasks = 3
+
+[env.taskset.task]
+judges = []
+
+[env.taskset.task.stops]
+
+[env.taskset.task.metrics]
+
+[env.taskset.task.rewards]
+
+[env.timeout]
+
+[env.retries]
+max_retries = 0
+include = []
+exclude = []
+
+[env.interception]
+type = "elastic"
+multiplex = 32
+
+[env.agent]
+max_turns = 1
+
+[env.agent.harness]
+id = "learning-harness"
+forward_env = []
+tool_timeout = 600.0
+skills = []
+
+[env.agent.harness.env]
+
+[env.agent.runtime]
+type = "subprocess"
+
+[env.agent.timeout]
+
+[env.agent.retries]
+max_retries = 0
+include = []
+exclude = []
+
+[client]
+base_url = "http://127.0.0.1:8000/v1"
+api_key_var = "TASK2_LOCAL_INFERENCE_KEY"
+type = "eval"
+
+[client.headers]
+
+[sampling]
+temperature = 0.7
+max_tokens = 64
+
+[reflection_client]
+base_url = "http://127.0.0.1:8000/v1"
+api_key_var = "TASK2_LOCAL_INFERENCE_KEY"
+type = "eval"
+
+[reflection_client.headers]

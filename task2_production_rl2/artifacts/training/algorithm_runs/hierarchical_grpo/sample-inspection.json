@@ -1,0 +1,351 @@
+{
+  "algorithm": "hierarchical_grpo",
+  "groups": [
+    {
+      "group_id": "48b6ba14-0941-4ef7-a465-cd723687e54f",
+      "rollouts": [
+        {
+          "trace_id": "2443cf08db1d438884a05af7e14db614",
+          "episode_id": "3d305a86c9134d4aba5f341b2c6493f6",
+          "agent": "proposer",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 512,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "dad22b329ace4e66b9fe773f4abe2061",
+          "episode_id": "3d305a86c9134d4aba5f341b2c6493f6",
+          "agent": "solver",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 695,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "027a260353b34d75a6657b0f786fa6cd",
+          "episode_id": "3d305a86c9134d4aba5f341b2c6493f6",
+          "agent": "solver",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 751,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "6a027de314524a84b3cbc73d9400d982",
+          "episode_id": "cec89e20fec945ad8ccbb4656d7239d6",
+          "agent": "proposer",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 512,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "abeecba8257d4a55b91495c340d0fadb",
+          "episode_id": "cec89e20fec945ad8ccbb4656d7239d6",
+          "agent": "solver",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 440,
+              "advantage_values": [
+                0.5
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "db06aa85c3a54dc7a4c3daf2679de4a6",
+          "episode_id": "cec89e20fec945ad8ccbb4656d7239d6",
+          "agent": "solver",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 804,
+              "advantage_values": [
+                -0.5
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "0db05f7babb64b8c9751f7beb31fbb2d",
+          "episode_id": "6eb3f95248f84f189f73974130882ddc",
+          "agent": "proposer",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 1024,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "c70736b169ca4375a8c19f581ae71d8d",
+          "episode_id": "6eb3f95248f84f189f73974130882ddc",
+          "agent": "solver",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 399,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "6a693b240b7545969935e6c95fe7d838",
+          "episode_id": "6eb3f95248f84f189f73974130882ddc",
+          "agent": "solver",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 509,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "0271a664db1f4383ad09c7590c663ba7",
+          "episode_id": "dab918436c7d4eb08e435a4727884b24",
+          "agent": "proposer",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 1138,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "7a808d791e2840d59776a5519455ca42",
+          "episode_id": "dab918436c7d4eb08e435a4727884b24",
+          "agent": "solver",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 449,
+              "advantage_values": [
+                0.5
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "204332a60b0644299ef0414ad32b1fa0",
+          "episode_id": "dab918436c7d4eb08e435a4727884b24",
+          "agent": "solver",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 688,
+              "advantage_values": [
+                -0.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "14fc6783-50b1-4251-9f8e-314692bbf162",
+      "rollouts": [
+        {
+          "trace_id": "124a2d19ffe948ff90ae2160981691bf",
+          "episode_id": "73155ea5f749418c817fba120e354100",
+          "agent": "proposer",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 496,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "0f947bada81d4c3d8dd023e675bb3563",
+          "episode_id": "73155ea5f749418c817fba120e354100",
+          "agent": "solver",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 322,
+              "advantage_values": [
+                0.5
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "4e034e88ce054a13883570f5274b372b",
+          "episode_id": "73155ea5f749418c817fba120e354100",
+          "agent": "solver",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 397,
+              "advantage_values": [
+                -0.5
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "a8dc40104fe648009054f215161ae4d9",
+          "episode_id": "f5aee75a7e514ef2a31b4d33bb5411ff",
+          "agent": "proposer",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 699,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "27b60f6f15264085a1dc5b840f6dbe3c",
+          "episode_id": "f5aee75a7e514ef2a31b4d33bb5411ff",
+          "agent": "solver",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 375,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "d2d67acc53f642068d81538ed80fb2e6",
+          "episode_id": "f5aee75a7e514ef2a31b4d33bb5411ff",
+          "agent": "solver",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 388,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "9e9ce44fe124483aa271619cf5a35acd",
+          "episode_id": "1f6eab39f8734f1994fd207c451bbee0",
+          "agent": "proposer",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 781,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "5caedb4cb83948a7bb675bc66ffa5db4",
+          "episode_id": "1f6eab39f8734f1994fd207c451bbee0",
+          "agent": "solver",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 512,
+              "advantage_values": [
+                -0.5
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "df9f940d25304ac6843457b1add5a658",
+          "episode_id": "1f6eab39f8734f1994fd207c451bbee0",
+          "agent": "solver",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 954,
+              "advantage_values": [
+                0.5
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "6a7d981ffc514703be236bff1e0f7ee5",
+          "episode_id": "f88e4b349d4b493eb0c3868fd3f7f5d1",
+          "agent": "proposer",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 482,
+              "advantage_values": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "f1c1df0566814d839bd749610672eabf",
+          "episode_id": "f88e4b349d4b493eb0c3868fd3f7f5d1",
+          "agent": "solver",
+          "reward": 1.0,
+          "samples": [
+            {
+              "trainable_tokens": 403,
+              "advantage_values": [
+                0.5
+              ]
+            }
+          ]
+        },
+        {
+          "trace_id": "f301f92145cb471ab42b6a4b97140e81",
+          "episode_id": "f88e4b349d4b493eb0c3868fd3f7f5d1",
+          "agent": "solver",
+          "reward": 0.0,
+          "samples": [
+            {
+              "trainable_tokens": 1052,
+              "advantage_values": [
+                -0.5
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

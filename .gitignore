@@ -5,8 +5,10 @@ mixed_precision_amp/
 sft/
 tensors/
 external_repos/
+verifiers/
 
 # Model weights and caches
+.env
 *.pt
 *.pth
 *.safetensors
@@ -17,3 +19,5 @@ venv/
 .pytest_cache/
 .ruff_cache/
 __pycache__/
+primerl_docs/
+verifiers/

@@ -1,0 +1,103 @@
+13:16:54 WARNING Harness 'bash' is running in the subprocess runtime on the local system. Local files and settings may affect the evaluation; use subprocess only for debugging. Use --env.<role>.runtime.type docker or prime for an isolated run.
+13:16:54    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "learning-harness",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {}
+      },
+      "system_prompt": null,
+      "num_tasks": 3
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 1,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "agent": {
+      "harness": {
+        "id": "bash",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": [],
+        "edit": true,
+        "search": false
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 2,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-0.6B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 64
+  },
+  "num_tasks": 1,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/harness-suite/bash"
+}
+13:16:54    INFO running 1x1 rollouts on Qwen/Qwen3-0.6B
+13:16:54    INFO results: /outputs/harness-suite/bash
+13:16:54    INFO rollout start: id=b3ee3f5e9e8b4730a967922235b476ac task=0 harness=bash runtime=subprocess
+13:16:54    INFO interception up: url=http://127.0.0.1:58292
+13:16:54    INFO interception pool: 1 server(s), multiplex=32
+13:16:58    INFO rollout done: id=b3ee3f5e9e8b4730a967922235b476ac task=0 reward=0.000 turns=1 stop=agent_completed
+13:16:58    INFO interception down: url=http://127.0.0.1:58292

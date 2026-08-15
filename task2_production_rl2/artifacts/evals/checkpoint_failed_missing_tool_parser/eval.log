@@ -1,0 +1,126 @@
+12:17:01    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "tiny-repo-repair-v1",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {},
+        "e2b": {
+          "colocated": false,
+          "runtime": {
+            "type": "subprocess"
+          },
+          "url": null,
+          "timeout_seconds": 240,
+          "command_timeout_seconds": 120,
+          "max_output_chars": 20000,
+          "allow_internet_access": false
+        }
+      },
+      "system_prompt": null,
+      "num_tasks": 4,
+      "start": 16
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 1,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "agent": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 4,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "/outputs/repo-repair-mixed/weights/step_2",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": null
+  },
+  "num_tasks": 4,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/repo-repair-mixed/checkpoint-eval"
+}
+12:17:01    INFO running 4x1 rollouts on /outputs/repo-repair-mixed/weights/step_2
+12:17:01    INFO results: /outputs/repo-repair-mixed/checkpoint-eval
+12:17:01    INFO rollout start: id=2c15b94e52b44d8cb33db96d3085a972 task=16 harness=null runtime=subprocess
+12:17:01    INFO rollout start: id=99d65405ed944475b3e026861ccc8969 task=17 harness=null runtime=subprocess
+12:17:01    INFO rollout start: id=68b309963a434700a83941558eeca176 task=18 harness=null runtime=subprocess
+12:17:01    INFO rollout start: id=96ea712ce81d4aa89c6766a2db9787ce task=19 harness=null runtime=subprocess
+12:17:01    INFO interception up: url=http://127.0.0.1:23037
+12:17:01    INFO interception pool: 1 server(s), multiplex=32
+12:17:11    INFO tool server 'e2b': http://127.0.0.1:45078/mcp
+12:17:11    INFO tool server 'e2b': http://127.0.0.1:32979/mcp
+12:17:11    INFO tool server 'e2b': http://127.0.0.1:32227/mcp
+12:17:11    INFO tool server 'e2b': http://127.0.0.1:41372/mcp
+12:17:14 WARNING model call failed: id=96ea712ce81d4aa89c6766a2db9787ce ProviderError: upstream 400: {"error":{"message":"\"auto\" tool choice requires --enable-auto-tool-choice and --tool-call-parser to be set","type":"BadRequestError","param":null,"code":400}}
+12:17:14 WARNING model call failed: id=2c15b94e52b44d8cb33db96d3085a972 ProviderError: upstream 400: {"error":{"message":"\"auto\" tool choice requires --enable-auto-tool-choice and --tool-call-parser to be set","type":"BadRequestError","param":null,"code":400}}
+12:17:14 WARNING model call failed: id=68b309963a434700a83941558eeca176 ProviderError: upstream 400: {"error":{"message":"\"auto\" tool choice requires --enable-auto-tool-choice and --tool-call-parser to be set","type":"BadRequestError","param":null,"code":400}}
+12:17:14 WARNING model call failed: id=99d65405ed944475b3e026861ccc8969 ProviderError: upstream 400: {"error":{"message":"\"auto\" tool choice requires --enable-auto-tool-choice and --tool-call-parser to be set","type":"BadRequestError","param":null,"code":400}}
+12:17:16    INFO rollout done: id=96ea712ce81d4aa89c6766a2db9787ce task=19 reward=0.000 turns=0 stop=ProviderError
+12:17:16    INFO rollout done: id=99d65405ed944475b3e026861ccc8969 task=17 reward=0.000 turns=0 stop=ProviderError
+12:17:16    INFO rollout done: id=2c15b94e52b44d8cb33db96d3085a972 task=16 reward=0.000 turns=0 stop=ProviderError
+12:17:16    INFO rollout done: id=68b309963a434700a83941558eeca176 task=18 reward=0.000 turns=0 stop=ProviderError
+12:17:16    INFO interception down: url=http://127.0.0.1:23037

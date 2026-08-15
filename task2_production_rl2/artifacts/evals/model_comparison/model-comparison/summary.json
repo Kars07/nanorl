@@ -1,0 +1,90 @@
+{
+  "results": {
+    "task1-sft": {
+      "model": "/models/task1/sft_overfit",
+      "inference_command": "uv run --frozen inference --vllm.model /models/task1/sft_overfit --vllm.max-model-len 4096 --vllm.gpu-memory-utilization 0.85 --vllm.tool-call-parser hermes --vllm.enable-auto-tool-choice true",
+      "eval_command": "uv run --frozen eval tiny-repo-repair-v1 -m /models/task1/sft_overfit -n 4 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.taskset.start 16 --env.taskset.num-tasks 4 --env.taskset.task.e2b.allow-internet-access false --env.taskset.task.e2b.timeout-seconds 240 --env.agent.max-turns 6 --env.agent.harness.id null --env.agent.runtime.type subprocess --sampling.max-tokens 512 --output-dir /outputs/model-comparison/task1-sft --no-push",
+      "exit_code": 0,
+      "stdout": "env       tiny-repo-repair-v1  \u00b7  null harness  \u00b7  subprocess runtime           \nmodel     /models/task1/sft_overfit  (max_tokens=512)  via                      \n          http://127.0.0.1:8000/v1                                              \ntaskset   num_tasks=4  \u00b7  start=16  \u00b7  task.e2b.timeout_seconds=240             \nlimits    \u2264128 episodes     \u00b7  6 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/model-comparison/task1-sft                                   \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 4/4 \u00b7 16s \u00b7 reward 0.00 \u00b7 err 0.00\nrewards   repository_passed 0.00                                                \nmetrics   sandbox_commands 0.00  \u00b7  submitted 0.00                              \nusage     2.1K/1.7K tokens                                                      \ntime      boot 0.0s  \u00b7  setup 9s  \u00b7  agent 6s (model 2s + harness 4s)  \u00b7        \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  [success ] task idx=16 agent=agent \u00b7 166ccdb0 \u00b7 subprocess(\u2026 reward=0.00 \u00b7 14s\n  [success ] task idx=17 agent=agent \u00b7 079f96f8 \u00b7 subprocess(\u2026 reward=0.00 \u00b7 16s\n  [success ] task idx=18 agent=agent \u00b7 73d31ccc \u00b7 subprocess(\u2026 reward=0.00 \u00b7 16s\n  [success ] task idx=19 agent=agent \u00b7 cecf1b97 \u00b7 subprocess(\u2026 reward=0.00 \u00b7 16s",
+      "stderr": "   Building prime-rl @ file:///opt/prime-rl\n   Building prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config\n   Building prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs\n      Built prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs\n      Built prime-rl @ file:///opt/prime-rl\n      Built prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config\nUninstalled 3 packages in 1ms\nInstalled 3 packages in 3ms\n",
+      "startup_error": "",
+      "trace_count": 4,
+      "error_count": 0,
+      "rewards": [
+        {
+          "repository_passed": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        },
+        {
+          "repository_passed": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        },
+        {
+          "repository_passed": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        },
+        {
+          "repository_passed": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        }
+      ],
+      "calls": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "qwen3-1.7b-reference": {
+      "model": "Qwen/Qwen3-1.7B",
+      "inference_command": "uv run --frozen inference --vllm.model Qwen/Qwen3-1.7B --vllm.max-model-len 4096 --vllm.gpu-memory-utilization 0.85",
+      "eval_command": "uv run --frozen eval tiny-repo-repair-v1 -m Qwen/Qwen3-1.7B -n 4 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.taskset.start 16 --env.taskset.num-tasks 4 --env.taskset.task.e2b.allow-internet-access false --env.taskset.task.e2b.timeout-seconds 240 --env.agent.max-turns 6 --env.agent.harness.id null --env.agent.runtime.type subprocess --sampling.max-tokens 512 --output-dir /outputs/model-comparison/qwen3-1.7b-reference --no-push",
+      "exit_code": 0,
+      "stdout": "env       tiny-repo-repair-v1  \u00b7  null harness  \u00b7  subprocess runtime           \nmodel     Qwen/Qwen3-1.7B  (max_tokens=512)  via http://127.0.0.1:8000/v1       \ntaskset   num_tasks=4  \u00b7  start=16  \u00b7  task.e2b.timeout_seconds=240             \nlimits    \u2264128 episodes     \u00b7  6 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/model-comparison/qwen3-1.7b-reference                        \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 4/4 \u00b7 17s \u00b7 reward 0.00 \u00b7 err 0.00\nrewards   repository_passed 0.00                                                \nmetrics   sandbox_commands 0.00  \u00b7  submitted 0.00                              \nusage     2.1K/2.0K tokens                                                      \ntime      boot 0.0s  \u00b7  setup 8s  \u00b7  agent 8s (model 5s + harness 3s)  \u00b7        \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  [success ] task idx=16 agent=agent \u00b7 395ca4ce \u00b7 subprocess(\u2026 reward=0.00 \u00b7 16s\n  [success ] task idx=17 agent=agent \u00b7 33b854cc \u00b7 subprocess(\u2026 reward=0.00 \u00b7 16s\n  [success ] task idx=18 agent=agent \u00b7 c869dc42 \u00b7 subprocess(\u2026 reward=0.00 \u00b7 16s\n  [success ] task idx=19 agent=agent \u00b7 e40151d6 \u00b7 subprocess(\u2026 reward=0.00 \u00b7 17s",
+      "stderr": "",
+      "startup_error": "",
+      "trace_count": 4,
+      "error_count": 0,
+      "rewards": [
+        {
+          "repository_passed": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        },
+        {
+          "repository_passed": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        },
+        {
+          "repository_passed": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        },
+        {
+          "repository_passed": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        }
+      ],
+      "calls": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

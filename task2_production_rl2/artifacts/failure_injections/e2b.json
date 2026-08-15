@@ -1,0 +1,23 @@
+{
+  "sandbox_id": "if8mdpo2w0pkj7l3k2dpj",
+  "sandbox": {
+    "secure": true,
+    "allow_internet_access": false
+  },
+  "checks": {
+    "impossible_hidden_test": true,
+    "hidden_verifier_not_in_guest": true,
+    "network_denied": true,
+    "runtime_timeout": true,
+    "missing_dependency": true
+  },
+  "all_passed": true,
+  "evidence": {
+    "public_exit": 0,
+    "impossible_hidden_exit": 1,
+    "hidden_absent_exit": 0,
+    "network_exit": 124,
+    "timeout_exception": "TimeoutException",
+    "missing_dependency_exit": 1
+  }
+}

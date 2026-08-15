@@ -1,0 +1,15 @@
+{
+  "command": "uv run --with harbor==0.20.0 python scripts/inspect_harbor.py",
+  "taskset_class": "HarborTaskset",
+  "task_class": "HarborTask",
+  "idx": 0,
+  "name": "hello-world/hello-world",
+  "prompt": "Create a file called hello.txt with \"Hello, world!\" as the content.",
+  "image": null,
+  "upload_environment": false,
+  "network_allow": ["*"],
+  "network_block": [],
+  "verifier_separate": false,
+  "artifacts": [],
+  "note": "Metadata-only parse used ignore_dockerfile=true after the default loader correctly rejected implicit Dockerfile building."
+}

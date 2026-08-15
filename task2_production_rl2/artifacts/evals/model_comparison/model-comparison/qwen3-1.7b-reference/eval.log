@@ -1,0 +1,122 @@
+13:19:39    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "tiny-repo-repair-v1",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {},
+        "e2b": {
+          "colocated": false,
+          "runtime": {
+            "type": "subprocess"
+          },
+          "url": null,
+          "timeout_seconds": 240,
+          "command_timeout_seconds": 120,
+          "max_output_chars": 20000,
+          "allow_internet_access": false
+        }
+      },
+      "system_prompt": null,
+      "num_tasks": 4,
+      "start": 16
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 1,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "agent": {
+      "harness": {
+        "id": "null",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 6,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-1.7B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 512
+  },
+  "num_tasks": 4,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/model-comparison/qwen3-1.7b-reference"
+}
+13:19:39    INFO running 4x1 rollouts on Qwen/Qwen3-1.7B
+13:19:39    INFO results: /outputs/model-comparison/qwen3-1.7b-reference
+13:19:39    INFO rollout start: id=395ca4ceb46844ab81e7ab0bff23687c task=16 harness=null runtime=subprocess
+13:19:39    INFO rollout start: id=33b854cc2bac4150ad3179b715e35c96 task=17 harness=null runtime=subprocess
+13:19:39    INFO rollout start: id=c869dc422bbf4a8bb56efc3b936db31b task=18 harness=null runtime=subprocess
+13:19:39    INFO rollout start: id=e40151d6f063428cb6b7a30410b4e11f task=19 harness=null runtime=subprocess
+13:19:39    INFO interception up: url=http://127.0.0.1:23042
+13:19:39    INFO interception pool: 1 server(s), multiplex=32
+13:19:46    INFO tool server 'e2b': http://127.0.0.1:55829/mcp
+13:19:46    INFO tool server 'e2b': http://127.0.0.1:61012/mcp
+13:19:46    INFO tool server 'e2b': http://127.0.0.1:38832/mcp
+13:19:47    INFO tool server 'e2b': http://127.0.0.1:63497/mcp
+13:19:55    INFO rollout done: id=395ca4ceb46844ab81e7ab0bff23687c task=16 reward=0.000 turns=1 stop=agent_completed
+13:19:55    INFO rollout done: id=33b854cc2bac4150ad3179b715e35c96 task=17 reward=0.000 turns=1 stop=agent_completed
+13:19:55    INFO rollout done: id=c869dc422bbf4a8bb56efc3b936db31b task=18 reward=0.000 turns=1 stop=agent_completed
+13:19:55    INFO rollout done: id=e40151d6f063428cb6b7a30410b4e11f task=19 reward=0.000 turns=1 stop=agent_completed
+13:19:55    INFO interception down: url=http://127.0.0.1:23042

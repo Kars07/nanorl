@@ -1,0 +1,236 @@
+{
+  "inference_command": "uv run --frozen inference --vllm.model Qwen/Qwen3-1.7B --vllm.max-model-len 4096 --vllm.gpu-memory-utilization 0.85",
+  "results": {
+    "tiny-terminal-v1": {
+      "command": "uv run --frozen eval tiny-terminal-v1 -m Qwen/Qwen3-1.7B -n 1 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.agent.max-turns 8 --env.agent.harness.id null --env.agent.runtime.type subprocess --sampling.max-tokens 1536 --output-dir /outputs/environment-suite/tiny-terminal-v1 --no-push",
+      "exit_code": 0,
+      "stdout": "env       tiny-terminal-v1  \u00b7  null harness  \u00b7  subprocess runtime              \nmodel     Qwen/Qwen3-1.7B  (max_tokens=1536)  via http://127.0.0.1:8000/v1      \nlimits    \u2264128 episodes     \u00b7  8 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/environment-suite/tiny-terminal-v1                           \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1/1 \u00b7 16s \u00b7 reward 1.00 \u00b7 err 0.00\nrewards   final_state 1.00                                                      \nusage     481/496 tokens                                                        \ntime      boot 0.0s  \u00b7  setup 7s  \u00b7  agent 9s (model 5s + harness 4s)  \u00b7        \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  [success ] task idx=0 agent=agent \u00b7 d1f89698 \u00b7 subprocess(/\u2026 reward=1.00 \u00b7 16s",
+      "stderr": "   Building prime-rl @ file:///opt/prime-rl\n   Building prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config\n   Building prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs\n      Built prime-rl-configs @ file:///opt/prime-rl/packages/prime-rl-configs\n      Built prime-rl @ file:///opt/prime-rl\n      Built prime-pydantic-config @ file:///opt/prime-rl/deps/pydantic-config\nUninstalled 3 packages in 2ms\nInstalled 3 packages in 3ms\n",
+      "trace_count": 1,
+      "ok": true,
+      "reward": [
+        {
+          "final_state": {
+            "score": 1.0,
+            "weight": 1.0
+          }
+        }
+      ],
+      "calls": [
+        2
+      ],
+      "tools": [
+        [
+          "terminal_list_files",
+          "terminal_read",
+          "terminal_remove",
+          "terminal_submit",
+          "terminal_write"
+        ]
+      ],
+      "called_tools": [
+        [
+          "terminal_write",
+          "terminal_submit"
+        ]
+      ]
+    },
+    "tiny-browser-v1": {
+      "command": "uv run --frozen eval tiny-browser-v1 -m Qwen/Qwen3-1.7B -n 1 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.agent.max-turns 8 --env.agent.harness.id null --env.agent.runtime.type subprocess --sampling.max-tokens 1536 --output-dir /outputs/environment-suite/tiny-browser-v1 --no-push",
+      "exit_code": 0,
+      "stdout": "env       tiny-browser-v1  \u00b7  null harness  \u00b7  subprocess runtime               \nmodel     Qwen/Qwen3-1.7B  (max_tokens=1536)  via http://127.0.0.1:8000/v1      \nlimits    \u2264128 episodes     \u00b7  8 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/environment-suite/tiny-browser-v1                            \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1/1 \u00b7 16s \u00b7 reward 0.00 \u00b7 err 0.00\nrewards   correct_answer 0.00                                                   \nmetrics   pages_visited 0.00                                                    \nusage     469/832 tokens                                                        \ntime      boot 0.0s  \u00b7  setup 6s  \u00b7  agent 10s (model 8s + harness 2s)  \u00b7       \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  [success ] task idx=0 agent=agent \u00b7 9a9cfca1 \u00b7 subprocess(/\u2026 reward=0.00 \u00b7 16s",
+      "stderr": "",
+      "trace_count": 1,
+      "ok": true,
+      "reward": [
+        {
+          "correct_answer": {
+            "score": 0.0,
+            "weight": 1.0
+          }
+        }
+      ],
+      "calls": [
+        7
+      ],
+      "tools": [
+        [
+          "browser_open_page",
+          "browser_search",
+          "browser_submit"
+        ]
+      ],
+      "called_tools": [
+        [
+          "browser_search",
+          "browser_open_page",
+          "browser_search",
+          "browser_submit",
+          "browser_submit",
+          "browser_submit"
+        ]
+      ]
+    },
+    "tiny-tooluse-v1": {
+      "command": "uv run --frozen eval tiny-tooluse-v1 -m Qwen/Qwen3-1.7B -n 1 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.agent.max-turns 8 --env.agent.harness.id null --env.agent.runtime.type subprocess --sampling.max-tokens 1536 --output-dir /outputs/environment-suite/tiny-tooluse-v1 --no-push",
+      "exit_code": 0,
+      "stdout": "env       tiny-tooluse-v1  \u00b7  null harness  \u00b7  subprocess runtime               \nmodel     Qwen/Qwen3-1.7B  (max_tokens=1536)  via http://127.0.0.1:8000/v1      \nlimits    \u2264128 episodes     \u00b7  8 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/environment-suite/tiny-tooluse-v1                            \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1/1 \u00b7 11s \u00b7 reward 1.00 \u00b7 err 0.00\nrewards   answer 1.00                                                           \nusage     339/273 tokens                                                        \ntime      boot 0.0s  \u00b7  setup 6s  \u00b7  agent 5s (model 3s + harness 2s)  \u00b7        \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  [success ] task idx=0 agent=agent \u00b7 abbf78c4 \u00b7 subprocess(/\u2026 reward=1.00 \u00b7 11s",
+      "stderr": "",
+      "trace_count": 1,
+      "ok": true,
+      "reward": [
+        {
+          "answer": {
+            "score": 1.0,
+            "weight": 1.0
+          }
+        }
+      ],
+      "calls": [
+        3
+      ],
+      "tools": [
+        [
+          "issues_query",
+          "issues_submit"
+        ]
+      ],
+      "called_tools": [
+        [
+          "issues_query",
+          "issues_submit"
+        ]
+      ]
+    },
+    "tiny-long-horizon-v1": {
+      "command": "uv run --frozen eval tiny-long-horizon-v1 -m Qwen/Qwen3-1.7B -n 1 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.agent.max-turns 8 --env.agent.harness.id null --env.agent.runtime.type subprocess --sampling.max-tokens 1536 --output-dir /outputs/environment-suite/tiny-long-horizon-v1 --no-push",
+      "exit_code": 0,
+      "stdout": "env       tiny-long-horizon-v1  \u00b7  null harness  \u00b7  subprocess runtime          \nmodel     Qwen/Qwen3-1.7B  (max_tokens=1536)  via http://127.0.0.1:8000/v1      \nlimits    \u2264128 episodes     \u00b7  8 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/environment-suite/tiny-long-horizon-v1                       \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1/1 \u00b7 43s \u00b7 reward 1.00 \u00b7 err 0.00\nrewards   ordered_completion 1.00                                               \nusage     684/3.4K tokens                                                       \ntime      boot 0.0s  \u00b7  setup 7s  \u00b7  agent 36s (model 33s + harness 3s)  \u00b7      \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  [success ] task idx=0 agent=agent \u00b7 1ce4dc90 \u00b7 subprocess(/\u2026 reward=1.00 \u00b7 43s",
+      "stderr": "",
+      "trace_count": 1,
+      "ok": true,
+      "reward": [
+        {
+          "ordered_completion": {
+            "score": 1.0,
+            "weight": 1.0
+          }
+        }
+      ],
+      "calls": [
+        5
+      ],
+      "tools": [
+        [
+          "workflow_complete",
+          "workflow_next_step",
+          "workflow_submit"
+        ]
+      ],
+      "called_tools": [
+        [
+          "workflow_next_step",
+          "workflow_next_step",
+          "workflow_next_step",
+          "workflow_next_step",
+          "workflow_next_step",
+          "workflow_next_step",
+          "workflow_next_step",
+          "workflow_next_step",
+          "workflow_next_step",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_submit",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_submit",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_submit",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_complete",
+          "workflow_submit"
+        ]
+      ]
+    },
+    "proposer-solver-v1": {
+      "command": "uv run --frozen eval proposer-solver-v1 -m Qwen/Qwen3-1.7B -n 1 -r 1 --client.base-url http://127.0.0.1:8000/v1 --client.api-key-var TASK2_LOCAL_INFERENCE_KEY --env.proposer.max-turns 4 --env.proposer.harness.id null --env.proposer.runtime.type subprocess --env.solver.max-turns 4 --env.solver.harness.id null --env.solver.runtime.type subprocess --env.n 2 --sampling.max-tokens 1536 --output-dir /outputs/environment-suite/proposer-solver-v1 --no-push",
+      "exit_code": 0,
+      "stdout": "env       proposer-solver-v1  \u00b7  null harness  \u00b7  subprocess runtime            \nmodel     Qwen/Qwen3-1.7B  (max_tokens=1536)  via http://127.0.0.1:8000/v1      \nlimits    \u2264128 episodes     \u00b7  4 turns             \u00b7  no token cap              \ntimeouts  no setup timeout  \u00b7  no rollout timeout  \u00b7  no finalize timeout  \u00b7  no\n          scoring timeout  \u00b7  no env finalize timeout                           \noutput    /outputs/environment-suite/proposer-solver-v1                         \n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1/1 \u00b7 21s \u00b7 reward 1.00 \u00b7 err 0.00\nrewards   proposer: verified_pair 1.00    solver: verified_pair 1.00            \nmetrics   proposer: episode_agents 3.00  \u00b7  solver_passes 2.00    solver:       \n          episode_agents 3.00  \u00b7  solver_passes 2.00                            \nusage     1.4K/827 tokens                                                       \ntime      boot 0.0s  \u00b7  setup 5s  \u00b7  agent 5s (model 3s + harness 2s)  \u00b7        \n          finalize 0.0s  \u00b7  scoring 0.0s                                        \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\u256d [success ] task idx=0 agent=proposer \u00b7 2fd71072 \u00b7 subproces\u2026 reward=1.00 \u00b7 13s\n\u2502 [success ] task idx=0 agent=solver   \u00b7 ad374155 \u00b7 subproces\u2026 reward=1.00 \u00b7  8s\n\u2570 [success ] task idx=0 agent=solver   \u00b7 330bad3f \u00b7 subproces\u2026 reward=1.00 \u00b7  8s",
+      "stderr": "",
+      "trace_count": 3,
+      "ok": true,
+      "reward": [
+        {
+          "verified_pair": {
+            "score": 1.0,
+            "weight": 1.0
+          }
+        },
+        {
+          "verified_pair": {
+            "score": 1.0,
+            "weight": 1.0
+          }
+        },
+        {
+          "verified_pair": {
+            "score": 1.0,
+            "weight": 1.0
+          }
+        }
+      ],
+      "calls": [
+        2,
+        2,
+        2
+      ],
+      "tools": [
+        [
+          "pair_propose",
+          "pair_solve",
+          "pair_submit"
+        ],
+        [
+          "pair_propose",
+          "pair_solve",
+          "pair_submit"
+        ],
+        [
+          "pair_propose",
+          "pair_solve",
+          "pair_submit"
+        ]
+      ],
+      "called_tools": [
+        [
+          "pair_propose",
+          "pair_solve",
+          "pair_submit"
+        ],
+        [
+          "pair_propose",
+          "pair_solve",
+          "pair_submit"
+        ],
+        [
+          "pair_propose",
+          "pair_solve",
+          "pair_submit"
+        ]
+      ]
+    }
+  },
+  "all_commands_succeeded": true,
+  "all_traces_ok": true
+}

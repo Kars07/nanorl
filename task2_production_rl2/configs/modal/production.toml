@@ -1,0 +1,7 @@
+# Audit record for executable values in modal_apps/self_hosted_rollout.py.
+cuda_image = "nvidia/cuda:12.8.1-cudnn-devel-ubuntu24.04"
+gpu = "A10:2"
+prime_rl_revision = "8c1f196dd39699726ee8ff52f6ee2495c5fa38df"
+model = "Qwen/Qwen3-0.6B"
+inference = "self-hosted-vllm"
+sandbox = "e2b"

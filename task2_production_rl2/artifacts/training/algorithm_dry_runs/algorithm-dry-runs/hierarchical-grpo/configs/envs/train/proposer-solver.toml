@@ -1,0 +1,83 @@
+[env]
+id = ""
+max_concurrent_agents = 2
+n = 2
+train_proposer = true
+train_solver = true
+
+[env.taskset]
+id = "proposer-solver-v1"
+num_tasks = 2
+
+[env.taskset.task]
+judges = []
+
+[env.taskset.task.stops]
+
+[env.taskset.task.metrics]
+
+[env.taskset.task.rewards]
+
+[env.timeout]
+
+[env.retries]
+max_retries = 0
+include = []
+exclude = []
+
+[env.interception]
+type = "elastic"
+multiplex = 32
+
+[env.proposer]
+max_turns = 4
+
+[env.proposer.harness]
+id = "null"
+forward_env = []
+tool_timeout = 600.0
+skills = []
+
+[env.proposer.harness.env]
+
+[env.proposer.runtime]
+type = "subprocess"
+
+[env.proposer.timeout]
+
+[env.proposer.retries]
+max_retries = 0
+include = []
+exclude = []
+
+[env.solver]
+max_turns = 4
+
+[env.solver.harness]
+id = "null"
+forward_env = []
+tool_timeout = 600.0
+skills = []
+
+[env.solver.harness.env]
+
+[env.solver.runtime]
+type = "subprocess"
+
+[env.solver.timeout]
+
+[env.solver.retries]
+max_retries = 0
+include = []
+exclude = []
+
+[serve]
+address = "tcp://127.0.0.1:5000"
+
+[serve.pool]
+type = "elastic"
+multiplex = 128
+
+[log]
+level = "info"
+json_logging = false

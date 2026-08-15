@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "task2-production-rl2"
+version = "0.1.0"
+description = "Production agentic RL with Prime-RL, Verifiers v1, Modal, and E2B"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "e2b==2.35.0",
+  "learning-harness",
+  "modal==1.3.3",
+  "python-dotenv==1.1.1",
+  "proposer-solver-v1",
+  "tiny-browser-v1",
+  "tiny-long-horizon-v1",
+  "tiny-repo-repair-v1",
+  "tiny-terminal-v1",
+  "tiny-tooluse-v1",
+  "verifiers",
+]
+
+[dependency-groups]
+dev = ["pytest==8.4.1", "pytest-asyncio==1.1.0"]
+
+[tool.uv.sources]
+verifiers = { path = "../verifiers", editable = true }
+learning-harness = { path = "harnesses/learning_harness", editable = true }
+tiny-repo-repair-v1 = { path = "environments/tiny_repo_repair_v1", editable = true }
+tiny-terminal-v1 = { path = "environments/tiny_terminal_v1", editable = true }
+tiny-browser-v1 = { path = "environments/tiny_browser_v1", editable = true }
+tiny-tooluse-v1 = { path = "environments/tiny_tooluse_v1", editable = true }
+tiny-long-horizon-v1 = { path = "environments/tiny_long_horizon_v1", editable = true }
+proposer-solver-v1 = { path = "environments/proposer_solver_v1", editable = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["modal_apps", "task2_runtime"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

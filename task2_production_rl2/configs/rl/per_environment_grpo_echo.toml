@@ -1,0 +1,53 @@
+max_steps = 2
+seq_len = 4096
+
+[model]
+name = "Qwen/Qwen3-0.6B"
+
+[orchestrator]
+batch_size = 4
+group_size = 4
+max_inflight_episodes = 4
+# ECHO's observation CE stream remains useful when the GRPO advantage stream
+# is zero. Prime's default zero_advantage filter only examines the latter, so
+# it would silently remove terminal ECHO samples from this mixed run.
+pre_batch_filters = []
+post_batch_filters = []
+
+[orchestrator.algo]
+type = "grpo"
+
+[orchestrator.train.sampling]
+max_completion_tokens = 512
+
+[[orchestrator.train.source]]
+name = "browser-grpo"
+[orchestrator.train.source.env.taskset]
+id = "tiny-browser-v1"
+[orchestrator.train.source.env.agent]
+max_turns = 8
+[orchestrator.train.source.env.agent.harness]
+id = "null"
+[orchestrator.train.source.env.agent.runtime]
+type = "subprocess"
+
+[[orchestrator.train.source]]
+name = "terminal-echo"
+[orchestrator.train.source.algo]
+type = "echo"
+[orchestrator.train.source.env.taskset]
+id = "tiny-terminal-v1"
+[orchestrator.train.source.env.agent]
+max_turns = 8
+[orchestrator.train.source.env.agent.harness]
+id = "null"
+[orchestrator.train.source.env.agent.runtime]
+type = "subprocess"
+
+[trainer.optim]
+lr = 1e-6
+
+[inference]
+
+[orchestrator.renderer]
+name = "qwen3"

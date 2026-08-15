@@ -1,0 +1,120 @@
+[2m10:44:45[0m [1m   INFO[0m [1m[22mStarting orchestrator (algorithm: grpo)[0m[0m
+[2m10:44:45[0m [1m   INFO[0m [1m[22mSetting default executor to ThreadPoolExecutor(max_workers=64)[0m[0m
+[2m10:44:45[0m [1m   INFO[0m [1m[22mInitializing tokenizer (name='PrimeIntellect/Qwen3-0.6B-Reverse-Text-SFT' trust_remote_code=False chat_template=None)[0m[0m
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2m10:44:46[0m [1m   INFO[0m [1m[22mInitializing policy inference pool (base_url=http://localhost:8000/v1, model=PrimeIntellect/Qwen3-0.6B-Reverse-Text-SFT)[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22mInitialized PrimeQwen3Renderer for PrimeIntellect/Qwen3-0.6B-Reverse-Text-SFT[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22mUsing direct renderer rollout client[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22mInitializing monitor (wandb=None, prime_monitor=None)[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22mConfigured 3 pre-batch rollout filter(s):[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22m  Monitoring gibberish filter (type=gibberish, enforce=False, token_id_threshold=100000, logprob_offset=2.0)[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22m  Monitoring repetition filter (type=repetition, enforce=False, window=3000, prob_threshold=0.99)[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22m  Monitoring zero_advantage filter (type=zero_advantage, enforce=False)[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22mConfigured 3 post-batch rollout filter(s):[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22m  Monitoring gibberish filter (type=gibberish, enforce=False, token_id_threshold=100000, logprob_offset=2.0)[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22m  Monitoring repetition filter (type=repetition, enforce=False, window=3000, prob_threshold=0.99)[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22m  Enforcing zero_advantage filter (type=zero_advantage, enforce=True)[0m[0m
+[2m10:44:47[0m [1m   INFO[0m [1m[22mLoading training environments[0m[0m
+Generating train split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 1000/1000 [00:00<00:00, 154566.04 examples/s]
+[2m10:44:49[0m [1m   INFO[0m [1m[22mEnv reverse-text ready: num_tasks=1000[0m[0m
+[2m10:44:49[0m [32m[1mSUCCESS[0m [32m[1m[22mTrain environment(s) ready[0m[0m
+[2m10:44:49[0m [1m   INFO[0m [1m[22mWaiting for policy inference pool to be ready[0m[0m
+[2m10:44:59[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 10 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m10:44:59[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 10 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m10:45:09[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 20 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m10:45:09[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 20 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m10:45:19[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 30 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m10:45:19[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 30 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m10:45:29[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 40 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m10:45:29[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 40 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m10:45:39[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 50 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m10:45:39[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 50 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m10:45:49[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 60 seconds (Error: All connection attempts failed) on http://localhost:8100[0m[0m
+[2m10:45:49[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 60 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m10:45:59[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 70 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m10:46:09[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 80 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m10:46:19[0m [33m[1mWARNING[0m [33m[1m[22mInference server was not reached after 90 seconds (Error: All connection attempts failed) on http://localhost:8000[0m[0m
+[2m10:46:21[0m [32m[1mSUCCESS[0m [32m[1m[22mPolicy inference pool ready[0m[0m
+[2m10:46:21[0m [1m   INFO[0m [1m[22mInitializing weight broadcast (host='localhost' port=29501 timeout=1200 inference_world_size=1 type='nccl' quantize_in_weight_transfer=False)[0m[0m
+[2m10:46:21[0m [1m   INFO[0m [1m[22mInitializing NCCL broadcast: 1 servers, inference_world_size=1, gpus_per_server=1[0m[0m
+[2m10:46:22[0m [1m   INFO[0m [1m[22mTraining from scratch[0m[0m
+[2m10:46:22[0m [1m   INFO[0m [1m[22mInitializing micro batch sender (type='zmq' host='localhost' port=5555 hwm=10)[0m[0m
+[2m10:46:22[0m [1m   INFO[0m [1m[22mZMQ micro batch sender initialized: endpoint=tcp://localhost:5555 ready_endpoint=tcp://localhost:5556 hwm=10[0m[0m
+[2m10:46:22[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v0[0m[0m
+[2m10:46:22[0m [1m   INFO[0m [1m[22mStarting orchestrator loop (max_steps=20)[0m[0m
+[2m10:46:32[0m [1m   INFO[0m [1m[22mTrain batch 0/128 (0.0%); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:46:42[0m [1m   INFO[0m [1m[22mTrain batch 0/128 (0.0%) (+13 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:46:52[0m [1m   INFO[0m [1m[22mTrain batch 112/128 (87.5%) (+13 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:46:54[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 1 |   31.1s | Reward 0.1251 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 0 | Error 0.0% | Truncation 81.2%[0m[0m
+[2m10:47:01[0m [1m   INFO[0m [1m[22mPausing dispatcher to prevent orchestrator from racing from trainer. Waiting for new policy...[0m[0m
+[2m10:47:01[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 2 |    7.3s | Reward 0.1833 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 1 | Error 0.0% | Truncation 75.8%[0m[0m
+[2m10:47:02[0m [1m   INFO[0m [1m[22mTrain batch 48/128 (37.5%) (+2 buffered); 108 inflight rollouts (train=108, eval=0)[0m[0m
+[2m10:47:10[0m [1m   INFO[0m [1m[22mHolding batch 3 until the trainer publishes policy v1 (currently v0)[0m[0m
+[2m10:47:12[0m [1m   INFO[0m [1m[22mTrain batch 0/128 (0.0%) (+20 buffered); 0 inflight rollouts (train=0, eval=0)[0m[0m
+[2m10:47:22[0m [1m   INFO[0m [1m[22mTrain batch 0/128 (0.0%) (+20 buffered); 0 inflight rollouts (train=0, eval=0)[0m[0m
+[2m10:47:32[0m [1m   INFO[0m [1m[22mTrain batch 0/128 (0.0%) (+20 buffered); 0 inflight rollouts (train=0, eval=0)[0m[0m
+[2m10:47:42[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v1[0m[0m
+[2m10:47:42[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 3 |    9.3s | Reward 0.1625 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 79.7%[0m[0m
+[2m10:47:43[0m [1m   INFO[0m [1m[22mTrain batch 0/128 (0.0%) (+20 buffered); 0 inflight rollouts (train=0, eval=0)[0m[0m
+[2m10:47:49[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v2[0m[0m
+[2m10:47:49[0m [1m   INFO[0m [1m[22mResuming dispatcher[0m[0m
+[2m10:47:53[0m [1m   INFO[0m [1m[22mTrain batch 16/128 (12.5%) (+14 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:47:57[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v3[0m[0m
+[2m10:48:03[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 4 |   52.1s | Reward 0.3088 | Trainable 112/112 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 3 | Error 0.0% | Truncation 52.7%[0m[0m
+[2m10:48:03[0m [1m   INFO[0m [1m[22mTrain batch 0/128 (0.0%) (+27 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:48:08[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v4[0m[0m
+[2m10:48:13[0m [1m   INFO[0m [1m[22mTrain batch 80/128 (62.5%) (+36 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:48:15[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 5 |   11.7s | Reward 0.4855 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 35.9%[0m[0m
+[2m10:48:21[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v5[0m[0m
+[2m10:48:23[0m [1m   INFO[0m [1m[22mTrain batch 48/128 (37.5%) (+8 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:48:27[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 6 |   12.0s | Reward 0.4766 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 35.9%[0m[0m
+[2m10:48:33[0m [1m   INFO[0m [1m[22mTrain batch 48/128 (37.5%) (+2 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:48:33[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v6[0m[0m
+[2m10:48:38[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 7 |   11.2s | Reward 0.6360 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 17.2%[0m[0m
+[2m10:48:43[0m [1m   INFO[0m [1m[22mTrain batch 32/128 (25.0%) (+13 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:48:44[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v7[0m[0m
+[2m10:48:50[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 8 |   11.9s | Reward 0.7258 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 3.9%[0m[0m
+[2m10:48:53[0m [1m   INFO[0m [1m[22mTrain batch 32/128 (25.0%) (+3 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:48:55[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v8[0m[0m
+[2m10:49:01[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 9 |   11.7s | Reward 0.7445 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 3.9%[0m[0m
+[2m10:49:03[0m [1m   INFO[0m [1m[22mTrain batch 16/128 (12.5%) (+13 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:49:07[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v9[0m[0m
+[2m10:49:13[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 10 |   11.9s | Reward 0.7504 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 1.6%[0m[0m
+[2m10:49:14[0m [1m   INFO[0m [1m[22mTrain batch 0/128 (0.0%) (+3 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:49:19[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v10[0m[0m
+[2m10:49:24[0m [1m   INFO[0m [1m[22mTrain batch 112/128 (87.5%) (+15 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:49:25[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 11 |   11.4s | Reward 0.7515 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 0.8%[0m[0m
+[2m10:49:30[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v11[0m[0m
+[2m10:49:34[0m [1m   INFO[0m [1m[22mTrain batch 80/128 (62.5%) (+13 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:49:37[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 12 |   12.2s | Reward 0.7190 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 2.3%[0m[0m
+[2m10:49:42[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v12[0m[0m
+[2m10:49:44[0m [1m   INFO[0m [1m[22mTrain batch 32/128 (25.0%) (+7 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:49:48[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 13 |   11.0s | Reward 0.7191 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 0.8%[0m[0m
+[2m10:49:53[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v13[0m[0m
+[2m10:49:54[0m [1m   INFO[0m [1m[22mTrain batch 32/128 (25.0%) (+5 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:50:00[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 14 |   12.0s | Reward 0.7088 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 1.6%[0m[0m
+[2m10:50:04[0m [1m   INFO[0m [1m[22mTrain batch 32/128 (25.0%); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:50:05[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v14[0m[0m
+[2m10:50:11[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 15 |   11.5s | Reward 0.8198 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 0.0%[0m[0m
+[2m10:50:14[0m [1m   INFO[0m [1m[22mTrain batch 16/128 (12.5%) (+15 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:50:16[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v15[0m[0m
+[2m10:50:23[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 16 |   12.0s | Reward 0.7421 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 0.0%[0m[0m
+[2m10:50:24[0m [1m   INFO[0m [1m[22mTrain batch 0/128 (0.0%) (+7 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:50:28[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v16[0m[0m
+[2m10:50:34[0m [1m   INFO[0m [1m[22mTrain batch 112/128 (87.5%) (+17 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:50:35[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 17 |   11.4s | Reward 0.7611 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 0.8%[0m[0m
+[2m10:50:39[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v17[0m[0m
+[2m10:50:44[0m [1m   INFO[0m [1m[22mTrain batch 80/128 (62.5%) (+20 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:50:46[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 18 |   11.6s | Reward 0.7528 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 0.8%[0m[0m
+[2m10:50:52[0m [1m   INFO[0m [1m[22mUpdating policy in-flight to v18[0m[0m
+[2m10:50:54[0m [1m   INFO[0m [1m[22mTrain batch 32/128 (25.0%) (+9 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:50:57[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 19 |   11.1s | Reward 0.7509 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 0.0%[0m[0m
+[2m10:51:04[0m [1m   INFO[0m [1m[22mTrain batch 32/128 (25.0%); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:51:09[0m [32m[1mSUCCESS[0m [32m[1m[22mStep 20 |   11.8s | Reward 0.7408 | Trainable 128/128 (100.0%) | Turns 1.0 | Branches 1.0 | Max Off-Policy 2 | Error 0.0% | Truncation 0.8%[0m[0m
+[2m10:51:14[0m [1m   INFO[0m [1m[22mTrain batch 16/128 (12.5%) (+12 buffered); 128 inflight rollouts (train=128, eval=0)[0m[0m
+[2m10:51:21[0m [1m   INFO[0m [1m[22mDraining pipeline (cancelled 128 in-flight train rollout(s); any in-flight evals will complete)[0m[0m
+[2m10:51:21[0m [1m   INFO[0m [1m[22mPipeline drained, exiting main loop[0m[0m
+[2m10:51:21[0m [32m[1mSUCCESS[0m [32m[1m[22mOrchestrator step loop done in 4m 58s[0m[0m
+[2m10:51:21[0m [1m   INFO[0m [1m[22mWriting final checkpoint[0m[0m
+[2m10:51:21[0m [1m   INFO[0m [1m[22mZMQ micro batch sender closed[0m[0m
+[2m10:51:21[0m [32m[1mSUCCESS[0m [32m[1m[22mOrchestrator finished.[0m[0m

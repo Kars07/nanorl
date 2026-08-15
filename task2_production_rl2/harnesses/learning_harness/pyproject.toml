@@ -1,0 +1,13 @@
+[project]
+name = "learning-harness"
+version = "0.1.0"
+description = "Minimal one-call Verifiers v1 learning harness."
+requires-python = ">=3.11"
+dependencies = ["verifiers"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["learning_harness"]

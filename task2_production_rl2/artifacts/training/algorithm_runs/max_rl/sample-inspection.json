@@ -1,0 +1,70 @@
+{
+  "algorithm": "max_rl",
+  "group_size": 4,
+  "rollouts": [
+    {
+      "trace_id": "19a0639c1b764d35a94f006788ecca96",
+      "reward": 0.0,
+      "samples": [
+        {
+          "token_count": 1031,
+          "trainable_tokens": 512,
+          "advantage_min": -1.0,
+          "advantage_max": -1.0,
+          "advantage_values": [
+            -1.0
+          ],
+          "rl_weight_values": null
+        }
+      ]
+    },
+    {
+      "trace_id": "42882ea7ac644d1ab8ea08e986be2b78",
+      "reward": 0.0,
+      "samples": [
+        {
+          "token_count": 1031,
+          "trainable_tokens": 512,
+          "advantage_min": -1.0,
+          "advantage_max": -1.0,
+          "advantage_values": [
+            -1.0
+          ],
+          "rl_weight_values": null
+        }
+      ]
+    },
+    {
+      "trace_id": "2df1bac5cb3640b49f16fa9b109454e2",
+      "reward": 0.0,
+      "samples": [
+        {
+          "token_count": 1031,
+          "trainable_tokens": 512,
+          "advantage_min": -1.0,
+          "advantage_max": -1.0,
+          "advantage_values": [
+            -1.0
+          ],
+          "rl_weight_values": null
+        }
+      ]
+    },
+    {
+      "trace_id": "ed48865849f647bcb9f529ed5b9755f6",
+      "reward": 1.0,
+      "samples": [
+        {
+          "token_count": 1222,
+          "trainable_tokens": 665,
+          "advantage_min": 3.0,
+          "advantage_max": 3.0,
+          "advantage_values": [
+            3.0
+          ],
+          "rl_weight_values": null
+        }
+      ]
+    }
+  ]
+}

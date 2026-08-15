@@ -1,0 +1,100 @@
+13:17:02    INFO eval config:
+{
+  "env": {
+    "id": "",
+    "taskset": {
+      "id": "learning-harness",
+      "task": {
+        "judges": [],
+        "stops": {},
+        "metrics": {},
+        "rewards": {}
+      },
+      "system_prompt": null,
+      "num_tasks": 3
+    },
+    "timeout": {
+      "episode": null,
+      "finalize": null
+    },
+    "retries": {
+      "max_retries": 0,
+      "include": [],
+      "exclude": []
+    },
+    "max_concurrent_agents": 1,
+    "interception": {
+      "type": "elastic",
+      "multiplex": 32
+    },
+    "agent": {
+      "harness": {
+        "id": "learning-harness",
+        "env": {},
+        "forward_env": [],
+        "tool_timeout": 600.0,
+        "disabled_tools": null,
+        "skills": []
+      },
+      "runtime": {
+        "type": "subprocess"
+      },
+      "model": null,
+      "client": null,
+      "sampling": null,
+      "max_turns": 2,
+      "max_input_tokens": null,
+      "max_output_tokens": null,
+      "max_total_tokens": null,
+      "timeout": {
+        "setup": null,
+        "rollout": null,
+        "finalize": null,
+        "scoring": null
+      },
+      "retries": {
+        "max_retries": 0,
+        "include": [],
+        "exclude": []
+      }
+    }
+  },
+  "serve": {
+    "pool": {
+      "type": "elastic",
+      "max_workers": null,
+      "multiplex": 128
+    },
+    "address": null,
+    "max_concurrent": null
+  },
+  "model": "Qwen/Qwen3-0.6B",
+  "client": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_var": "TASK2_LOCAL_INFERENCE_KEY",
+    "headers": {},
+    "type": "eval"
+  },
+  "sampling": {
+    "temperature": null,
+    "top_p": null,
+    "reasoning_effort": null,
+    "max_tokens": 64
+  },
+  "num_tasks": 1,
+  "num_rollouts": 1,
+  "shuffle": false,
+  "max_concurrent": 128,
+  "verbose": false,
+  "rich": true,
+  "server": false,
+  "push": false,
+  "output_dir": "/outputs/harness-suite/learning-harness"
+}
+13:17:02    INFO running 1x1 rollouts on Qwen/Qwen3-0.6B
+13:17:02    INFO results: /outputs/harness-suite/learning-harness
+13:17:02    INFO rollout start: id=85af2cf8f8174acd8c78bd7b8184edad task=0 harness=learning-harness runtime=subprocess
+13:17:02    INFO interception up: url=http://127.0.0.1:45804
+13:17:02    INFO interception pool: 1 server(s), multiplex=32
+13:17:06    INFO rollout done: id=85af2cf8f8174acd8c78bd7b8184edad task=0 reward=0.000 turns=1 stop=agent_completed
+13:17:06    INFO interception down: url=http://127.0.0.1:45804
